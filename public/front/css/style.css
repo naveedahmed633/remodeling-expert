@@ -1,0 +1,242 @@
+ /* Define colors in root */
+ :root {
+    --primary-color: #2FA8FC; /* Blue */
+    --secondary-color: #2ecc71; /* Green */
+    --accent-color: #e74c3c; /* Red */
+    --background-color: #f4f4f4; /* Light Gray */
+    --text-color: #333333; /* Dark Gray */
+    --link-color: #2980b9; /* Link color */
+}
+
+/* Banner Image */
+.home-banner {
+    background-image: url('../images/movie-night-by-pool-whole-family.png'); /* Banner image link */
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.btn-primary{
+    background-color: var(--primary-color) !important;
+    border: none !important;
+}
+
+/* Choti screen par navbar brand ke text ko chhota karna */
+@media (max-width: 992px) {
+    .navbar-brand .fw-bold,
+    .navbar-brand .fw-thin {
+        font-size: 10px; /* Text ko chhota karna */
+    }
+
+    /* Toggle button ke niche links ko align karna */
+    .navbar-collapse {
+        position: absolute;
+        top: 60px; /* Adjust karen toggle button ke neeche */
+        width: 100%;
+        background-color: #000000c2; /* Optional: background color add karen */
+    }
+
+    /* Jab navbar collapse ho to logo ke size ko thora chhota karen */
+    .navbar-brand img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Navbar links ko center align karna */
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+
+.navbar--hidden{
+    display: none;
+}
+
+/* Footer Background Color */
+.footer {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Quick Links and Services Styling */
+.footer h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    color: #2FA8FC;
+}
+
+/* Bottom Section Styling */
+/* Full Width Divider Line */
+.footer hr {
+    border-color: white;
+    width: 100%; /* Full width */
+    margin: 0 auto;
+}
+
+/* Navbar Brand Customizations */
+.navbar-brand span {
+    display: block;  /* Display both spans on separate lines */
+}
+
+/* Bold for TOTAL UPGRADE */
+.navbar-brand .font-weight-bold {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Thin for REMODELING EXPERT */
+.navbar-brand .font-weight-light {
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+.footer .navbar-brand img {
+    width: 35px; /* Icon size */
+    height: 35px;
+    margin-right: 15px;
+}
+
+/* Bold for TOTAL UPGRADE */
+.footer .navbar-brand p {
+    font-size: 13px;
+}
+
+.footer .text-white {
+    color: #fff !important;
+    line-height: 10px;
+}
+
+.footer .text-white:hover {
+    color: #2FA8FC !important;
+}
+
+/* Social Icons Style */
+.social-icon {
+    background-color: white; /* White background */
+    font-size: 24px; /* Adjust icon size */
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    display: flex;
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+    margin-right: 10px; /* Space between icons */
+    border-radius: 50%; /* Perfect round shape */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon i {
+    color: black !important;
+}
+
+.text-theme-color{
+    color: #2FA8FC !important;
+}
+
+/* .before-after-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem 1rem;
+  }
+   */
+  .before-after-section {
+    width: 100%;
+    /* height: 100%; */
+    padding: 0;
+    margin: 0;
+  }
+  
+
+  .image-compare-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    max-height: 100%;
+    border-radius: 12px;
+  }
+
+  .image-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .image-after {
+    clip-path: inset(0 0 0 50%);
+  }
+  
+  .image-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .divider-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+  }
+  
+  .slider-range {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    width: calc(100% + 2.25rem);
+    height: 100%;
+    left: -1.125rem;
+    background: transparent;
+    z-index: 15;
+  }
+  
+  .slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 height%3D%2224px%22 viewBox%3D%220 -960 960 960%22 width%3D%2224px%22 fill%3D%22%23000%22%3E%3Cpath d%3D%22M286.15-293.85 100-479.62l185.77-185.76 42.15 41.76-113 113.62h530.16l-113-113.62 42.15-41.76L860-479.62 674.23-293.85l-42.54-41.77 113.39-114H214.54l113.38 114-41.77 41.77Z%22/%3E%3C/svg%3E');
+    background-size: cover;
+    cursor: grab;
+  }
+  
+  .slider-range:active::-webkit-slider-thumb {
+    cursor: grabbing;
+  }
+  
+  .slider-range::-moz-range-thumb {
+    height: 2rem;
+    width: 2rem;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 height%3D%2224px%22 viewBox%3D%220 -960 960 960%22 width%3D%2224px%22 fill%3D%22%23000%22%3E%3Cpath d%3D%22M286.15-293.85 100-479.62l185.77-185.76 42.15 41.76-113 113.62h530.16l-113-113.62 42.15-41.76L860-479.62 674.23-293.85l-42.54-41.77 113.39-114H214.54l113.38 114-41.77 41.77Z%22/%3E%3C/svg%3E');
+    background-size: cover;
+    cursor: grab;
+  }
+  
+  .slider-range:active::-moz-range-thumb {
+    cursor: grabbing;
+  }
+  
