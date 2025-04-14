@@ -254,3 +254,8 @@
     cursor: grabbing;
   }
   
+  .overlay-box {
+    bottom: 0;
+    left: 0;
+    width: 90%;
+  }

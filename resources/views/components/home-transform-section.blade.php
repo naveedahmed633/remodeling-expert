@@ -1,4 +1,4 @@
-<section class="py-5" style="background-color: #f8f9fa;">
+<section class="py-5" style="">
     <div class="container position-relative">
         <div class="row">
             <!-- Image Column -->

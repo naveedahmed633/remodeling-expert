@@ -36,7 +36,7 @@
     </div>
 </nav> --}}
 
-<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top mt-4">
+<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top mt-5">
   <div class="container d-flex justify-content-between align-items-center">
       
       <!-- Left Nav Links + Toggle Button -->
