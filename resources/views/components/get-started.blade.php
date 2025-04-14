@@ -1,7 +1,5 @@
 <style>
-  
-
-    .get-started-section {
+  .get-started-section {
   background-image: url('{{ asset('front/images/frames.png') }}'); /* replace with your image */
   background-size: cover;
   background-position: center;
@@ -16,7 +14,6 @@
   border-radius: 10px;
 }
 </style>
-
 <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
     <div class="content-box text-white text-center p-5">
         <h2 class="fw-bold mb-3 text-white">Get Started Today</h2>
@@ -24,4 +21,3 @@
         <a href="#" class="btn btn-primary px-4 py-2">Join Now</a>
     </div>
 </section>
-

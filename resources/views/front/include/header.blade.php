@@ -48,8 +48,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarLeft">
               <ul class="navbar-nav me-3 mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link text-white active" href="#">Home</a></li>
-                  <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link text-white active" href="/">Home</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="{{ route('about') }}">About Us</a></li>
                   <li class="nav-item"><a class="nav-link text-white" href="#">Our Services</a></li>
                   <li class="nav-item"><a class="nav-link text-white" href="#">Projects</a></li>
               </ul>

@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-7 ms-auto">
-                      <div class="p-4 py-5 text-white" style="background-color: #001626; width: 40%;">
+                      <div class="p-4 py-5 text-white" style="background-color: #001626; width: 60%;">
                         <h5 class="mb-2 text-white">Need Consultation?</h5>
                         <p class="mb-1 text-white">We’re here to help 24/7.</p>
                         <h4 class="fw-bold mb-0 text-theme-color">+92 300 1234567</h4>

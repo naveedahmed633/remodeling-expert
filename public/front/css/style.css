@@ -8,9 +8,7 @@
     --link-color: #2980b9; /* Link color */
 }
 
-/* Banner Image */
-.home-banner {
-    background-image: url('../images/movie-night-by-pool-whole-family.png'); /* Banner image link */
+.banner{
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -20,6 +18,22 @@
     text-align: center;
     color: white;
 }
+
+/* Banner Image */
+.home-banner {
+    background-image: url('../images/movie-night-by-pool-whole-family.png'); 
+}
+
+.about-banner {
+    background-image: url('../images/todd-kent-178j8tJrNlc-unsplash.png'); 
+}
+
+.equal-height {
+    /* height: ; */
+    object-fit: cover;
+    width: 100%;
+  }
+  
 
 .btn-primary{
     background-color: var(--primary-color) !important;
