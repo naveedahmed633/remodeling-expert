@@ -1,5 +1,5 @@
 @extends('front.include.app')
-@section('title', 'Home | Total Upgrade Remodeling Expert')
+@section('title', 'Home | Remodeling Expert')
 @section('content')
 
     <!-- Banner Section -->

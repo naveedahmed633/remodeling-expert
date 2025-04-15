@@ -1,6 +1,6 @@
 <section class="py-5" style="">
     <div class="container position-relative">
-        <div class="row">
+        <div class="row mb-5">
             <!-- Image Column -->
             <div class="col-md-6">
                 <img src="{{ asset($imagePath) }}"

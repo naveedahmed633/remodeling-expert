@@ -28,6 +28,24 @@
     background-image: url('../images/todd-kent-178j8tJrNlc-unsplash.png'); 
 }
 
+.project-banner {
+  background-image: url('../images/image\ \(9\).png'); 
+}
+
+.services-banner {
+  background-image: url('../images/spacejoy-9M66C_w_ToM-unsplash.png'); 
+}
+
+@media screen and (min-width: 992px) {
+  .bottom-minus{
+    bottom: -50% !important;
+  }
+  
+  .height-335{
+    height: 335px !important;
+  }
+}
+
 .equal-height {
     /* height: ; */
     object-fit: cover;

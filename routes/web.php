@@ -25,8 +25,8 @@ Route::controller(\App\Http\Controllers\FrontController::class)->group(function 
    Route::get('/','index')->name('index');
    Route::get('/about','about')->name('about');
    Route::get('/contact','contact')->name('contact');
-   Route::get('/events','events')->name('events');
-   Route::get('/leagues/and/tournaments','leagues')->name('leagues');
+   Route::get('/project','project')->name('project');
+   Route::get('/services','services')->name('services');
    Route::get('/personal/training','personalTraining')->name('personal.training');
    Route::get('/youth/training','youthTraining')->name('youth.training');
    Route::get('/get-in-touch','getInTouch')->name('getInTouch');

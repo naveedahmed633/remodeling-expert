@@ -31,4 +31,13 @@ class FrontController extends Controller
     {
         return view('front.about');
     }
+    public function project()
+    {
+        return view('front.projects');
+    }
+
+    public function services()
+    {
+        return view('front.services');
+    }
 }
