@@ -15,7 +15,7 @@
                 <p class="text-start">{{ $paragraphTwo }}</p>
                 <p class="text-start">{{ $paragraphThree }}</p>
                 <div class="text-start mt-4">
-                    <a href="{{ $buttonUrl }}" class="btn btn-primary">{{ $buttonText }}</a>
+                    <a href="{{ $buttonUrl }}" class="btn btn-primary p-3">{{ $buttonText }}</a>
                 </div>
             </div>
         </div>

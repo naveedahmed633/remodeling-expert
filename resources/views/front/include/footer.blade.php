@@ -67,8 +67,8 @@
         <div class="row">
             <div class="col-12 text-center mt-4 pb-4">
                 <hr class="border-white w-100 mb-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="mb-0 text-white">© 2025 Website Name</p>
+                <div class="d-flex justify-content-between text-start">
+                    <p class="mb-0 text-white">Copyright © 2025Total Upgrade Remodeling Expert. All rights reserved.</p>
                     <div class="d-flex">
                         <a href="#" class="text-white">Privacy Policy</a>
                         <span class="text-white mx-2">|</span>

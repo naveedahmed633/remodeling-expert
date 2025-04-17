@@ -11,7 +11,7 @@
                 craftsmanship,
                 innovative designs, and seamless execution to bring your vision to life.
             </p>
-            <button class="btn btn-primary">START NOW</button>
+            <button class="btn btn-primary p-3">START NOW</button>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <a href="#" class="btn btn-primary mt-4">MORE SERVICES</a>
+            <a href="#" class="btn btn-primary mt-4 p-3">MORE SERVICES</a>
         </div>
     </section>
 
