@@ -3,36 +3,38 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        $adminRole = Role::create(['name' => 'admin']);
-        $userRole = Role::create(['name' => 'user']);
+        // Create roles if they don't already exist
+        $adminRole = Role::firstOrCreate(['name' => 'admin']);
+        $userRole = Role::firstOrCreate(['name' => 'user']);
 
-        $editPermission = Permission::create(['name' => 'edit articles']);
-        $deletePermission = Permission::create(['name' => 'delete articles']);
+        // Create permissions if they don't already exist
+        $editPermission = Permission::firstOrCreate(['name' => 'edit articles']);
+        $deletePermission = Permission::firstOrCreate(['name' => 'delete articles']);
 
-        $adminRole->givePermissionTo($editPermission);
-        $adminRole->givePermissionTo($deletePermission);
-        $userRole->givePermissionTo($editPermission);
+        // Assign permissions to roles (use syncWithoutDetaching to avoid duplicates)
+        $adminRole->syncPermissions([$editPermission, $deletePermission]);
+        $userRole->syncPermissions([$editPermission]);
 
-        $user = User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@pnp-gym.com',
-            'password' => bcrypt('admin!@#'),
-        ]);
+        // Create admin user if not exists
+        $user = User::firstOrCreate(
+            ['email' => 'admin@remodlingexpert.com'],
+            [
+                'name' => 'Admin User',
+                'password' => bcrypt('admin!@#'),
+            ]
+        );
 
-        $user->assignRole('admin');
+        // Assign admin role to user (only if not already assigned)
+        if (!$user->hasRole('admin')) {
+            $user->assignRole('admin');
+        }
     }
 }

@@ -1,5 +1,5 @@
 <!-- Footer Section -->
-<footer class="footer bg-dark text-white pt-5">
+<footer class="footer text-white pt-5" style="background: #001626">
     <div class="container">
         <div class="row">
             <!-- First Section: Logo and Description -->
@@ -29,11 +29,12 @@
             <div class="col-md-3 d-flex flex-column justify-content-center lh-lg mt-4">
                 <h5 class="text-white">Quick Links</h5>
                 <ul class="list-unstyled ">
-                    <li><a href="#" class="text-white">Home</a></li>
-                    <li><a href="#" class="text-white">About Us</a></li>
-                    <li><a href="#" class="text-white">Services</a></li>
-                    <li><a href="#" class="text-white">Contact</a></li>
-                    <li><a href="#" class="text-white">Blog</a></li>
+                    <li><a href="{{ route('index') }}" class="text-white">Home</a></li>
+                    <li><a href="{{ route('about') }}" class="text-white">About Us</a></li>
+                    <li><a href="{{ route('services') }}" class="text-white">Services</a></li>
+                    <li><a href="{{ route('contact') }}" class="text-white">Contact</a></li>
+                    <li><a href="{{ route('blog') }}" class="text-white">Blog</a></li>
+                    <li><a href="{{ route('classic.and.professional') }}" class="text-white">Classic & professional</a></li>
                 </ul>
             </div>
 
@@ -41,11 +42,13 @@
             <div class="col-md-3 d-flex flex-column justify-content-center lh-lg mt-4">
                 <h5 class="text-white">Our Services</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Web Design</a></li>
-                    <li><a href="#" class="text-white">Web Development</a></li>
-                    <li><a href="#" class="text-white">SEO Services</a></li>
-                    <li><a href="#" class="text-white">Digital Marketing</a></li>
-                    <li><a href="#" class="text-white">E-Commerce</a></li>
+                    @foreach ($services->take(5) as $service)
+                        <li>
+                            <a href="{{ route('service.detail', $service->id) }}" class="text-white">
+                                {{ $service->title }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 

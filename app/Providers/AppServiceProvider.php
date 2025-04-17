@@ -25,22 +25,22 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $pageData = [];
+        // $pageData = [];
     
-        $pageNames = ['Home','About', 'Contact', 'Feature', 'Services', 'Faqs', 'CompanyStatistic', 'Testimonial', 'Blog','Category','Product','Setting'];
+        // $pageNames = ['Home','About', 'Contact', 'Feature', 'Services', 'Faqs', 'CompanyStatistic', 'Testimonial', 'Blog','Category','Product','Setting'];
     
-        foreach ($pageNames as $pageName) {
-            try {
-                $page = CmsPage::where('name', $pageName)->first();
+        // foreach ($pageNames as $pageName) {
+        //     try {
+        //         $page = CmsPage::where('name', $pageName)->first();
     
-                if ($page) {
-                    $pageData[$pageName] = $page; // Store the full model, not just the content
-                }
-            } catch (\Exception $e) {
-                $pageData[$pageName] = null;
-            }
-        }
+        //         if ($page) {
+        //             $pageData[$pageName] = $page; // Store the full model, not just the content
+        //         }
+        //     } catch (\Exception $e) {
+        //         $pageData[$pageName] = null;
+        //     }
+        // }
     
-        View::share('pageData', $pageData);
+        // View::share('pageData', $pageData);
     }
 }

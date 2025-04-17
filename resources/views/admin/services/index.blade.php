@@ -14,7 +14,7 @@
                     <div class="col-md-12">
                         <div class="card card-primary card-box-shadow">
                             <div class="card-body">
-                                <a href="{{ route('admin.blogs.create') }}">
+                                <a href="{{ route('admin.service.create') }}">
                                     <button type="button" class="btn btn-primary btn-sm float-right mb-5">
                                         Add Blog
                                     </button>
@@ -31,14 +31,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($blogs as $blog)
+                                        @foreach ($services as $service)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $blog->title ?: '' }}</td>
-                                                <td>{{ Str::limit(strip_tags($blog->description), 40) ? : '' }}</td>
+                                                <td>{{ $service->title ?: '' }}</td>
+                                                <td>{{ Str::limit(strip_tags($service->description), 40) ? : '' }}</td>
                                                 <td>
-                                                    @if($blog->image)
-                                                    <img src="{{ asset('storage/'.$blog->image) }}" alt="{{ $blog->title }}" class="img-fluid mb-3" style="width: 100px;height: 100px;">
+                                                    @if($service->image)
+                                                    <img src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}" class="img-fluid mb-3" style="width: 100px;height: 100px;">
                                                 @endif
                                                 </td>
                                                 <td>
@@ -50,9 +50,9 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item"
-                                                                href="{{ route('admin.blogs.edit', $blog->id) }}">Edit</a>
+                                                                href="{{ route('admin.service.edit', $service->id) }}">Edit</a>
                                                             <a class="dropdown-item delete-btn"
-                                                                data-id="{{ $blog->id }}">Delete</a>
+                                                                data-id="{{ $service->id }}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -97,7 +97,7 @@
                 }).then((willDelete) => {
                     if (willDelete) {
                         $.ajax({
-                            url: "/admin/blogs/" + id,
+                            url: "/admin/service/" + id,
                             type: "DELETE",
                             success: function(response) {
                                 toastr.success(response.message);

@@ -58,95 +58,66 @@
                         <div class="card card-box-shadow mt-5">
                             <div class="card-header">
                                 <h3 class="card-title">Add Blogs</h3>
-                                <a href="{{ route('admin.blog.list') }}" class="btn btn-primary btn-sm float-right">
+                                <a href="{{ route('admin.blogs.index') }}" class="btn btn-primary btn-sm float-right">
                                     Back
                                 </a>
                             </div>
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('admin.blog.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.blogs.store') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
-                                        <!-- Heading Input -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="Name">Heading *</label>
-                                                <input type="text" class="form-control form__field" name="heading"
-                                                       placeholder="Enter Blog Heading"
-                                                       value="{{ old('heading') }}">
+                                                <label for="Name">Blog Title *</label>
+                                                <input type="text" class="form-control form__field" name="title"
+                                                    placeholder="blogs Title" value="{{ old('title') }}">
                                             </div>
                                             <small class="text-danger">
-                                                @error('heading')
-                                                {{ $message }}
-                                                @enderror
-                                            </small>
-                                        </div>
-
-                                        <!-- Short Description -->
-                                        <div class="col-md-6">
-                                            <label for="">Short Description *</label>
-                                            <textarea id="summernote1" name="description" rows="4" placeholder="Description" class="form-control form__field"></textarea>
-                                            <small class="text-danger">
-                                                @error('description')
-                                                {{ $message }}
-                                                @enderror
-                                            </small>
-                                        </div>
-
-                                        <!-- Meta Title -->
-                                        <div class="col-md-6 mt-4">
-                                            <div class="form-group">
-                                                <label for="meta_title">Meta Title *</label>
-                                                <input type="text" class="form-control form__field" name="meta_title"
-                                                       placeholder="Enter Meta Title" value="{{ old('meta_title') }}">
-                                            </div>
-                                            <small class="text-danger">
-                                                @error('meta_title')
-                                                {{ $message }}
-                                                @enderror
-                                            </small>
-                                        </div>
-
-                                        <!-- Meta Description -->
-                                        <div class="col-md-6 mt-4">
-                                            <label for="meta_description">Meta Description *</label>
-                                            <textarea name="meta_description" rows="4" placeholder="Enter Meta Description" class="form-control form__field"></textarea>
-                                            <small class="text-danger">
-                                                @error('meta_description')
-                                                {{ $message }}
+                                                @error('title')
+                                                    {{ $message }}
                                                 @enderror
                                             </small>
                                         </div>
 
                                         <!-- Blog Image -->
-                                        <div class="col-md-12 mt-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="testimonialImageInput">Blog Image *</label>
                                                 <input type="file" class="form-control form__field visually-hidden"
-                                                       name="blog_image" id="testimonialImageInput" accept="image/*">
+                                                    name="image" id="testimonialImageInput" accept="image/*">
                                                 <label for="testimonialImageInput"
-                                                       class="file-input-label form__field form-control">
+                                                    class="file-input-label form__field form-control">
                                                     <i class="fas fa-camera"></i> Choose file
                                                 </label>
                                                 <small class='text-danger'>
-                                                    @error('blog_image')
-                                                    {{ $message }}
+                                                    @error('image')
+                                                        {{ $message }}
                                                     @enderror
                                                 </small>
                                             </div>
-                                            <img id="testimonialImagePreview" src="{{ asset('upload/No-Image.png') }}"
-                                                 alt="Profile Preview"
-                                                 style="width: 200px; height: 150px; margin-top: 10px;">
+                                        </div>
+
+                                        <!-- Short Description -->
+                                        <div class="col-md-12">
+                                            <label for="">Blog Description *</label>
+                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field"></textarea>
+                                            <small class="text-danger">
+                                                @error('description')
+                                                    {{ $message }}
+                                                @enderror
+                                            </small>
                                         </div>
 
                                         <!-- Submit Button -->
                                         <div class="mx-auto mt-5">
                                             <div class="form-group">
                                                 <input type="submit" class="form-control btn btn-primary btn-sm"
-                                                       value="Submit">
+                                                    value="Submit">
                                             </div>
                                         </div>
 
@@ -166,35 +137,20 @@
     </div>
 
     <!-- /.content-wrapper -->
-@endsection
 
-@section('script')
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script> --}}
     <script>
-        $('#summernote1').summernote({
-            placeholder: 'Hello Admin',
-            tabsize: 2,
-            height: 100
-        });
-    </script>
-    <script>
-        function showImagePreview(input, previewId) {
-            const preview = document.getElementById(previewId);
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 200
+            });
 
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
+            $('form').on('submit', function() {
+                $('#summernote').val($('#summernote').summernote('code'));
+            });
 
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        const imageInput = document.getElementById('testimonialImageInput');
-        imageInput.addEventListener('change', function() {
-            showImagePreview(this, 'testimonialImagePreview');
         });
     </script>
 @endsection

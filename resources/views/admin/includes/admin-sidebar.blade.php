@@ -40,105 +40,20 @@
                     </ul>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('admin/user/list*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.service.index') }}" class="nav-link {{ request()->is('admin/services*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-users"></i>
-                                <p>User Listing</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.class_schedules.index') }}"
-                                class="nav-link {{ request()->is('admin/home/class/*') ? 'active' : '' }}">
-                                <i class="fas fa-calendar-check nav-icon"></i>
-                                <p>Class Schedules</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.class_types.index') }}"
-                                class="nav-link {{ request()->is('admin/home/slider/*') ? 'active' : '' }}">
-                                <i class="fas fa-chalkboard-teacher nav-icon"></i>
-                                <p>Class Type</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.trainers.index') }}"
-                                class="nav-link {{ request()->is('admin/blog/*') ? 'active' : '' }}">
-                                <i class="fas fa-user-tie nav-icon"></i>
-                                <p>Trainers</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="{{ route('admin.service.index') }}"
-                                class="nav-link {{ request()->is('admin/podcast/*') ? 'active' : '' }}">
-                                <i class="fas fa-cogs nav-icon"></i>
                                 <p>Services</p>
                             </a>
-                        </li>
+                        </li>     
                         <li class="nav-item">
-                            <a
-                                href="{{ route('admin.testimonial.index') }}"
-                                class="nav-link {{ request()->is('admin/podcast/*') ? 'active' : '' }}">
-                                <i class="fas fa-cogs nav-icon"></i>
-                                <p>Testimonials</p>
+                            <a href="{{ route('admin.blogs.index') }}" class="nav-link {{ request()->is('admin/blogs*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Blogs</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="{{ route('admin.tournament.index') }}"
-                                class="nav-link {{ request()->is('admin/tournament/*') ? 'active' : '' }}">
-                                <i class="fas fa-trophy nav-icon"></i>
-                                <p>Tournament</p>
-                            </a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a
-                                href="{{ route('admin.event.index') }}"
-                                class="nav-link {{ request()->is('admin/podcast/*') ? 'active' : '' }}">
-                                <i class="fas fa-cogs nav-icon"></i>
-                                <p>Events</p>
-                            </a>
-                        </li>
-                        <li
-                            class="nav-item {{ request()->is('admin/product*') || request()->is('admin/category*') ? 'menu-open' : '' }}">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-shopping-cart nav-icon"></i>
-                                <p>
-                                    Ecommerce Section
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                        </li>
-                        <li
-                            class="nav-item {{ request()->is('admin/profile*') || request()->is('admin/change-password*') || request()->is('admin/setting/create*') ? 'menu-open' : '' }}">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-cog nav-icon"></i>
-                                <p>
-                                    Account Setting
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.setting.create') }}"
-                                        class="nav-link {{ request()->is('admin/setting/create*') ? 'active' : '' }}">
-                                        <i class="nav-icon far fa-window-restore"></i>
-                                        <p>Web Settings</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.profile') }}"
-                                        class="nav-link {{ request()->is('admin/profile*') ? 'active' : '' }}">
-                                        <i class="fa fa-user-check nav-icon"></i>
-                                        <p>Profile</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        </li>                    
 
                         <!--  CMS-Section -->
-                        <div style="border-top: 1px solid #ddd; padding-top: 10px;">
+                        {{-- <div style="border-top: 1px solid #ddd; padding-top: 10px;">
                             <h4 class="text-white p-4">CMS</h4>
                             <li class="nav-item {{ request()->is('admin/cms*') ? 'menu-open' : '' }}">
                                 <a href="#" class="nav-link">
@@ -221,7 +136,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        </div>
+                        </div> --}}
                     </ul>
                 </li>
             </ul>

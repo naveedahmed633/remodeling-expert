@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\ClassSchedule;
 use App\Models\CmsPage;
 use App\Models\StayInTouch;
@@ -23,21 +24,68 @@ class FrontController extends Controller
 
     public function index()
     {
-
-        return view('front.index');
+        $services = Service::all();
+        return view('front.index', compact('services'));
     }
 
     public function about()
     {
-        return view('front.about');
+        $services = Service::all();
+        return view('front.about', compact('services'));
     }
     public function project()
     {
-        return view('front.projects');
+        $services = Service::all();
+        return view('front.projects', compact('services'));
     }
 
     public function services()
     {
-        return view('front.services');
+        $services = Service::all();
+        return view('front.services', compact('services'));
+    }
+
+    public function classicAndProfessional()
+    {
+        $services = Service::all();
+        return view('front.classic', compact('services'));
+    }
+
+    public function blog()
+    {
+        $services = Service::all();
+        $blogs = Blog::all();
+        return view('front.blog', compact('blogs', 'services'));
+    }
+
+    public function contact()
+    {
+        $services = Service::all();
+        return view('front.contact', compact('services'));
+    }
+
+    public function order()
+    {
+        $services = Service::all();
+        return view('front.order', compact('services'));
+    }
+
+    public function store(Request $request)
+    {
+        $services = $request->input('services', []);
+
+        $cleanedServices = array_map(function ($service) {
+            return preg_replace('/\s+/', ' ', trim($service));
+        }, $services);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',   
+            'phone' => 'nullable|string|max:15',     
+            'email' => 'required|email|max:255',   
+            'message' => 'nullable|string|max:500',  
+        ]);
+        
+         
+        dd($cleanedServices);
     }
 }

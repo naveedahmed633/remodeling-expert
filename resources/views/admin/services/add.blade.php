@@ -1,6 +1,6 @@
 @extends('layouts.admin-layout')
 @section('title')
-    Edit Blog
+    Add Blog
 @endsection
 @section('content')
     <style>
@@ -38,10 +38,6 @@
             line-height: 1;
         }
 
-        .rating label.active-star::before {
-            color: #f9df4a;
-        }
-
         .rating input {
             display: none;
         }
@@ -59,29 +55,27 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-
                         <div class="card card-box-shadow mt-5">
-
                             <div class="card-header">
-                                <h3 class="card-title">Edit Blog</h3>
-                                <a href="{{ route('admin.blogs.index') }}" class="btn btn-primary btn-sm float-right">
+                                <h3 class="card-title">Add Blogs</h3>
+                                <a href="{{ route('admin.service.index') }}" class="btn btn-primary btn-sm float-right">
                                     Back
                                 </a>
                             </div>
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.service.store') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
-                                    @method('PUT')
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="Name">Blog Title *</label>
+                                                <label for="Name">Services Title *</label>
                                                 <input type="text" class="form-control form__field" name="title"
-                                                    placeholder="blog Title" value="{{ old('title', $blog->title ?? '') }}">
+                                                    placeholder="Service Title" value="{{ old('title') }}">
                                             </div>
                                             <small class="text-danger">
                                                 @error('title')
@@ -110,10 +104,8 @@
 
                                         <!-- Short Description -->
                                         <div class="col-md-12">
-                                            <label for="">Blog Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field">
-                                                {{ $blog->description ?? '' }}
-                                            </textarea>
+                                            <label for="">Service Description *</label>
+                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field"></textarea>
                                             <small class="text-danger">
                                                 @error('description')
                                                     {{ $message }}
@@ -134,7 +126,6 @@
                             </div>
                             <!-- /.card-body -->
                         </div>
-
                     </div>
                     <!-- /.col -->
                 </div>
@@ -146,14 +137,20 @@
     </div>
 
     <!-- /.content-wrapper -->
-@endsection
 
-@section('script')
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
-<script>
-    $(document).ready(function() {
-  $('#summernote').summernote();
-});
-</script>
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script> --}}
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 200
+            });
+
+            $('form').on('submit', function() {
+                $('#summernote').val($('#summernote').summernote('code'));
+            });
+
+        });
+    </script>
 @endsection

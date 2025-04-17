@@ -36,6 +36,18 @@
   background-image: url('../images/spacejoy-9M66C_w_ToM-unsplash.png'); 
 }
 
+.interior-banner {
+  background-image: url('../images/image\ \(16\).png'); 
+}
+
+.classic-banner {
+  background-image: url('../images/image\ \(17\).png'); 
+}
+
+.contact-banner {
+  background-image: url('../images/image\ \(25\).png'); 
+}
+
 @media screen and (min-width: 992px) {
   .bottom-minus{
     bottom: -50% !important;
@@ -44,6 +56,20 @@
   .height-335{
     height: 335px !important;
   }
+
+  .order-form{
+    height: 36em !important;
+  }
+
+  .form-image{
+    height: 36em !important;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.gap-2 .social-icon i{
+  color: #fff !important;
 }
 
 .equal-height {
@@ -276,4 +302,19 @@
     bottom: 0;
     left: 0;
     width: 90%;
+  }
+
+  .blog-posts{
+    color: #ffffff !important;
+    transition: all 0.4s ease;
+  }
+  
+  .blog-posts:hover{
+    color: #2FA8FC !important;
+    text-decoration: underline !important;
+  }
+  
+  .bg-nav{
+    background: #001626;
+    padding-bottom: 150px; 
   }

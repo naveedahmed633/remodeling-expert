@@ -142,9 +142,7 @@
         transition: background-color 4000s ease-in-out 0s;
     }
 </style>
-@php
-$setting =  $pageData['Setting'];
-@endphp
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 

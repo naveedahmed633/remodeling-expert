@@ -19,69 +19,22 @@
         image-path="front/images/3d-rendering-loft-luxury-living-room-with-bookshelf.png" button-text="LEARN MORE"
         button-url="#" />
 
-    <section class="container my-5">
-        <div class="row mt-5">
-            <!-- Card 1 -->
-            <div class="col-lg-4 mb-4 height-335">
-                <div class="position-relative">
-                    <img src="{{ asset('front/images/image (10).png') }}" class="img-fluid w-100" alt="Image 1">
-                    <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
-                        <h5>Interior Remodeling</h5>
-                        <p>Modern upgrades for kitchens, bathrooms, and living spaces.</p>
-                        <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
+        <section class="container my-5">
+            <div class="row mt-5">
+                @foreach($services as $service)
+                    <div class="col-lg-4 mb-4 height-335">
+                        <div class="position-relative">
+                            <img src="{{ asset('storage/' . $service->image) }}" class="img-fluid w-100" alt="{{ $service->title }}">
+                            <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
+                                <h5>{{ $service->title }}</h5>
+                                <p>{{ Str::limit(strip_tags($service->description), 40) ? : '' }}</p>
+                                <a href="{{ route('service.detail', $service->id) }}" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-
-            <!-- Card 2 -->
-            <div class="col-lg-4 mb-4 height-335">
-                <div class="position-relative">
-                    <img src="{{ asset('front/images/image (11).png') }}" class="img-fluid w-100" alt="Image 2">
-                    <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
-                        <h5>Exterior Remodeling</h5>
-                        <p>Enhancing curb appeal with durable design renovations.</p>
-                        <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-lg-4 mb-4 height-335">
-                <div class="position-relative">
-                    <img src="{{ asset('front/images/image (12).png') }}" class="img-fluid w-100" alt="Image 3">
-                    <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
-                        <h5>Plumbing</h5>
-                        <p>Modern upgrades for kitchens, bathrooms, and living spaces.</p>
-                        <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="col-lg-4 mb-4 height-335">
-                <div class="position-relative">
-                    <img src="{{ asset('front/images/image (13).png') }}" class="img-fluid w-100" alt="Image 4">
-                    <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
-                        <h5>HVAC</h5>
-                        <p>Efficient heating, cooling, and ventilation solutions.</p>
-                        <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="col-lg-4 mb-4 height-335">
-                <div class="position-relative">
-                    <img src="{{ asset('front/images/image (14).png') }}" class="img-fluid w-100" alt="Image 4">
-                    <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
-                        <h5>Electrical Work</h5>
-                        <p>Modern upgrades for kitchens, bathrooms, and living spaces.</p>
-                        <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <x-trusted-experts />
 @endsection

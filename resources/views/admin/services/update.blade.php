@@ -64,14 +64,14 @@
 
                             <div class="card-header">
                                 <h3 class="card-title">Edit Blog</h3>
-                                <a href="{{ route('admin.blogs.index') }}" class="btn btn-primary btn-sm float-right">
+                                <a href="{{ route('admin.service.index') }}" class="btn btn-primary btn-sm float-right">
                                     Back
                                 </a>
                             </div>
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.service.update', $service->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="row">
@@ -79,9 +79,9 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="Name">Blog Title *</label>
+                                                <label for="Name">Services Title *</label>
                                                 <input type="text" class="form-control form__field" name="title"
-                                                    placeholder="blog Title" value="{{ old('title', $blog->title ?? '') }}">
+                                                    placeholder="Service Title" value="{{ old('title', $service->title ?? '') }}">
                                             </div>
                                             <small class="text-danger">
                                                 @error('title')
@@ -110,9 +110,9 @@
 
                                         <!-- Short Description -->
                                         <div class="col-md-12">
-                                            <label for="">Blog Description *</label>
+                                            <label for="">Service Description *</label>
                                             <textarea name="description" id="summernote" placeholder="description" class="form-control form__field">
-                                                {{ $blog->description ?? '' }}
+                                                {{ $service->description ?? '' }}
                                             </textarea>
                                             <small class="text-danger">
                                                 @error('description')

@@ -56,8 +56,8 @@
 
             <!-- Search Form: Visible on lg+, hidden on small -->
             <form class="d-none d-lg-flex" role="search">
-                <button class="btn btn-primary">(123) 456-7890</button>
-            </form>
+                <a href="{{ route('order') }}" class="btn btn-primary">(123) 456-7890</a>
+            </form>            
 
         </div>
     </nav>
