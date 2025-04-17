@@ -5,7 +5,7 @@
     <!-- Banner Section -->
     <div class="classic-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white">Classic & Professional</h1>
+            <h1 class="text-white">Blogs</h1>
         </div>
     </div>
 
