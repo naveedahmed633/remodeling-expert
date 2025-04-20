@@ -20,15 +20,10 @@
 }
 /* update */
 /* Banner Image */
-.home-banner {
-    background-image: url('../images/movie-night-by-pool-whole-family.png'); 
-}
 
-.about-banner {
-    background-image: url('../images/todd-kent-178j8tJrNlc-unsplash.png'); 
-}
 
-.project-banner {
+
+/* .project-banner {
   background-image: url('../images/image\ \(9\).png'); 
 }
 
@@ -46,7 +41,7 @@
 
 .contact-banner {
   background-image: url('../images/image\ \(25\).png'); 
-}
+} */
 
 @media screen and (min-width: 992px) {
   .bottom-minus{
@@ -179,7 +174,7 @@
     line-height: 20px;
 }
 
-.footer .text-white:hover {
+.footer li .text-white:hover {
     color: #2FA8FC !important;
 }
 
@@ -318,3 +313,9 @@
     background: #001626;
     padding-bottom: 150px; 
   }
+
+  .project-image {
+    object-fit: cover !important;
+    height: 400px !important;  
+    width: 100% !important;
+}

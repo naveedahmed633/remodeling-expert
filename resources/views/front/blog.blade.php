@@ -2,10 +2,16 @@
 @section('title', 'Services | Remodeling Expert')
 @section('content')
 
+<style>
+    .classic-banner {
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+    }
+</style>
+
     <!-- Banner Section -->
     <div class="classic-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white">Blogs</h1>
+            <h1 class="text-white">{{ $content['banner_section_heading'] ?? '' }}</h1>
         </div>
     </div>
 
@@ -34,5 +40,31 @@
         </div>
     </section>
 
-    <x-get-started />
+    <style>
+        .get-started-section {
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?? '' }}');
+            /* replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.482);
+            /* black with opacity */
+            max-width: 500px;
+            /* col-5 jaisa */
+            width: 100%;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+    </style>
+    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
+        <div class="content-box text-white text-center p-5">
+            <h2 class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
+            <p class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
+            <a href="{{ $content['get_started_button_url'] ?? '' }}"
+                class="btn btn-primary p-3">{{ $content['get_started_button_text'] ?? '' }}</a>
+        </div>
+    </section>
 @endsection

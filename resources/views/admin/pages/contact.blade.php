@@ -12,81 +12,58 @@
     <!-- Content Wrapper -->
     <div class="content-wrapper">
         <form action="{{ route('admin.pages.update', $slug) }}" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="media_collections[]" value="contact_banner_img">
             @csrf
-            <!-- Weight List Main Heading Content Section -->
+            <!-- Hidden media collection inputs -->
+            @foreach(['banner_image', 'get_started_today_image'] as $media)
+                <input type="hidden" name="media_collections[]" value="{{ $media }}">
+            @endforeach
+
             <input type="hidden" name="slug" value="{{ $slug }}">
-            <section class="content">
+
+             <!-- Banner Section -->
+             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card card-box-shadow mt-5">
                                 <div class="card-header">
-                                    <h3 class="card-title">Update Contact Content</h3>
+                                    <h3 class="card-title">Update Banner Section</h3>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="row">
                                         <input type="hidden" name="admin_id">
-
+            
+                                        <!-- Banner Image Input -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="title">Contact Bg-Image</label>
-                                                <input type="file" class="form-control form__field"
-                                                    name="contact_banner_img" id="cta_image">
-                                                @if ($page->hasMedia('contact_banner_img'))
-                                                    <label for="existing_background_banner_image"></label>
-                                                    @foreach ($page->getMedia('contact_banner_img') as $media)
-                                                        <img src="{{ $media->getUrl() }}"
-                                                            alt="Existing Banner Image"
+                                                <label for="banner_image">Banner Image</label>
+                                                <input type="file" class="form-control form__field" name="banner_image" id="banner_image">
+                                                @if ($page->hasMedia('banner_image'))
+                                                    <label for="existing_banner_image"></label>
+                                                    @foreach ($page->getMedia('banner_image') as $media)
+                                                        <img src="{{ $media->getUrl() ?? '' }}" alt="Existing Banner Image"
                                                             style="max-width: 200px; max-height: 200px; margin-top: 10px;">
                                                     @endforeach
                                                 @endif
                                             </div>
                                         </div>
-                                        <!-- First Input Field -->
+            
+                                        <!-- Banner Section Heading -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="main_heading">Main Heading</label>
-                                                <input type="text" class="form-control form__field"
-                                                    value="{{ $content['main_heading'] ?? '' }}" name="main_heading"
-                                                    placeholder="Enter text to highlight in red">
+                                                <label for="banner_section_heading">Banner Section Heading</label>
+                                                <input type="text" class="form-control form__field" name="banner_section_heading"
+                                                       placeholder="Enter Banner Section Heading"
+                                                       value="{{ old('banner_section_heading', $content['banner_section_heading'] ?? '') }}">
+                                                <small class="text-danger">
+                                                    @error('banner_section_heading')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Get In Touch Main Heading Content Section -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-box-shadow mt-5">
-                                <div class="card-header">
-                                    <h3 class="card-title">Update Map URL</h3>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="row">
-                                        <!-- Hidden Admin ID (if needed for tracking) -->
-                                        <input type="hidden" name="admin_id" value="{{ $content['admin_id'] ?? '' }}">
-
-                                        <!-- Map URL Link Input -->
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="map_url">Map URL</label>
-                                                <input type="text" class="form-control form__field" name="map_url"
-                                                    value="{{ $content['map_url'] ?? '' }}"
-                                                    placeholder="Enter Map URL">
-                                            </div>
-                                        </div>
-
+            
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -102,50 +79,217 @@
                         <div class="col-12">
                             <div class="card card-box-shadow mt-5">
                                 <div class="card-header">
-                                    <h3 class="card-title">Update Form Content</h3>
+                                    <h3 class="card-title">Contact Details Section</h3>
                                 </div>
-                                <!-- Card Body -->
+            
                                 <div class="card-body">
                                     <div class="row">
-                                        <!-- Hidden Admin ID (if needed for tracking) -->
-                                        <input type="hidden" name="admin_id" value="{{ $content['admin_id'] ?? '' }}">
-
-                                        <!-- Form Heading Input -->
-                                        <div class="col-md-12">
+            
+                                        <!-- Address Section -->
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_heading">Form Heading</label>
-                                                <input type="text" class="form-control form__field" name="form_heading"
-                                                    value="{{ $content['form_heading'] ?? '' }}"
-                                                    placeholder="Enter Form Heading">
+                                                <label for="address_heading">Address Heading</label>
+                                                <input type="text" class="form-control" name="address_heading"
+                                                       placeholder="Enter Address Heading"
+                                                       value="{{ old('address_heading', $content['address_heading'] ?? '') }}">
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <label for="address_description_1">Address Description Line 1</label>
+                                                <input type="text" class="form-control" name="address_description_1"
+                                                       placeholder="Enter Address Description Line 1"
+                                                       value="{{ old('address_description_1', $content['address_description_1'] ?? '') }}">
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <label for="address_description_2">Address Description Line 2</label>
+                                                <input type="text" class="form-control" name="address_description_2"
+                                                       placeholder="Enter Address Description Line 2"
+                                                       value="{{ old('address_description_2', $content['address_description_2'] ?? '') }}">
                                             </div>
                                         </div>
-                                        <!-- Form Discription Input -->
-                                        <div class="col-md-12">
+            
+                                        <!-- Office Hours Section -->
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_discription">Form Discription</label>
-                                                <input type="text" class="form-control form__field" name="form_discription"
-                                                    value="{{ $content['form_discription'] ?? '' }}"
-                                                    placeholder="Enter Form Discription">
+                                                <label for="office_hours_heading">Office Hours Heading</label>
+                                                <input type="text" class="form-control" name="office_hours_heading"
+                                                       placeholder="Enter Office Hours Heading"
+                                                       value="{{ old('office_hours_heading', $content['office_hours_heading'] ?? '') }}">
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <label for="office_hours_description_1">Office Hours Description Line 1</label>
+                                                <input type="text" class="form-control" name="office_hours_description_1"
+                                                       placeholder="Enter Office Hours Description Line 1"
+                                                       value="{{ old('office_hours_description_1', $content['office_hours_description_1'] ?? '') }}">
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <label for="office_hours_description_2">Office Hours Description Line 2</label>
+                                                <input type="text" class="form-control" name="office_hours_description_2"
+                                                       placeholder="Enter Office Hours Description Line 2"
+                                                       value="{{ old('office_hours_description_2', $content['office_hours_description_2'] ?? '') }}">
                                             </div>
                                         </div>
-                                        <!-- Form Heading Input -->
-                                        <div class="col-md-12">
+            
+                                        <!-- Phone Number Section -->
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_btn_text">Form Button</label>
-                                                <input type="text" class="form-control form__field" name="form_btn_text"
-                                                    value="{{ $content['form_btn_text'] ?? '' }}"
-                                                    placeholder="Enter Form Button Text">
+                                                <label for="phone_number_heading">Phone Number Heading</label>
+                                                <input type="text" class="form-control" name="phone_number_heading"
+                                                       placeholder="Enter Phone Number Heading"
+                                                       value="{{ old('phone_number_heading', $content['phone_number_heading'] ?? '') }}">
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <label for="phone_number_description_1">Phone Number Description Line 1</label>
+                                                <input type="text" class="form-control" name="phone_number_description_1"
+                                                       placeholder="Enter Phone Number Description Line 1"
+                                                       value="{{ old('phone_number_description_1', $content['phone_number_description_1'] ?? '') }}">
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <label for="phone_number_description_2">Phone Number Description Line 2</label>
+                                                <input type="text" class="form-control" name="phone_number_description_2"
+                                                       placeholder="Enter Phone Number Description Line 2"
+                                                       value="{{ old('phone_number_description_2', $content['phone_number_description_2'] ?? '') }}">
                                             </div>
                                         </div>
-
+            
                                     </div>
-                                </div>
-                                <!-- /.card-body -->
+                                </div> <!-- /.card-body -->
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-box-shadow mt-5">
+                                <div class="card-header">
+                                    <h3 class="card-title">Get in Touch Section</h3>
+                                </div>
+            
+                                <div class="card-body">
+                                    <div class="row">
+            
+                                        <!-- Heading Field -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_in_touch_heading">Heading</label>
+                                                <input type="text" class="form-control" name="get_in_touch_heading"
+                                                       placeholder="Enter Heading"
+                                                       value="{{ old('get_in_touch_heading', $content['get_in_touch_heading'] ?? '') }}">
+                                            </div>
+                                        </div>
+            
+                                        <!-- Description Field -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_in_touch_description">Description</label>
+                                                <textarea name="get_in_touch_description" class="form-control"
+                                                          placeholder="Enter Description">{{ old('get_in_touch_description', $content['get_in_touch_description'] ?? '') }}</textarea>
+                                            </div>
+                                        </div>
+            
+                                        <!-- Button Text Field -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_in_touch_button_text">Button Text</label>
+                                                <input type="text" class="form-control" name="get_in_touch_button_text"
+                                                       placeholder="Enter Button Text"
+                                                       value="{{ old('get_in_touch_button_text', $content['get_in_touch_button_text'] ?? '') }}">
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div> <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Get Started Today -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-box-shadow mt-5">
+                                <div class="card-header">
+                                    <h3 class="card-title">Get Started Today Section</h3>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <!-- Heading -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="get_started_heading">Heading</label>
+                                                <input type="text" class="form-control" name="get_started_heading"
+                                                    placeholder="Enter Heading"
+                                                    value="{{ old('get_started_heading', $content['get_started_heading'] ?? '') }}">
+                                            </div>
+                                        </div>
+
+                                        <!-- Image Upload Field -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="get_started_today_image">Image</label>
+                                                <input type="file" class="form-control" name="get_started_today_image"
+                                                    id="get_started_today_image">
+
+                                                @if ($page->hasMedia('get_started_today_image'))
+                                                    @foreach ($page->getMedia('get_started_today_image') as $media)
+                                                        <img src="{{ $media->getUrl() ?? '' }}"
+                                                            alt="Get Started Today Image"
+                                                            style="max-width: 200px; max-height: 200px; margin-top: 10px;">
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="get_started_description">Description</label>
+                                                <textarea name="get_started_description" class="form-control" rows="3" placeholder="Enter Description">{{ old('get_started_description', $content['get_started_description'] ?? '') }}</textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- Button Text -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_started_button_text">Button Text</label>
+                                                <input type="text" class="form-control" name="get_started_button_text"
+                                                    placeholder="Enter Button Text"
+                                                    value="{{ old('get_started_button_text', $content['get_started_button_text'] ?? '') }}">
+                                            </div>
+                                        </div>
+
+                                        <!-- Button URL -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_started_button_url">Button URL</label>
+                                                <input type="url" class="form-control" name="get_started_button_url"
+                                                    placeholder="Enter Button URL"
+                                                    value="{{ old('get_started_button_url', $content['get_started_button_url'] ?? '') }}">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>   
+
             <!-- Submit Button -->
             <div class="text-center mt-3">
                 <div class="form-group">

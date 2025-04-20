@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -25,7 +26,7 @@ class BlogController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -41,7 +42,8 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blogs = Blog::all();
-        return view('front.detailed-blog', compact('blog', 'blogs'));
+        $services = Service::all();
+        return view('front.detailed-blog', compact('blog', 'blogs', 'services'));
     }
 
     public function edit($id)
@@ -56,7 +58,7 @@ class BlogController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         if ($request->hasFile('image')) {

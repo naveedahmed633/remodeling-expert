@@ -4,7 +4,7 @@
 
     <style>
         body {
-            background: linear-gradient(135deg, #000000, #8b0000);
+            background: linear-gradient(135deg, #000000, #2980b9);
             font-family: 'Arial', sans-serif;
             color: #fff;
             height: 100vh;
@@ -30,7 +30,7 @@
 
         .login-logo h2 {
             font-weight: bold;
-            color: red;
+            color: 2980b9;
             margin-top: 10px;
         }
 
@@ -41,26 +41,26 @@
         }
 
         .card-body h4 {
-            color: red;
+            color: 2980b9;
         }
 
         .form__field {
             background: #333;
             color: #fff;
-            border: 1px solid darkred;
+            border: 1px solid 2980b9;
             border-radius: 5px;
             padding: 10px;
             transition: transform 0.3s ease;
         }
 
         .form__field:focus {
-            border: 1px solid #ff6347;
+            border: 1px solid #2980b9;
             transform: scale(1.03);
             outline: none;
         }
 
         .btn-primary {
-            background: darkred;
+            background: 2980b9;
             color: #fff;
             border: none;
             border-radius: 25px;
@@ -71,7 +71,8 @@
         }
 
         .btn-primary:hover {
-            background: #ff6347;
+            background: #ffffff;
+            color: #000000;
             transform: translateY(-3px);
         }
 

@@ -23,18 +23,14 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             AdminSeeder::class,
-            // SettingSeeder::class,
-            // ServiceSeeder::class,
-            // ClassTypeSeeder::class,
-            // HomeSeeder::class,
-            // AboutSeeder::class,
-            // TrainerSeeder::class,
-            // ScheduleSeeder::class,
-            // EventsSeeder::class,
-            // ContactSeeder::class,
-            // LeagueSeeder::class,
-            // ProgramsSeeder::class,
-            // TrainingSeeder::class,
+            SettingSeeder::class,
+            ServiceSeeder::class,
+            HomeSeeder::class,
+            ProjectSeeder::class,
+            BlogSeeder::class,
+            StepFormSeeder::class,
+            AboutSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }

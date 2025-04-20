@@ -6,23 +6,14 @@ use Illuminate\View\Component;
 
 class HomeTransformSection extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+   
+    public $content;
+    public $data;
 
-    public $heading, $paragraphOne, $paragraphTwo, $paragraphThree, $imagePath, $buttonText, $buttonUrl;
-
-    public function __construct($heading, $paragraphOne, $paragraphTwo, $paragraphThree, $imagePath, $buttonText, $buttonUrl)
+    public function __construct($content = [], $data = null)
     {
-        $this->heading = $heading;
-        $this->paragraphOne = $paragraphOne;
-        $this->paragraphTwo = $paragraphTwo;
-        $this->paragraphThree = $paragraphThree;
-        $this->imagePath = $imagePath;
-        $this->buttonText = $buttonText;
-        $this->buttonUrl = $buttonUrl;
+        $this->content = $content;
+        $this->data = $data;
     }
 
     /**

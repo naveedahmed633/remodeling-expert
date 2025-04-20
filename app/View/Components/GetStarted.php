@@ -6,14 +6,16 @@ use Illuminate\View\Component;
 
 class GetStarted extends Component
 {
+    public $content;
+
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param array $content
      */
-    public function __construct()
+    public function __construct($content = [])
     {
-        //
+        $this->content = $content;
     }
 
     /**

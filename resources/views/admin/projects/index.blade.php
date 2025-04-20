@@ -1,5 +1,5 @@
 @extends('layouts.admin-layout')
-@section('title', 'All Blogs')
+@section('title', 'All project')
 @section('content')
     <style>
         .active-star {
@@ -14,12 +14,12 @@
                     <div class="col-md-12">
                         <div class="card card-primary card-box-shadow">
                             <div class="card-body">
-                                <a href="{{ route('admin.service.create') }}">
+                                <a href="{{ route('admin.project.create') }}">
                                     <button type="button" class="btn btn-primary btn-sm float-right mb-5">
-                                        Add Service
+                                        Add Project
                                     </button>
                                 </a>
-                                <h2>Service Section</h2>
+                                <h2>Project Section</h2>
                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
@@ -31,14 +31,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($services as $service)
+                                        @foreach ($projects as $project)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $service->title ?: '' }}</td>
-                                                <td>{{ Str::limit(strip_tags($service->description), 40) ? : '' }}</td>
+                                                <td>{{ $project->title ?: '' }}</td>
+                                                <td>{{ Str::limit(strip_tags($project->description), 40) ? : '' }}</td>
                                                 <td>
-                                                    @if($service->image)
-                                                    <img src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}" class="img-fluid mb-3" style="width: 100px;height: 100px;">
+                                                    @if($project->image)
+                                                    <img src="{{ asset('storage/'.$project->image) }}" alt="{{ $project->title }}" class="img-fluid mb-3" style="width: 100px;height: 100px;">
                                                 @endif
                                                 </td>
                                                 <td>
@@ -50,9 +50,9 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item"
-                                                                href="{{ route('admin.service.edit', $service->id) }}">Edit</a>
+                                                                href="{{ route('admin.project.edit', $project->id) }}">Edit</a>
                                                             <a class="dropdown-item delete-btn"
-                                                                data-id="{{ $service->id }}">Delete</a>
+                                                                data-id="{{ $project->id }}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -90,14 +90,14 @@
 
                 swal({
                     title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this blog!",
+                    text: "Once deleted, you will not be able to recover this Project!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete) {
                         $.ajax({
-                            url: "/admin/service/" + id,
+                            url: "/admin/project/" + id,
                             type: "DELETE",
                             success: function(response) {
                                 toastr.success(response.message);

@@ -6,7 +6,7 @@
             <div class="col-md-3 mt-4">
                 <div class="navbar-brand text-start" style="white-space: normal;">
                     <div class="d-flex justify-content-start align-items-center my-3">
-                        <img src="{{ asset('front/images/logo.png') }}" alt="Logo" class="mb-2 mr-3">
+                        <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" class="mb-2 mr-3">
                         <div>
                             <span class="font-weight-bold">TOTAL UPGRADE</span>
                             <span class="font-weight-light">REMODELING EXPERT</span>
@@ -34,7 +34,6 @@
                     <li><a href="{{ route('services') }}" class="text-white">Services</a></li>
                     <li><a href="{{ route('contact') }}" class="text-white">Contact</a></li>
                     <li><a href="{{ route('blog') }}" class="text-white">Blog</a></li>
-                    <li><a href="{{ route('classic.and.professional') }}" class="text-white">Classic & professional</a></li>
                 </ul>
             </div>
 
@@ -83,6 +82,12 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('front/js/script.js') }}"></script>
+<script src="{{ asset('front/js/aos.js') }}"></script>
+<script>
+    AOS.init({
+      easing: 'ease-in-out-sine'
+    });
+  </script>
 </body>
 
 </html>

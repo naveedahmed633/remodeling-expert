@@ -57,7 +57,7 @@
                     <div class="col-12">
                         <div class="card card-box-shadow mt-5">
                             <div class="card-header">
-                                <h3 class="card-title">Add Blogs</h3>
+                                <h3 class="card-title">Add Service</h3>
                                 <a href="{{ route('admin.service.index') }}" class="btn btn-primary btn-sm float-right">
                                     Back
                                 </a>
@@ -65,15 +65,15 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('admin.service.store') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form action="{{ route('admin.service.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
+                                        <!-- Service Title -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="Name">Services Title *</label>
+                                                <label for="Name">Service Title *</label>
                                                 <input type="text" class="form-control form__field" name="title"
                                                     placeholder="Service Title" value="{{ old('title') }}">
                                             </div>
@@ -88,10 +88,9 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="testimonialImageInput">Blog Image *</label>
-                                                <input type="file" class="form-control form__field visually-hidden"
-                                                    name="image" id="testimonialImageInput" accept="image/*">
-                                                <label for="testimonialImageInput"
-                                                    class="file-input-label form__field form-control">
+                                                <input type="file" class="form-control form__field visually-hidden" name="image"
+                                                    id="testimonialImageInput" accept="image/*">
+                                                <label for="testimonialImageInput" class="file-input-label form__field form-control">
                                                     <i class="fas fa-camera"></i> Choose file
                                                 </label>
                                                 <small class='text-danger'>
@@ -102,10 +101,11 @@
                                             </div>
                                         </div>
 
-                                        <!-- Short Description -->
+                                        <!-- Service Description -->
                                         <div class="col-md-12">
                                             <label for="">Service Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field"></textarea>
+                                            <textarea name="description" id="summernote" placeholder="Description"
+                                                class="form-control form__field">{{ old('description') }}</textarea>
                                             <small class="text-danger">
                                                 @error('description')
                                                     {{ $message }}
@@ -116,8 +116,7 @@
                                         <!-- Submit Button -->
                                         <div class="mx-auto mt-5">
                                             <div class="form-group">
-                                                <input type="submit" class="form-control btn btn-primary btn-sm"
-                                                    value="Submit">
+                                                <input type="submit" class="form-control btn btn-primary btn-sm" value="Submit">
                                             </div>
                                         </div>
 
@@ -138,19 +137,19 @@
 
     <!-- /.content-wrapper -->
 
-    <!-- include summernote css/js -->
+    <!-- Include Summernote CSS/JS -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
-    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
                 height: 200
             });
 
+            // Ensuring Summernote content is saved in the textarea
             $('form').on('submit', function() {
                 $('#summernote').val($('#summernote').summernote('code'));
             });
-
         });
     </script>
 @endsection

@@ -42,12 +42,13 @@
             display: none;
         }
 
-        .rating input:checked~label:before,
-        .rating:not(:checked)>label:hover:before,
-        .rating:not(:checked)>label:hover~label:before {
+        .rating input:checked ~ label:before,
+        .rating:not(:checked) > label:hover:before,
+        .rating:not(:checked) > label:hover ~ label:before {
             color: #f9df4a;
         }
     </style>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Main content -->
@@ -65,8 +66,7 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('admin.blogs.store') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form action="{{ route('admin.blogs.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -75,13 +75,13 @@
                                             <div class="form-group">
                                                 <label for="Name">Blog Title *</label>
                                                 <input type="text" class="form-control form__field" name="title"
-                                                    placeholder="blogs Title" value="{{ old('title') }}">
+                                                    placeholder="Blog Title" value="{{ old('title') }}">
+                                                <small class="text-danger">
+                                                    @error('title')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
                                             </div>
-                                            <small class="text-danger">
-                                                @error('title')
-                                                    {{ $message }}
-                                                @enderror
-                                            </small>
                                         </div>
 
                                         <!-- Blog Image -->
@@ -89,7 +89,7 @@
                                             <div class="form-group">
                                                 <label for="testimonialImageInput">Blog Image *</label>
                                                 <input type="file" class="form-control form__field visually-hidden"
-                                                    name="image" id="testimonialImageInput" accept="image/*">
+                                                    name="image" id="testimonialImageInput" accept="image/*" required>
                                                 <label for="testimonialImageInput"
                                                     class="file-input-label form__field form-control">
                                                     <i class="fas fa-camera"></i> Choose file
@@ -105,7 +105,7 @@
                                         <!-- Short Description -->
                                         <div class="col-md-12">
                                             <label for="">Blog Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field"></textarea>
+                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field">{!! old('description') !!}</textarea>
                                             <small class="text-danger">
                                                 @error('description')
                                                     {{ $message }}
@@ -120,7 +120,6 @@
                                                     value="Submit">
                                             </div>
                                         </div>
-
                                     </div>
                                 </form>
                             </div>
@@ -136,11 +135,10 @@
         <!-- /.content -->
     </div>
 
-    <!-- /.content-wrapper -->
-
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
-    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
@@ -150,7 +148,6 @@
             $('form').on('submit', function() {
                 $('#summernote').val($('#summernote').summernote('code'));
             });
-
         });
     </script>
 @endsection

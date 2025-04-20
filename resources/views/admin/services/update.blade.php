@@ -112,7 +112,7 @@
                                         <div class="col-md-12">
                                             <label for="">Service Description *</label>
                                             <textarea name="description" id="summernote" placeholder="description" class="form-control form__field">
-                                                {{ $service->description ?? '' }}
+                                                {{ old('description', $service->description ?? '') }}
                                             </textarea>
                                             <small class="text-danger">
                                                 @error('description')
@@ -153,7 +153,23 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
 <script>
     $(document).ready(function() {
-  $('#summernote').summernote();
-});
+        $('#summernote').summernote({
+            height: 200
+        });
+
+        // Ensure summernote content is saved before form submit
+        $('form').on('submit', function() {
+            $('#summernote').val($('#summernote').summernote('code'));
+        });
+
+        // Image preview before upload
+        $('#testimonialImageInput').on('change', function() {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').attr('src', e.target.result).show();
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+    });
 </script>
 @endsection

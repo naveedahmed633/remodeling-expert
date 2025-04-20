@@ -6,17 +6,15 @@ use Illuminate\View\Component;
 
 class GetEstimate extends Component
 {
-    /**
-     * The component's data, you can pass data to the component if needed.
-     */ 
-    
-    public function __construct()
+    public $content;
+    public $data;
+
+    public function __construct($content = [], $data = null)
     {
+        $this->content = $content;
+        $this->data = $data;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render()
     {
         return view('components.get-estimate');

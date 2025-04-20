@@ -10,7 +10,7 @@
             <!-- Content Box Overlapping -->
             <div class="col-md-7 position-absolute top-50 end-0 translate-middle-y bg-white p-5 shadow"
                 style="z-index: 10;">
-                <h3 class="mb-3 text-start">{{ $heading }}</h3>
+                <h3 class="mb-3 text-start">{{ $content['estimate_section_heading'] ?? '' }}</h3>
                 <p class="text-start">{{ $paragraphOne }}</p>
                 <p class="text-start">{{ $paragraphTwo }}</p>
                 <p class="text-start">{{ $paragraphThree }}</p>

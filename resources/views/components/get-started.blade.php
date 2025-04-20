@@ -18,6 +18,6 @@
     <div class="content-box text-white text-center p-5">
         <h2 class="fw-bold mb-3 text-white">Get Started Today</h2>
         <p class="mb-4">Start your journey with us and unlock endless possibilities.</p>
-        <a href="#" class="btn btn-primary p-3">Join Now</a>
+        <a href="{{ route('order') }}" class="btn btn-primary p-3">Join Now</a>
     </div>
 </section>

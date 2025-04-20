@@ -11,13 +11,14 @@
 
     <link href="{{ asset('front/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/css/aos.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 
 <body>
 
-    <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top mt-5">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top mt-5" data-aos="fade-up">
         <div class="container d-flex justify-content-between align-items-center">
 
             <!-- Left Nav Links + Toggle Button -->
@@ -42,13 +43,13 @@
 
             <!-- Center Logo on large screen | Right Logo on small -->
             <div class="position-absolute start-50 translate-middle-x text-center d-none d-lg-block">
-                <a class="navbar-brand d-block" href="#">
+                <a class="navbar-brand d-block" href="/">
                     <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" style="width: 40px; height: 40px;">
                     <div class="text-white small fw-bold">TOTAL UPGRADE</div>
                     <div class="text-white small fw-thin">REMODELING EXPERT</div>
                 </a>
             </div>
-            <a class="navbar-brand ms-auto d-lg-none text-center" href="#">
+            <a class="navbar-brand ms-auto d-lg-none text-center" href="/">
                 <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" style="width: 30px; height: 30px;">
                 <div class="text-white small fw-bold">TOTAL UPGRADE</div>
                 <div class="text-white small fw-thin">REMODELING EXPERT</div>
@@ -56,7 +57,7 @@
 
             <!-- Search Form: Visible on lg+, hidden on small -->
             <form class="d-none d-lg-flex" role="search">
-                <a href="{{ route('order') }}" class="btn btn-primary p-3">(123) 456-7890</a>
+                <a href="#" class="btn btn-primary px-4 py-2">(123) 456-7890</a>
             </form>            
 
         </div>

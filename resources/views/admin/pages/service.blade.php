@@ -1,6 +1,6 @@
 @extends('layouts.admin-layout')
 @section('title')
-    Update About
+    Update Services
 @endsection
 @section('content')
     <style>
@@ -13,15 +13,15 @@
     <div class="content-wrapper">
         <form action="{{ route('admin.pages.update', $slug) }}" method="POST" enctype="multipart/form-data">
             <!-- Hidden media collection inputs -->
-            @foreach(['banner_image', 'transforming_homes_image', 'before_after', 'after_image', 'estimate_image_1', 'estimate_image_2', 'estimate_image_3', 'estimate_image_4', 'trusted_section_image'] as $media)
+            @foreach(['banner_image', 'transforming_homes_image'] as $media)
                 <input type="hidden" name="media_collections[]" value="{{ $media }}">
             @endforeach
             @csrf
 
             <input type="hidden" name="slug" value="{{ $slug }}">
 
-             <!-- Banner Section -->
-             <section class="content">
+            <!-- Banner Section -->
+            <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
@@ -146,9 +146,9 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="transforming_homes_desc_3">Description 3</label>
+                                                <label for="transforming_homes_desc_3">Description 2</label>
                                                 <textarea name="transforming_homes_desc_3" class="form-control form__field"
-                                                          placeholder="Enter Description 3">{{ old('transforming_homes_desc_3', $content['transforming_homes_desc_3'] ?? '') }}</textarea>
+                                                          placeholder="Enter Description 2">{{ old('transforming_homes_desc_3', $content['transforming_homes_desc_3'] ?? '') }}</textarea>
                                                 <small class="text-danger">
                                                     @error('transforming_homes_desc_3')
                                                         {{ $message }}
@@ -189,156 +189,6 @@
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Estimate Your Dream Home -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-box-shadow mt-5">
-                                <div class="card-header">
-                                    <h3 class="card-title">Estimate Your Dream Home</h3>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="row">
-                                        <!-- Section Heading -->
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="estimate_section_heading">Section Heading</label>
-                                                <input type="text" class="form-control"
-                                                    name="estimate_section_heading" placeholder="Enter Section Heading"
-                                                    value="{{ old('estimate_section_heading', $content['estimate_section_heading'] ?? '') }}">
-                                            </div>
-                                        </div>
-
-                                        <!-- Section Description -->
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="estimate_section_description">Section Description</label>
-                                                <textarea name="estimate_section_description" class="form-control" placeholder="Enter Section Description">{{ old('estimate_section_description', $content['estimate_section_description'] ?? '') }}</textarea>
-                                            </div>
-                                        </div>
-
-                                        @for ($i = 1; $i <= 4; $i++)
-                                            <!-- Image {{ $i }} Upload -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="estimate_image_{{ $i }}">Image
-                                                        {{ $i }}</label>
-                                                    <input type="file" class="form-control"
-                                                        name="estimate_image_{{ $i }}"
-                                                        id="estimate_image_{{ $i }}">
-                                                    @if ($page->hasMedia('estimate_image_' . $i))
-                                                        @foreach ($page->getMedia('estimate_image_' . $i) as $media)
-                                                            <img src="{{ $media->getUrl() }}"
-                                                                alt="Image {{ $i }}"
-                                                                style="max-width: 200px; margin-top: 10px;">
-                                                        @endforeach
-                                                    @endif
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="estimate_image_heading_{{ $i }}">Image
-                                                        {{ $i }} Heading</label>
-                                                    <input type="text" class="form-control"
-                                                        name="estimate_image_heading_{{ $i }}"
-                                                        placeholder="Enter Heading for Image {{ $i }}"
-                                                        value="{{ old('estimate_image_heading_' . $i, $content['estimate_image_heading_' . $i] ?? '') }}">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="estimate_image_desc_{{ $i }}">Image
-                                                        {{ $i }} Description</label>
-                                                    <textarea name="estimate_image_desc_{{ $i }}" class="form-control"
-                                                        placeholder="Enter Description for Image {{ $i }}">{{ old('estimate_image_desc_' . $i, $content['estimate_image_desc_' . $i] ?? '') }}</textarea>
-                                                </div>
-                                            </div>
-                                        @endfor
-
-                                        <!-- Button Text -->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="estimate_button_text">Button Text</label>
-                                                <input type="text" class="form-control" name="estimate_button_text"
-                                                    placeholder="Enter Button Text"
-                                                    value="{{ old('estimate_button_text', $content['estimate_button_text'] ?? '') }}">
-                                            </div>
-                                        </div>
-
-                                        <!-- Button URL -->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="estimate_button_url">Button URL</label>
-                                                <input type="url" class="form-control" name="estimate_button_url"
-                                                    placeholder="Enter Button URL"
-                                                    value="{{ old('estimate_button_url', $content['estimate_button_url'] ?? '') }}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- /.card-body -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Before & After -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-box-shadow mt-5">
-                                <div class="card-header">
-                                    <h3 class="card-title">Before and After</h3>
-                                </div>
-            
-                                <div class="card-body">
-                                    <div class="row">
-                                        <!-- Section Heading -->
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="before_after_heading">Section Heading</label>
-                                                <input type="text" class="form-control" name="before_after_heading"
-                                                       placeholder="Enter Section Heading"
-                                                       value="{{ old('before_after_heading', $content['before_after_heading'] ?? '') }}">
-                                            </div>
-                                        </div>
-            
-                                        <!-- Before Image -->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="before_image">Before Image</label>
-                                                <input type="file" class="form-control" name="before_image" id="before_image">
-                                                @if ($page->hasMedia('before_image'))
-                                                    @foreach ($page->getMedia('before_image') as $media)
-                                                        <img src="{{ $media->getUrl() }}" alt="Before Image"
-                                                             style="max-width: 200px; margin-top: 10px;">
-                                                    @endforeach
-                                                @endif
-                                            </div>
-                                        </div>
-            
-                                        <!-- After Image -->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="after_image">After Image</label>
-                                                <input type="file" class="form-control" name="after_image" id="after_image">
-                                                @if ($page->hasMedia('after_image'))
-                                                    @foreach ($page->getMedia('after_image') as $media)
-                                                        <img src="{{ $media->getUrl() }}" alt="After Image"
-                                                             style="max-width: 200px; margin-top: 10px;">
-                                                    @endforeach
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- /.card-body -->
                             </div>
                         </div>
                     </div>
@@ -397,7 +247,7 @@
             
                                             <div class="form-group">
                                                 <label for="dark_box_number">Number (e.g. Experience, Projects)</label>
-                                                <input type="text" class="form-control" name="dark_box_number"
+                                                <input type="type" class="form-control" name="dark_box_number"
                                                        placeholder="Enter Number"
                                                        value="{{ old('dark_box_number', $content['dark_box_number'] ?? '') }}">
                                             </div>

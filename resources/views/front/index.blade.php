@@ -1,138 +1,259 @@
 @extends('front.include.app')
 @section('title', 'Home | Remodeling Expert')
 @section('content')
-
+    <style>
+        .home-banner {
+            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+        }
+    </style>
     <!-- Banner Section -->
     <div class="home-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white">Transform Your Home with Expert Remodeling</h1>
-            <p class="text-white">
-                Transform your space with precision and style. Our expert remodeling services deliver high-quality
-                craftsmanship,
-                innovative designs, and seamless execution to bring your vision to life.
-            </p>
-            <button class="btn btn-primary p-3">START NOW</button>
+            <h1 class="text-white" data-aos="fade-up">{{ $content['banner_section_heading'] ?? '' }}</h1>
+            <p class="text-white" data-aos="fade-up">{{ $content['banner_section_description'] ?? '' }}</p>
+            <a href="{{ $content['banner_section_button_url'] ?? '' }}"
+                class="btn btn-primary px-4 py-2" data-aos="fade-up">{{ $content['banner_section_button_text'] ?? '' }}</a>
         </div>
     </div>
 
-    <x-home-transform-section heading="Transforming Homes with Expert Craftsmanship"
-        paragraph-one="At Remodelling Experts, we bring innovation, precision, and quality to every
-        remodeling project. With years of experience, our team specializes in creating stunning, functional
-        spaces that enhance your home’s beauty and value."
-        paragraph-two="We take pride in our attention to detail, seamless project management, and
-        commitment to customer satisfaction. Whether it's a kitchen, bathroom, or whole-home renovation, we
-        ensure a stress-free experience and exceptional results."
-        paragraph-three="Let’s build something amazing together!"
-        image-path="front/images/3d-rendering-loft-luxury-living-room-with-bookshelf.png" button-text="LEARN MORE"
-        button-url="#" />
+    <section class="py-5" style="">
+        <div class="container position-relative">
+            <div class="row mb-5">
+                <!-- Image Column -->
+                <div class="col-md-6">
+                    <img  data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}" alt="Sample"
+                        class="img-fluid w-100">
+                </div>
+
+                <!-- Content Box Overlapping -->
+                <div class="col-md-7 position-absolute top-50 end-0 translate-middle-y bg-white p-5 shadow"
+                    style="z-index: 10;">
+                    <h3 class="mb-3 text-start"  data-aos="fade-up">{{ $content['transforming_homes_heading'] ?? '' }}</h3>
+                    <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_1'] ?? '' }}</p>
+                    <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_2'] ?? '' }}</p>
+                    <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_3'] ?? '' }}</p>
+                    <div class="text-start mt-4">
+                        <a href="{{ $content['transforming_homes_button_url'] ?? '' }}"
+                            class="btn btn-primary p-3"  data-aos="fade-up">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-5">
         <div class="container text-center">
             <div class="row d-flex justify-content-center">
                 <div class="col-7">
-                    <h2 class="mb-5">Your all-in-one destination for interior solutions</h2>
-                    <p>At Remodelling Experts, we bring innovation, precision, and quality to every remodeling project. With
-                        years
-                        of experience, our team specializes in creating stunning, functional spaces that enhance your home’s
-                        beauty
-                        and value.</p>
+                    <h2 class="mb-5" data-aos="fade-up">{{ $content['interior_solutions_heading'] ?? '' }}</h2>
+                    <p data-aos="fade-up">{{ $content['interior_solutions_description'] ?? '' }}.</p>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-3 mb-4">
-                    <img src="{{ asset('front/images/all-in-one.png') }}" class="img-fluid equal-height" alt="Image 1">
-                    <h5 class="mt-3">Interior Remodeling</h5>
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}"
+                        class="img-fluid equal-height" alt="Image 1">
+                    <h5 data-aos="fade-up" class="mt-3">{{ $content['interior_solution_desc_1'] ?? '' }}</h5>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <img src="{{ asset('front/images/image (2).png') }}" class="img-fluid equal-height" alt="Image 2">
-                    <h5 class="mt-3">Interior Remodeling</h5>
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}"
+                        class="img-fluid equal-height" alt="Image 2">
+                    <h5 data-aos="fade-up" class="mt-3">{{ $content['interior_solution_desc_2'] ?? '' }}</h5>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <img src="{{ asset('front/images/image (3).png') }}" class="img-fluid equal-height" alt="Image 3">
-                    <h5 class="mt-3">Plumbing</h5>
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}"
+                        class="img-fluid equal-height" alt="Image 3">
+                    <h5 data-aos="fade-up" class="mt-3">{{ $content['interior_solution_desc_3'] ?? '' }}</h5>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <img src="{{ asset('front/images/image (4).png') }}" class="img-fluid equal-height" alt="Image 4">
-                    <h5 class="mt-3">HVAC</h5>
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}"
+                        class="img-fluid equal-height" alt="Image 4">
+                    <h5 data-aos="fade-up" class="mt-3">{{ $content['interior_solution_desc_3'] ?? '' }}</h5>
                 </div>
             </div>
 
-            <a href="#" class="btn btn-primary mt-4 p-3">MORE SERVICES</a>
+            <a  data-aos="fade-up" href="{{ $content['interior_solution_button_url'] ?? '' }}"
+                class="btn btn-primary mt-4 px-4 py-2">{{ $content['interior_solution_button_text'] ?? '' }}</a>
         </div>
     </section>
 
-    <x-get-estimate />
 
-    <x-before-after />
+    <section class="py-5" style="background-color: #001626;">
+        <div class="container">
+            <!-- Main Heading -->
+            <div class="text-center mb-4">
+                <h2 class="text-white"  data-aos="fade-up">{{ $content['estimate_section_heading'] ?? '' }}</h2>
+                <p class="text-white"  data-aos="fade-up">{{ $content['estimate_section_description'] ?? '' }}</p>
+            </div>
 
-    <x-trusted-experts />
+            <!-- Sub-sections -->
+            <div class="row text-center p-5">
+                <!-- Sub-section 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <img  data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_1') ?? '' }}" alt="Icon 1" class="mb-3"
+                            style="width: 50px; height: 50px;">
+                        <h5  data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_1'] ?? '' }}</h5>
+                        <p  data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_1'] ?? '' }}</p>
+                    </div>
+                </div>
+
+                <!-- Sub-section 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <img  data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_2') ?? '' }}" alt="Icon 2" class="mb-3"
+                            style="width: 50px; height: 50px;">
+                        <h5  data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_2'] ?? '' }}</h5>
+                        <p  data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_2'] ?? '' }}</p>
+                    </div>
+                </div>
+
+                <!-- Sub-section 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_3') ?? '' }}" alt="Icon 3" class="mb-3"
+                            style="width: 50px; height: 50px;">
+                        <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_3'] ?? '' }}</h5>
+                        <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_3'] ?? '' }}</p>
+                    </div>
+                </div>
+
+                <!-- Sub-section 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_4') ?? '' }}" alt="Icon 4" class="mb-3"
+                            style="width: 50px; height: 50px;">
+                        <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_4'] ?? '' }}</h5>
+                        <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_4'] ?? '' }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button at the End -->
+            <div class="text-center mt-4">
+                <a data-aos="fade-up" href="{{ $content['estimate_button_url'] ?? '' }}"
+                    class="btn btn-primary p-3">{{ $content['estimate_button_text'] ?? '' }}</a>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <section class="before-after-section py-5 text-center">
+            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold">{{ $content['before_after_heading'] ?? '' }}</h2>
+
+            <div class="image-compare-wrapper" aria-label="Before and After Image Slider">
+                <div class="image-layer image-before">
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('before_image') ?? '' }}" alt="Before Image">
+                </div>
+                <div class="image-layer image-after">
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('after_image') ?? '' }}" alt="After Image">
+                </div>
+                <div class="divider-line" id="dividerLine"></div>
+                <input type="range" min="0" max="100" value="50" id="imageSlider"
+                    class="slider-range" />
+            </div>
+        </section>
+    </div>
+
+
+    <section class="position-relative py-5 mb-5">
+        <div class="container position-relative z-2">
+            <div class="row  position-relative">
+                <div class="col-md-12 position-relative" style="z-index: 2;">
+                    <!-- White Box with width 100% -->
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="bg-white p-5 shadow mt-5 " style="width: 100%;">
+                                <div data-aos="fade-up" class="fs-1 text-primary mb-3"><i
+                                        class="fas fa-quote-left fa-3x text-theme-color mb-3"></i>
+                                </div>
+                                <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}
+                                </h6>
+                                <h1 data-aos="fade-up" class="fw-bold my-3">{{ $content['trusted_main_heading'] ?? '' }}</h1>
+                                <p data-aos="fade-up">{{ $content['trusted_description'] ?? '' }}</p>
+                            </div>
+                        </div>
+                        <div class="col-7 ms-auto">
+                            <div class="p-4 py-5 text-white" style="background-color: #001626; width: 60%;">
+                                <h5 data-aos="fade-up" class="mb-2 text-white">{{ $content['dark_box_heading'] ?? '' }}</h5>
+                                <p data-aos="fade-up" class="mb-1 text-white">{{ $content['dark_box_description'] ?? '' }}</p>
+                                <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{{ $content['dark_box_number'] ?? '' }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image outside container and full height -->
+        <div class="position-absolute top-0 end-0 h-100" style="width: 50%; z-index: 0;">
+            <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?? '' }}" alt="Image"
+                class="w-100 h-100 object-fit-cover">
+        </div>
+    </section>
 
     <section class="py-5">
         <div class="container">
             <div class="row d-flex justify-content-center  text-center">
                 <div class="col-7">
-                    <h2 class="mb-5">Recent Projects</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
-                        cursus ante
-                        dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+                    <h2 data-aos="fade-up" class="mb-5">{{ $content['recent_projects_heading'] ?? '' }}</h2>
+                    <p data-aos="fade-up">{{ $content['recent_projects_description'] ?? '' }}</p>
                 </div>
             </div>
             <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-3 mb-4">
-                    <div class="position-relative">
-                        <img src="{{ asset('front/images/image (5).png') }}" class="img-fluid w-100" alt="Image 1">
-                        <div class="overlay-box bg-white p-3 position-absolute">
-                            <h5>Classic & Professional</h5>
-                            <p>Elevating Homes with Expert Craftsmanship</p>
-                            <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>VIEW PROJECT</i></b></a>
+                @foreach ($projects->take(4) as $project)
+                    <div class="col-md-3 mb-4">
+                        <div class="position-relative">
+                            <img data-aos="fade-up" src="{{ asset('storage/' . $project->image) }}" class="img-fluid w-100 project-image"
+                                alt="{{ $project->title }}">
+                            <div class="overlay-box bg-white p-3 position-absolute">
+                                <h5 data-aos="fade-up">{{ $project->title }}</h5>
+                                <p data-aos="fade-up">{{ Str::limit(strip_tags($project->description), 40) ?: '' }}</p>
+                                <a data-aos="fade-up" href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
+                                    style="color: #2980b9;">
+                                    <b><i>VIEW PROJECT</i></b>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <!-- Card 2 -->
-                <div class="col-md-3 mb-4">
-                    <div class="position-relative">
-                        <img src="{{ asset('front/images/image (6).png') }}" class="img-fluid w-100" alt="Image 2">
-                        <div class="overlay-box bg-white p-3 position-absolute">
-                            <h5>Modern & Sleek</h5>
-                            <p>Redefining Spaces with Innovation & Style</p>
-                            <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>VIEW PROJECT</i></b></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-3 mb-4">
-                    <div class="position-relative">
-                        <img src="{{ asset('front/images/image (7).png') }}" class="img-fluid w-100" alt="Image 3">
-                        <div class="overlay-box bg-white p-3 position-absolute">
-                            <h5>Customer-Focused</h5>
-                            <p>Designed for Your Vision, Built for Your Life.</p>
-                            <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>VIEW PROJECT</i></b></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="col-md-3 mb-4">
-                    <div class="position-relative">
-                        <img src="{{ asset('front/images/image (8).png') }}" class="img-fluid w-100" alt="Image 4">
-                        <div class="overlay-box bg-white p-3 position-absolute">
-                            <h5>Luxury & High-End</h5>
-                            <p>Where Elegance Meets Functionality</p>
-                            <a href="#" class="btn btn-sm" style="color: #2980b9;"><b><i>VIEW PROJECT</i></b></a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Bottom Centered Button -->
             <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary p-3">MORE PROJECTS</a>
+                <a data-aos="fade-up" href="{{ $content['recent_projects_button_url'] ?? '' }}"
+                    class="btn btn-primary px-4 py-2">{{ $content['recent_projects_button_text'] ?? '' }}</a>
             </div>
         </div>
     </section>
 
-    <x-get-started />
+    <style>
+        .get-started-section {
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?? '' }}');
+            /* replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.482);
+            /* black with opacity */
+            max-width: 500px;
+            /* col-5 jaisa */
+            width: 100%;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+    </style>
+    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
+        <div class="content-box text-white text-center p-5">
+            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
+            <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
+            <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
+                class="btn btn-primary p-3">{{ $content['get_started_button_text'] ?? '' }}</a>
+        </div>
+    </section>
 @endsection

@@ -50,10 +50,16 @@
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Blogs</p>
                             </a>
-                        </li>                    
+                        </li>     
+                        <li class="nav-item">
+                            <a href="{{ route('admin.project.index') }}" class="nav-link {{ request()->is('admin/project*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Projects</p>
+                            </a>
+                        </li>                
 
                         <!--  CMS-Section -->
-                        {{-- <div style="border-top: 1px solid #ddd; padding-top: 10px;">
+                        <div style="border-top: 1px solid #ddd; padding-top: 10px; padding-bottom: 50px;">
                             <h4 class="text-white p-4">CMS</h4>
                             <li class="nav-item {{ request()->is('admin/cms*') ? 'menu-open' : '' }}">
                                 <a href="#" class="nav-link">
@@ -86,41 +92,34 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('admin.pages.edit', ['slug' => 'program']) }}"
-                                            class="nav-link {{ request()->is('admin/cms/pages/program/edit') ? 'active' : '' }}">
+                                        <a href="{{ route('admin.pages.edit', ['slug' => 'project']) }}"
+                                            class="nav-link {{ request()->is('admin/cms/pages/project/edit') ? 'active' : '' }}">
                                             <i class="fas fa-eject nav-icon"></i>
-                                            <p>Program</p>
+                                            <p>Project</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('admin.pages.edit', ['slug' => 'league']) }}"
-                                            class="nav-link {{ request()->is('admin/cms/pages/merchandise/edit') ? 'active' : '' }}">
+                                        <a href="{{ route('admin.pages.edit', ['slug' => 'service']) }}"
+                                            class="nav-link {{ request()->is('admin/cms/pages/service/edit') ? 'active' : '' }}">
                                             <i class="fas fa-eject nav-icon"></i>
-                                            <p>Leagues & Tournaments</p>
+                                            <p>Service</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('admin.pages.edit', ['slug' => 'personal_training']) }}"
-                                            class="nav-link {{ request()->is('admin/cms/pages/podcast/edit') ? 'active' : '' }}">
+                                        <a href="{{ route('admin.pages.edit', ['slug' => 'blog']) }}"
+                                            class="nav-link {{ request()->is('admin/cms/pages/blog/edit') ? 'active' : '' }}">
                                             <i class="fas fa-eject nav-icon"></i>
-                                            <p>Personal Training</p>
+                                            <p>Blog</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('admin.pages.edit', ['slug' => 'events']) }}"
-                                            class="nav-link {{ request()->is('admin/cms/pages/donation/edit') ? 'active' : '' }}">
+                                        <a href="{{ route('admin.pages.edit', ['slug' => 'stepform']) }}"
+                                            class="nav-link {{ request()->is('admin/cms/pages/step-form/edit') ? 'active' : '' }}">
                                             <i class="fas fa-eject nav-icon"></i>
-                                            <p>Events</p>
+                                            <p>Step Form</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('admin.pages.edit', ['slug' => 'get_in_touch']) }}"
-                                            class="nav-link {{ request()->is('admin/cms/pages/donation/edit') ? 'active' : '' }}">
-                                            <i class="fas fa-eject nav-icon"></i>
-                                            <p>Get In Touch</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('admin.pages.edit', ['slug' => 'privacy_policy']) }}"
                                             class="nav-link {{ request()->is('admin/cms/pages/privacy/edit') ? 'active' : '' }}">
                                             <i class="fas fa-eject nav-icon"></i>
@@ -133,10 +132,10 @@
                                             <i class="fas fa-eject nav-icon"></i>
                                             <p>Term And Condition</p>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
-                        </div> --}}
+                        </div>
                     </ul>
                 </li>
             </ul>

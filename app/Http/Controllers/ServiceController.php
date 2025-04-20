@@ -1,6 +1,4 @@
 <?php
-
-// app/Http/Controllers/ServiceController.php
 namespace App\Http\Controllers;
 
 use App\Models\Service;
@@ -21,18 +19,19 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
-
-        // dd($request->all());
+        // Validate the request
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
+        // Check if an image is uploaded and store it
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('services', 'public');
         }
 
+        // Create a new service
         Service::create($data);
 
         return redirect()->route('admin.service.index')->with('success', 'Service created!');
@@ -53,17 +52,25 @@ class ServiceController extends Controller
 
     public function update(Request $request, $id)
     {
+        // Find the service to update
         $service = Service::findOrFail($id);
+
+        // Validate the request
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
+        // If an image is uploaded, store it and update the data
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('services', 'public');
+        } else {
+            // If no image is uploaded, keep the old image
+            $data['image'] = $service->image;
         }
 
+        // Update the service with new data
         $service->update($data);
 
         return redirect()->route('admin.service.index')->with('success', 'Service updated!');
@@ -77,4 +84,3 @@ class ServiceController extends Controller
         return response()->json(['message' => 'Service deleted successfully.']);
     }
 }
-

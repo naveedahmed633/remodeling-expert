@@ -9,6 +9,7 @@ use App\Models\StayInTouch;
 use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Event;
+use App\Models\Project;
 use App\Models\Tournament;
 use App\Traits\PHPCustomMail;
 use Carbon\Carbon;
@@ -24,8 +25,11 @@ class FrontController extends Controller
 
     public function index()
     {
+        $data = CmsPage::where('name', 'Home')->first();
+        $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
-        return view('front.index', compact('services'));
+        $projects = Project::all();
+        return view('front.index', compact('services', 'projects', 'content', 'data'));
     }
 
     public function about()
@@ -35,8 +39,9 @@ class FrontController extends Controller
     }
     public function project()
     {
+        $projects = Project::all();
         $services = Service::all();
-        return view('front.projects', compact('services'));
+        return view('front.projects', compact('services', 'projects'));
     }
 
     public function services()
@@ -68,24 +73,5 @@ class FrontController extends Controller
     {
         $services = Service::all();
         return view('front.order', compact('services'));
-    }
-
-    public function store(Request $request)
-    {
-        $services = $request->input('services', []);
-
-        $cleanedServices = array_map(function ($service) {
-            return preg_replace('/\s+/', ' ', trim($service));
-        }, $services);
-
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',   
-            'phone' => 'nullable|string|max:15',     
-            'email' => 'required|email|max:255',   
-            'message' => 'nullable|string|max:500',  
-        ]);
-        
-         
-        dd($cleanedServices);
     }
 }

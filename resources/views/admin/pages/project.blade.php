@@ -1,6 +1,6 @@
 @extends('layouts.admin-layout')
 @section('title')
-    Update Programs
+    Update Project
 @endsection
 @section('content')
     <style>
@@ -12,47 +12,58 @@
     <!-- Content Wrapper -->
     <div class="content-wrapper">
         <form action="{{ route('admin.pages.update', $slug) }}" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="media_collections[]" value="program_banner_img">
+            <!-- Hidden media collection inputs -->
+            @foreach(['banner_image'] as $media)
+                <input type="hidden" name="media_collections[]" value="{{ $media }}">
+            @endforeach
             @csrf
-            <!-- Weight List Main Heading Content Section -->
+
             <input type="hidden" name="slug" value="{{ $slug }}">
-            <section class="content">
+
+             <!-- Banner Section -->
+             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card card-box-shadow mt-5">
                                 <div class="card-header">
-                                    <h3 class="card-title">Update Programs Content</h3>
+                                    <h3 class="card-title">Update Banner Section</h3>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="row">
                                         <input type="hidden" name="admin_id">
-
+            
+                                        <!-- Banner Image Input -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="title">Programs Bg-Image</label>
-                                                <input type="file" class="form-control form__field"
-                                                    name="program_banner_img" id="cta_image">
-                                                @if ($page->hasMedia('program_banner_img'))
-                                                    <label for="existing_background_banner_image"></label>
-                                                    @foreach ($page->getMedia('program_banner_img') as $media)
-                                                        <img src="{{ $media->getUrl() }}"
-                                                            alt="Existing Banner Image"
+                                                <label for="banner_image">Banner Image</label>
+                                                <input type="file" class="form-control form__field" name="banner_image" id="banner_image">
+                                                @if ($page->hasMedia('banner_image'))
+                                                    <label for="existing_banner_image"></label>
+                                                    @foreach ($page->getMedia('banner_image') as $media)
+                                                        <img src="{{ $media->getUrl() ?? '' }}" alt="Existing Banner Image"
                                                             style="max-width: 200px; max-height: 200px; margin-top: 10px;">
                                                     @endforeach
                                                 @endif
                                             </div>
                                         </div>
-                                        <!-- First Input Field -->
+            
+                                        <!-- Banner Section Heading -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="main_heading">Main Heading</label>
-                                                <input type="text" class="form-control form__field"
-                                                    value="{{ $content['main_heading'] ?? '' }}" name="main_heading"
-                                                    placeholder="Enter main heading">
+                                                <label for="banner_section_heading">Banner Section Heading</label>
+                                                <input type="text" class="form-control form__field" name="banner_section_heading"
+                                                       placeholder="Enter Banner Section Heading"
+                                                       value="{{ old('banner_section_heading', $content['banner_section_heading'] ?? '') }}">
+                                                <small class="text-danger">
+                                                    @error('banner_section_heading')
+                                                        {{ $message }}
+                                                    @enderror
+                                                </small>
                                             </div>
                                         </div>
+            
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -61,6 +72,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Submit Button -->
             <div class="text-center mt-3">
                 <div class="form-group">

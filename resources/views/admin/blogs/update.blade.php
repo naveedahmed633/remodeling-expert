@@ -52,7 +52,8 @@
             color: #f9df4a;
         }
     </style>
-    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Wrapper -->
     <div class="content-wrapper">
         <!-- Main content -->
         <section class="content">
@@ -61,7 +62,6 @@
                     <div class="col-12">
 
                         <div class="card card-box-shadow mt-5">
-
                             <div class="card-header">
                                 <h3 class="card-title">Edit Blog</h3>
                                 <a href="{{ route('admin.blogs.index') }}" class="btn btn-primary btn-sm float-right">
@@ -69,7 +69,6 @@
                                 </a>
                             </div>
 
-                            <!-- /.card-header -->
                             <div class="card-body">
                                 <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -77,83 +76,73 @@
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
+                                        <!-- Title -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="Name">Blog Title *</label>
                                                 <input type="text" class="form-control form__field" name="title"
-                                                    placeholder="blog Title" value="{{ old('title', $blog->title ?? '') }}">
+                                                    placeholder="Blog Title" value="{{ old('title', $blog->title ?? '') }}">
+                                                <small class="text-danger">
+                                                    @error('title') {{ $message }} @enderror
+                                                </small>
                                             </div>
-                                            <small class="text-danger">
-                                                @error('title')
-                                                    {{ $message }}
-                                                @enderror
-                                            </small>
                                         </div>
 
                                         <!-- Blog Image -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="testimonialImageInput">Blog Image *</label>
+                                                <label for="testimonialImageInput">Blog Image</label>
                                                 <input type="file" class="form-control form__field visually-hidden"
                                                     name="image" id="testimonialImageInput" accept="image/*">
-                                                <label for="testimonialImageInput"
-                                                    class="file-input-label form__field form-control">
+                                                <label for="testimonialImageInput" class="file-input-label form__field form-control">
                                                     <i class="fas fa-camera"></i> Choose file
                                                 </label>
-                                                <small class='text-danger'>
-                                                    @error('image')
-                                                        {{ $message }}
-                                                    @enderror
+                                                <small class="text-danger">
+                                                    @error('image') {{ $message }} @enderror
                                                 </small>
                                             </div>
                                         </div>
 
-                                        <!-- Short Description -->
+                                        <!-- Blog Description -->
                                         <div class="col-md-12">
                                             <label for="">Blog Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field">
-                                                {{ $blog->description ?? '' }}
-                                            </textarea>
+                                            <textarea name="description" id="summernote" class="form-control form__field">{!! old('description', $blog->description ?? '') !!}</textarea>
                                             <small class="text-danger">
-                                                @error('description')
-                                                    {{ $message }}
-                                                @enderror
+                                                @error('description') {{ $message }} @enderror
                                             </small>
                                         </div>
 
-                                        <!-- Submit Button -->
+                                        <!-- Submit -->
                                         <div class="mx-auto mt-5">
                                             <div class="form-group">
-                                                <input type="submit" class="form-control btn btn-primary btn-sm"
-                                                    value="Submit">
+                                                <input type="submit" class="form-control btn btn-primary btn-sm" value="Update">
                                             </div>
                                         </div>
-
                                     </div>
                                 </form>
                             </div>
-                            <!-- /.card-body -->
+
                         </div>
-
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
         </section>
-        <!-- /.content -->
     </div>
-
-    <!-- /.content-wrapper -->
 @endsection
 
 @section('script')
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
-<script>
-    $(document).ready(function() {
-  $('#summernote').summernote();
-});
-</script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                height: 200
+            });
+
+            // Ensure description HTML gets submitted
+            $('form').on('submit', function () {
+                $('#summernote').val($('#summernote').summernote('code'));
+            });
+        });
+    </script>
 @endsection

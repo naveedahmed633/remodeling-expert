@@ -1,11 +1,15 @@
 @extends('front.include.app')
 @section('title', 'Contact Us | Remodeling Expert')
 @section('content')
-    
+<style>
+    .classic-banner {
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+    }
+</style>
     <!-- Banner Section -->
     <div class="classic-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white">Contact Us</h1>
+            <h1 class="text-white">{{ $content['banner_section_heading'] ?? '' }}</h1>
         </div>
     </div>
 
@@ -15,23 +19,23 @@
 
                 <!-- Address -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 class="fw-bold">Address</h5>
-                    <p class="mb-1">Your Company Name 333 Street</p>
-                    <p class="mb-1">City Name, Postal Code Zip Code</p>
+                    <h5 class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h5>
+                    <p class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <p class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
                 </div>
 
                 <!-- Office Hours -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 class="fw-bold">Office Hours</h5>
-                    <p class="mb-1">Mon-Fri: 08:00 AM - 05:00 PM</p>
-                    <p class="mb-0">Sat-Sun: Emergency only</p>
+                    <h5 class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h5>
+                    <p class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <p class="mb-0">{{ $content['banner_section_heading'] ?? '' }}</p>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center p-5">
-                    <h5 class="fw-bold">Phone Number</h5>
-                    <p class="mb-1">Main Phone Line</p>
-                    <p class="mb-0" style="color: #1abc9c;">(111) 123-1234</p>
+                    <h5 class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h5>
+                    <p class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <p class="mb-0" style="color: #1abc9c;">{{ $content['banner_section_heading'] ?? '' }}</p>
                 </div>
 
             </div>
@@ -44,9 +48,8 @@
 
                 <!-- Left Side Content -->
                 <div class="col-md-6 text-start mb-4 mb-md-0">
-                    <h2 class="fw-bold">Get in touch with us</h2>
-                    <p>Please fill out the form with all required information and we will get back to you within 3 business
-                        days.</p>
+                    <h2 class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h2>
+                    <p>{{ $content['banner_section_heading'] ?? '' }}</p>
                 </div>
 
                 <!-- Right Side Form -->
@@ -76,12 +79,38 @@
                             <label for="message" class="form-label">Message</label>
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary px-5 py-3">Submit</button>
+                        <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <x-get-started />
+    <style>
+        .get-started-section {
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?? '' }}');
+            /* replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .content-box {
+            background-color: rgba(0, 0, 0, 0.482);
+            /* black with opacity */
+            max-width: 500px;
+            /* col-5 jaisa */
+            width: 100%;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+    </style>
+    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
+        <div class="content-box text-white text-center p-5">
+            <h2 class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
+            <p class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
+            <a href="{{ $content['get_started_button_url'] ?? '' }}"
+                class="btn btn-primary p-3">{{ $content['get_started_button_text'] ?? '' }}</a>
+        </div>
+    </section>
 @endsection
