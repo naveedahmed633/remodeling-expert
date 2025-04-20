@@ -5,7 +5,7 @@
             <!-- First Section: Logo and Description -->
             <div class="col-md-3 mt-4">
                 <div class="navbar-brand text-start" style="white-space: normal;">
-                    <div class="d-flex justify-content-start align-items-center my-3">
+                    <div class="d-flex justify-content-start align-items-center my-3"  data-aos="fade-up">
                         <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" class="mb-2 mr-3">
                         <div>
                             <span class="font-weight-bold">TOTAL UPGRADE</span>
@@ -13,7 +13,7 @@
                         </div>
                     </div>
 
-                    <p class="mb-3">At Remodelling Experts, we bring innovation, precision, and quality to every
+                    <p class="mb-3"  data-aos="fade-up">At Remodelling Experts, we bring innovation, precision, and quality to every
                         remodeling project. With years of experience, our team specializes in creating stunning,
                         functional spaces that enhance your home’s beauty and value.</p>
                     <!-- Social Media Icons -->
@@ -27,8 +27,8 @@
 
             <!-- Second Section: Quick Links -->
             <div class="col-md-3 d-flex flex-column justify-content-center lh-lg mt-4">
-                <h5 class="text-white">Quick Links</h5>
-                <ul class="list-unstyled ">
+                <h5 class="text-white"  data-aos="fade-up">Quick Links</h5>
+                <ul class="list-unstyled "  data-aos="fade-up">
                     <li><a href="{{ route('index') }}" class="text-white">Home</a></li>
                     <li><a href="{{ route('about') }}" class="text-white">About Us</a></li>
                     <li><a href="{{ route('services') }}" class="text-white">Services</a></li>
@@ -39,8 +39,8 @@
 
             <!-- Third Section: Services -->
             <div class="col-md-3 d-flex flex-column justify-content-center lh-lg mt-4">
-                <h5 class="text-white">Our Services</h5>
-                <ul class="list-unstyled">
+                <h5 class="text-white" data-aos="fade-up">Our Services</h5>
+                <ul class="list-unstyled" data-aos="fade-up">
                     @foreach ($services->take(5) as $service)
                         <li>
                             <a href="{{ route('service.detail', $service->id) }}" class="text-white">
@@ -53,8 +53,8 @@
 
             <!-- Fourth Section: Contact Us -->
             <div class="col-md-3 d-flex flex-column justify-content-center lh-lg mt-4">
-                <h5 class="text-white">Contact Us</h5>
-                <ul class="list-unstyled">
+                <h5 class="text-white" data-aos="fade-up">Contact Us</h5>
+                <ul class="list-unstyled" data-aos="fade-up">
                     <li><a class="text-white">Phone: +123 456 7890</a></li>
                     <li><a class="text-white">Email: info@website.com</a></li>
                     <li><a class="text-white">Address: 123 Main Street, City, Country</a></li>
@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-12 text-center mt-4 pb-4">
                 <hr class="border-white w-100 mb-4">
-                <div class="d-flex justify-content-between text-start">
+                <div class="d-flex justify-content-between text-start"  data-aos="fade-up">
                     <p class="mb-0 text-white">Copyright © 2025Total Upgrade Remodeling Expert. All rights reserved.</p>
                     <div class="d-flex">
                         <a href="#" class="text-white">Privacy Policy</a>
