@@ -9,7 +9,7 @@
     <!-- Banner Section -->
     <div class="classic-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 data-aos="fade-up" class="text-white">{{ $content['banner_section_heading'] ?? '' }}</h1>
+            <h1 data-aos="fade-up" class="text-white bold">{{ $content['banner_section_heading'] ?? '' }}</h1>
         </div>
     </div>
 
@@ -19,21 +19,21 @@
 
                 <!-- Address -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['address_heading'] ?? '' }}</h5>
+                    <h5 data-aos="fade-up" class="fw-bold bold">{{ $content['address_heading'] ?? '' }}</h5>
                     <p data-aos="fade-up" class="mb-1">{{ $content['address_description_1'] ?? '' }}</p>
                     <p data-aos="fade-up" class="mb-1">{{ $content['address_description_2'] ?? '' }}</p>
                 </div>
 
                 <!-- Office Hours -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['office_hours_heading'] ?? '' }}</h5>
+                    <h5 data-aos="fade-up" class="fw-bold bold">{{ $content['office_hours_heading'] ?? '' }}</h5>
                     <p data-aos="fade-up" class="mb-1">{{ $content['office_hours_description_1'] ?? '' }}</p>
                     <p data-aos="fade-up" class="mb-0">{{ $content['office_hours_description_2'] ?? '' }}</p>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['phone_number_heading'] ?? '' }}</h5>
+                    <h5 data-aos="fade-up" class="fw-bold bold">{{ $content['phone_number_heading'] ?? '' }}</h5>
                     <p data-aos="fade-up" class="mb-1">{{ $content['phone_number_description_1'] ?? '' }}</p>
                     <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">{{ $content['phone_number_description_2'] ?? '' }}</p>
                 </div>
@@ -79,7 +79,7 @@
                             <label data-aos="fade-up" for="message" class="form-label">Message</label>
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
-                        <button data-aos="fade-up" type="submit" class="btn btn-primary px-4 py-2">{{ $content['get_in_touch_button_text'] ?? '' }}</button>
+                        <button data-aos="fade-up" type="submit" class="btn btn-primary banner-btn">{{ $content['get_in_touch_button_text'] ?? '' }}</button>
                     </form>
                 </div>
             </div>
@@ -88,7 +88,7 @@
 
     <style>
         .get-started-section {
-            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/image (9).png') }}');
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/frames-for-your-heart-2d4lAQAlbDA-unsplash.png') }}');
             /* replace with your image */
             background-size: cover;
             background-position: center;
@@ -96,13 +96,15 @@
         }
 
         .content-box {
-            background-color: rgba(0, 0, 0, 0.482);
+            background-color: #0016269e;
             /* black with opacity */
-            max-width: 500px;
+            max-width: 700px;
             /* col-5 jaisa */
             width: 100%;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 5rem !important;
+            padding-left: 6rem !important;
+            padding-right: 6rem !important;
+            /* border-radius: 10px; */
         }
     </style>
     <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
@@ -110,7 +112,7 @@
             <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
             <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
             <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
-                class="btn btn-primary p-3">{{ $content['get_started_button_text'] ?? '' }}</a>
+                class="btn btn-primary banner-btn">{{ $content['get_started_button_text'] ?? '' }}</a>
         </div>
     </section>
 @endsection

@@ -55,12 +55,12 @@ class HomeSeeder extends Seeder
 
             'before_after_heading' => 'Before & After',
 
-            'trusted_small_heading' => 'Trusted Experts',
-            'trusted_main_heading' => 'Building Your Vision into Reality',
-            'trusted_description' => 'Our dedicated team ensures excellence in every step of your construction journey, delivering unmatched results on time and on budget.',
-            'dark_box_heading' => 'Need Consultation?',
-            'dark_box_description' => 'We’re here to help 24/7.',
-            'dark_box_number' => '+92 300 1234567',
+            'trusted_small_heading' => 'WHAT OUR CLIENTS SAY',
+            'trusted_main_heading' => 'Outstanding Residential Services',
+            'trusted_description' => 'At Remodelling Experts, we bring innovation, precision, and quality to every remodeling project. With years of experience, our team specializes in creating stunning, functional spaces that enhance your home’s beauty and value.',
+            'dark_box_heading' => 'NEED SERVICE NOW?',
+            'dark_box_description' => 'At Remodelling Experts, we bring innovation, precision, and quality to every remodeling project.',
+            'dark_box_number' => '(123) 456-7890',
 
             'recent_projects_heading' => 'Recent Projects',
             'recent_projects_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.',
@@ -68,8 +68,8 @@ class HomeSeeder extends Seeder
             'recent_projects_button_url' => 'project',
 
             'get_started_heading' => 'Get Started Today',
-            'get_started_description' => 'Start your journey with us and unlock endless possibilities.',
-            'get_started_button_text' => 'Join Now',
+            'get_started_description' => 'You dream It, we design It.',
+            'get_started_button_text' => 'CONTACT US',
             'get_started_button_url' => 'order',
         ];
 

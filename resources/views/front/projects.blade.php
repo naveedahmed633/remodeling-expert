@@ -10,7 +10,7 @@
     <!-- Banner Section -->
     <div class="project-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white">{{ $content['banner_section_heading'] ?? '' }}</h1>
+            <h1 class="text-white bold">{{ $content['banner_section_heading'] ?? '' }}</h1>
         </div>
     </div>
 

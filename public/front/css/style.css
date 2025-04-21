@@ -43,6 +43,23 @@
   background-image: url('../images/image\ \(25\).png'); 
 } */
 
+nav .nav-link{
+  font-weight: 700;
+}
+
+.bold{
+  font-weight: 700 !important;
+}
+
+.home-banner h1{
+  font-weight: 700;
+}
+ 
+.banner-btn{
+  padding: 10px 40px; /* Button padding */
+  font-weight: 800;
+}
+
 @media screen and (min-width: 992px) {
   .bottom-minus{
     bottom: -50% !important;

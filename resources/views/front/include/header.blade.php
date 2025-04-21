@@ -57,7 +57,7 @@
 
             <!-- Search Form: Visible on lg+, hidden on small -->
             <form class="d-none d-lg-flex" role="search">
-                <a href="#" class="btn btn-primary px-4 py-2">(123) 456-7890</a>
+                <a href="#" class="btn btn-primary banner-btn bold">(123) 456-7890</a>
             </form>            
 
         </div>
