@@ -56,7 +56,19 @@
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Projects</p>
                             </a>
-                        </li>                
+                        </li> 
+                        <li class="nav-item">
+                            <a href="{{ route('admin.form.index') }}" class="nav-link {{ request()->is('admin/project*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Step Form</p>
+                            </a>
+                        </li>  
+                        <li class="nav-item">
+                            <a href="{{ route('admin.project.index') }}" class="nav-link {{ request()->is('admin/project*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Order Listing</p>
+                            </a>
+                        </li>              
 
                         <!--  CMS-Section -->
                         <div style="border-top: 1px solid #ddd; padding-top: 10px; padding-bottom: 50px;">

@@ -9,6 +9,7 @@ use App\Http\Controllers\CmsPagesController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceFormController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\TrainerController;
 use App\Models\Service;
@@ -41,7 +42,13 @@ Route::controller(\App\Http\Controllers\FrontController::class)->group(function 
   Route::post('user/subscribe/now', 'subscribeNowSubmit')->name('subscribe.now.submit');
 });
 
-Route::get('/order-data', [OrderController::class, 'handleRequest']);
+// Route for displaying the form (Step 1 and Step 2)
+Route::get('service-form', [ServiceFormController::class, 'create'])->name('service.form.create');
+
+// Route for form submission
+Route::post('service-form', [ServiceFormController::class, 'store'])->name('service.form.store');
+
+Route::post('/order-data', [OrderController::class, 'handleRequest']);
 
 Route::get('admin/login', [\App\Http\Controllers\AdminController::class, 'adminLoginView'])->name('admin.login.form');
 Route::post('admin/login/submit', [\App\Http\Controllers\AdminController::class, 'adminLogin'])->name('admin.login.submit');
@@ -70,6 +77,14 @@ Route::middleware('CheckAdmin')->prefix('admin/')->name('admin.')->group(functio
   Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
   Route::put('/project/{id}', [ProjectController::class, 'update'])->name('project.update');
   Route::delete('/project/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
+
+  // Project Crud Routes
+  Route::get('/form', [ServiceFormController::class, 'index'])->name('form.index');
+  Route::get('/form/create', [ServiceFormController::class, 'create'])->name('form.create');
+  Route::post('/form', [ServiceFormController::class, 'store'])->name('form.store');
+  Route::get('/form/{id}/edit', [ServiceFormController::class, 'edit'])->name('form.edit');
+  Route::put('/form/{id}', [ServiceFormController::class, 'update'])->name('form.update');
+  Route::delete('/form/{id}', [ServiceFormController::class, 'destroy'])->name('form.destroy');
 
   // BLOG Crud Routes
   Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');

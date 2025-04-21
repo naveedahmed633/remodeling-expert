@@ -25,6 +25,7 @@ class OrderController extends Controller
     // 1. Validate the input data
     private function validateData(Request $request)
     {
+        
         return $request->validate([
             'name' => 'required|string|max:255',
             'phone' => 'nullable|string|max:15',

@@ -10,6 +10,9 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Event;
 use App\Models\Project;
+use App\Models\RemodelType;
+use App\Models\ServiceCategory;
+use App\Models\SubserviceCategory;
 use App\Models\Tournament;
 use App\Traits\PHPCustomMail;
 use Carbon\Carbon;
@@ -75,9 +78,21 @@ class FrontController extends Controller
 
     public function order()
     {
+        $servicesForm = ServiceCategory::with('subServices.remodelTypes')->get();
         $data = CmsPage::where('name', 'Step Form')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
-        return view('front.order', compact('services', 'content', 'data'));
+    
+        $remodelTypes = RemodelType::all();
+        $subServicesData = SubserviceCategory::all();
+    
+        return view('front.order', compact(
+            'services',
+            'content',
+            'data',
+            'servicesForm',
+            'subServicesData',
+            'remodelTypes'
+        ));
     }
 }

@@ -59,7 +59,7 @@ class ServiceController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'image' => 'nullable|image',
         ]);
 
         // If an image is uploaded, store it and update the data
