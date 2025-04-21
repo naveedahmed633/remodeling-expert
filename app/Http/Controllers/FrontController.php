@@ -34,14 +34,14 @@ class FrontController extends Controller
 
     public function about()
     {
-        $data = CmsPage::where('name', 'Home')->first();
+        $data = CmsPage::where('name', 'About')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
         return view('front.about', compact('services', 'content', 'data'));
     }
     public function project()
     {
-        $data = CmsPage::where('name', 'Home')->first();
+        $data = CmsPage::where('name', 'Project')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $projects = Project::all();
         $services = Service::all();
@@ -50,23 +50,15 @@ class FrontController extends Controller
 
     public function services()
     {
-        $data = CmsPage::where('name', 'Home')->first();
+        $data = CmsPage::where('name', 'Service')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
         return view('front.services', compact('services', 'content', 'data'));
     }
 
-    public function classicAndProfessional()
-    {
-        $data = CmsPage::where('name', 'Home')->first();
-        $content = $data ? json_decode($data->content, true) : [];
-        $services = Service::all();
-        return view('front.classic', compact('services', 'content', 'data'));
-    }
-
     public function blog()
     {
-        $data = CmsPage::where('name', 'Home')->first();
+        $data = CmsPage::where('name', 'BLog')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
         $blogs = Blog::all();
@@ -75,7 +67,7 @@ class FrontController extends Controller
 
     public function contact()
     {
-        $data = CmsPage::where('name', 'Home')->first();
+        $data = CmsPage::where('name', 'Contact')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
         return view('front.contact', compact('services', 'content', 'data'));
@@ -83,7 +75,7 @@ class FrontController extends Controller
 
     public function order()
     {
-        $data = CmsPage::where('name', 'Home')->first();
+        $data = CmsPage::where('name', 'Step Form')->first();
         $content = $data ? json_decode($data->content, true) : [];
         $services = Service::all();
         return view('front.order', compact('services', 'content', 'data'));
