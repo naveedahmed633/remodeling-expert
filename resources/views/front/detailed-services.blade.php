@@ -47,6 +47,6 @@
         </div>
     </section>
 
-    <x-before-after :content="$content"/>
-    <x-get-started :content="$content"/>
+    {{-- <x-before-after :content="$content"/>
+    <x-get-started :content="$content"/> --}}
 @endsection

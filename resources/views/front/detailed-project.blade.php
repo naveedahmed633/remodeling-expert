@@ -67,6 +67,6 @@
             </div>
         </div>
     </section>
-
-    <x-get-started :content="$content"/>
+{{-- 
+    <x-get-started :content="$content"/> --}}
 @endsection
