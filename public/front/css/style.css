@@ -44,7 +44,7 @@
 } */
 
 nav .nav-link{
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 .bold{
@@ -52,12 +52,12 @@ nav .nav-link{
 }
 
 .home-banner h1{
-  font-weight: 700;
+  font-weight: 700 !important;
 }
  
 .banner-btn{
-  padding: 10px 40px; /* Button padding */
-  font-weight: 800;
+  padding: 10px 40px !important; /* Button padding */
+  font-weight: 800 !important;
 }
 
 @media screen and (min-width: 992px) {
