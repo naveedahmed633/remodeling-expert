@@ -4,7 +4,7 @@
 
 <style>
     .services-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/spacejoy-9M66C_w_ToM-unsplash.png') }}');
     }
 </style>
 
@@ -20,7 +20,7 @@
             <div class="row mb-5">
                 <!-- Image Column -->
                 <div class="col-md-6">
-                    <img src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}" alt="Sample"
+                    <img src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?: asset('front/images/florian-schmidinger-b_79nOqf95I-unsplash.png') }}" alt="Sample"
                         class="img-fluid w-100">
                 </div>
 
@@ -88,7 +88,7 @@
     
             <!-- Image outside container and full height -->
             <div class="position-absolute top-0 end-0 h-100" style="width: 50%; z-index: 0;">
-                <img src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?? '' }}" alt="Image"
+                <img src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}" alt="Image"
                     class="w-100 h-100 object-fit-cover">
             </div>
         </section>

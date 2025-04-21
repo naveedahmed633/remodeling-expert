@@ -4,7 +4,7 @@
 
 <style>
     .project-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image (9).png') }}');
     }
 </style>
     <!-- Banner Section -->

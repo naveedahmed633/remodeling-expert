@@ -21,7 +21,7 @@ class HomeSeeder extends Seeder
         $content = [
             'banner_section_heading' => 'Transform Your Home with Expert Remodeling',
             'banner_section_description' => 'Transform your space with precision and style. Our expert remodeling services deliver high-quality craftsmanship, innovative designs, and seamless execution to bring your vision to life.',
-            'banner_section_button_text' => 'Sart Now',
+            'banner_section_button_text' => 'Start Now', // corrected spelling
             'banner_section_button_url' => 'order',
 
             'transforming_homes_heading' => 'Transforming Homes with Expert Craftsmanship',
@@ -51,7 +51,7 @@ class HomeSeeder extends Seeder
             'estimate_image_desc_3' => 'Estimate the approximate cost your lightings.',
             'estimate_image_desc_4' => 'Estimate the approximate cost your doors.',
             'estimate_button_text' => 'Get A Quote',
-            'estimate_button_url' => '____',
+            'estimate_button_url' => 'estimate', // updated from '____'
 
             'before_after_heading' => 'Before & After',
 
@@ -74,46 +74,12 @@ class HomeSeeder extends Seeder
         ];
 
         // Create Home page record
-        $home = CmsPage::create([
+        CmsPage::create([
             'name' => 'Home',
             'slug' => 'home',
             'meta_title' => 'Home - Remodeling Expert',
             'meta_description' => 'Welcome to Remodeling Expert',
             'content' => json_encode($content),
         ]);
-
-        // Image paths and their media collection names
-        $imagePaths = [
-            'banner_image' => 'front/images/home.png',
-            'transforming_homes_image' => 'front/images/3d-rendering-loft-luxury-living-room-with-bookshelf.png',
-            'interior_solution_image_1' => 'front/images/all-in-one.png',
-            'interior_solution_image_2' => 'front/images/image (2).png',
-            'interior_solution_image_3' => 'front/images/image (3).png',
-            'interior_solution_image_4' => 'front/images/image (4).png',
-            'estimate_image_1' => 'front/images/Cabinets.png',
-            'estimate_image_2' => 'front/images/Flooring.png',
-            'estimate_image_3' => 'front/images/Lighting.png',
-            'estimate_image_4' => 'front/images/DOORS.png',
-            'before_image' => 'front/images/image.png',
-            'after_image' => 'front/images/image.png',
-            'trusted_section_image' => 'front/images/image (1).png',
-            'get_started_today_image' => 'front/images/image (1).png',
-        ];
-
-        // Attach media to collections
-        foreach ($imagePaths as $collectionName => $relativePath) {
-            $fullPath = public_path($relativePath);
-            if (file_exists($fullPath)) {
-                $home->clearMediaCollection($collectionName);
-                $home->addMedia($fullPath)->toMediaCollection($collectionName);
-            }
-        }
-
-        // Optionally add the logo
-        $logoPath = public_path('front/images/logo.png');
-        if (file_exists($logoPath)) {
-            $home->clearMediaCollection('logo');
-            $home->addMedia($logoPath)->toMediaCollection('logo');
-        }
     }
 }

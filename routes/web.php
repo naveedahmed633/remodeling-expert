@@ -50,7 +50,7 @@ Route::get('admin/logout', [\App\Http\Controllers\AdminController::class, 'admin
 Route::get('/service/{id}', [ServiceController::class, 'show'])->name('service.detail');
 Route::get('/project/{id}', [ProjectController::class, 'show'])->name('project.detail');
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.detail');
-
+Route::post('/multi-step-submit', [BlogController::class, 'ajeeb'])->name('multi.submit');
 Route::middleware('CheckAdmin')->prefix('admin/')->name('admin.')->group(function () {
   Route::get('dashboard', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
   Route::get('profile', [\App\Http\Controllers\AdminController::class, 'profile'])->name('profile');
@@ -61,6 +61,7 @@ Route::middleware('CheckAdmin')->prefix('admin/')->name('admin.')->group(functio
     Route::get('cms/pages/{slug}/edit', 'edit')->name('pages.edit');
     Route::post('cms/pages/{slug}/update', 'editAndUpdate')->name('pages.update');
   });
+  
 
   // Project Crud Routes
   Route::get('/project', [ProjectController::class, 'index'])->name('project.index');

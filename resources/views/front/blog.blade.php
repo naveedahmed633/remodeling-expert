@@ -4,7 +4,7 @@
 
 <style>
     .classic-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image (25).png') }}');
     }
 </style>
 
@@ -42,7 +42,7 @@
 
     <style>
         .get-started-section {
-            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?? '' }}');
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/image (9).png') }}');
             /* replace with your image */
             background-size: cover;
             background-position: center;

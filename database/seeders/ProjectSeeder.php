@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\CmsPage;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
@@ -15,35 +14,21 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        // Delete existing Home page data
+        // Remove existing Project page if it exists
         CmsPage::where('name', 'Project')->delete();
 
-        // Initialize new content
+        // Define content for the Project page
         $content = [
-            'banner_section_heading' => 'Project',
+            'banner_section_heading' => 'Our Projects',
         ];
 
-        // Create Home page record
-        $project = CmsPage::create([
+        // Create Project page record
+        CmsPage::create([
             'name' => 'Project',
             'slug' => 'project',
-            'meta_title' => 'Project - Remodeling Expert',
-            'meta_description' => 'Welcome to Remodeling Expert',
+            'meta_title' => 'Projects - Remodeling Expert',
+            'meta_description' => 'Explore our completed and ongoing remodeling projects at Remodeling Expert.',
             'content' => json_encode($content),
         ]);
-
-        // Image paths and their media collection names
-        $imagePaths = [
-            'banner_image' => 'front/images/hero_1.jpg',
-        ];
-
-        // Attach media to collections
-        foreach ($imagePaths as $collectionName => $relativePath) {
-            $fullPath = public_path($relativePath);
-            if (file_exists($fullPath)) {
-                $project->clearMediaCollection($collectionName);
-                $project->addMedia($fullPath)->toMediaCollection($collectionName);
-            }
-        }
     }
 }

@@ -38,6 +38,21 @@ class BlogController extends Controller
         return redirect()->route('admin.blogs.index')->with('success', 'blog created!');
     }
 
+    public function ajeeb(Request $request)
+    {
+        // Validate data if needed
+        $data = $request->all();
+
+        // Example: Save in database if needed
+        // ModelName::create($data);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Form submitted successfully!',
+            'data' => $data
+        ]);
+    }
+
     public function show($id)
     {
         $blog = Blog::findOrFail($id);

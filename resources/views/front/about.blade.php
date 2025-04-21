@@ -4,7 +4,7 @@
 
     <style>
         .about-banner {
-            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/todd-kent-178j8tJrNlc-unsplash.png') }}');
         }
     </style>
     <!-- Banner Section -->
@@ -19,7 +19,7 @@
             <div class="row mb-5">
                 <!-- Image Column -->
                 <div class="col-md-6">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?? '' }}"
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?: asset('front/images/florian-schmidinger-b_79nOqf95I-unsplash.png') }}"
                         alt="Sample" class="img-fluid w-100">
                 </div>
 
@@ -52,7 +52,7 @@
                 <!-- Sub-section 1 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_1') ?? '' }}"
+                        <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}"
                             alt="Icon 1" class="mb-3" style="width: 50px; height: 50px;">
                         <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_1'] ?? '' }}</h5>
                         <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_1'] ?? '' }}</p>
@@ -62,7 +62,7 @@
                 <!-- Sub-section 2 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_2') ?? '' }}"
+                        <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}"
                             alt="Icon 2" class="mb-3" style="width: 50px; height: 50px;">
                         <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_2'] ?? '' }}</h5>
                         <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_2'] ?? '' }}</p>
@@ -72,7 +72,7 @@
                 <!-- Sub-section 3 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_3') ?? '' }}"
+                        <img data-aos="fade-up" src="{{ asset('front/images/door.png') }}"
                             alt="Icon 3" class="mb-3" style="width: 50px; height: 50px;">
                         <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_3'] ?? '' }}</h5>
                         <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_3'] ?? '' }}</p>
@@ -82,7 +82,7 @@
                 <!-- Sub-section 4 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('estimate_image_4') ?? '' }}"
+                        <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}"
                             alt="Icon 4" class="mb-3" style="width: 50px; height: 50px;">
                         <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_4'] ?? '' }}</h5>
                         <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_4'] ?? '' }}</p>
@@ -104,10 +104,10 @@
 
             <div class="image-compare-wrapper" aria-label="Before and After Image Slider">
                 <div class="image-layer image-before">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('before_image') ?? '' }}" alt="Before Image">
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('before_image') ?: asset('front/images/image (3).png') }}" alt="Before Image">
                 </div>
                 <div class="image-layer image-after">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('after_image') ?? '' }}" alt="After Image">
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('after_image') ?: asset('front/images/image (3).png') }}" alt="After Image">
                 </div>
                 <div class="divider-line" id="dividerLine"></div>
                 <input type="range" min="0" max="100" value="50" id="imageSlider"
@@ -152,7 +152,7 @@
 
         <!-- Image outside container and full height -->
         <div class="position-absolute top-0 end-0 h-100" style="width: 50%; z-index: 0;">
-            <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?? '' }}" alt="Image"
+            <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}" alt="Image"
                 class="w-100 h-100 object-fit-cover">
         </div>
     </section>

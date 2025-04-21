@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .classic-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?? '' }}');
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image (25).png') }}');
     }
 </style>
     <!-- Banner Section -->
@@ -19,23 +19,23 @@
 
                 <!-- Address -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h5>
-                    <p data-aos="fade-up" class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
-                    <p data-aos="fade-up" class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['address_heading'] ?? '' }}</h5>
+                    <p data-aos="fade-up" class="mb-1">{{ $content['address_description_1'] ?? '' }}</p>
+                    <p data-aos="fade-up" class="mb-1">{{ $content['address_description_2'] ?? '' }}</p>
                 </div>
 
                 <!-- Office Hours -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h5>
-                    <p data-aos="fade-up" class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
-                    <p data-aos="fade-up" class="mb-0">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['office_hours_heading'] ?? '' }}</h5>
+                    <p data-aos="fade-up" class="mb-1">{{ $content['office_hours_description_1'] ?? '' }}</p>
+                    <p data-aos="fade-up" class="mb-0">{{ $content['office_hours_description_2'] ?? '' }}</p>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h5>
-                    <p data-aos="fade-up" class="mb-1">{{ $content['banner_section_heading'] ?? '' }}</p>
-                    <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <h5 data-aos="fade-up" class="fw-bold">{{ $content['phone_number_heading'] ?? '' }}</h5>
+                    <p data-aos="fade-up" class="mb-1">{{ $content['phone_number_description_1'] ?? '' }}</p>
+                    <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">{{ $content['phone_number_description_2'] ?? '' }}</p>
                 </div>
 
             </div>
@@ -48,8 +48,8 @@
 
                 <!-- Left Side Content -->
                 <div class="col-md-6 text-start mb-4 mb-md-0">
-                    <h2 data-aos="fade-up" class="fw-bold">{{ $content['banner_section_heading'] ?? '' }}</h2>
-                    <p data-aos="fade-up">{{ $content['banner_section_heading'] ?? '' }}</p>
+                    <h2 data-aos="fade-up" class="fw-bold">{{ $content['get_in_touch_heading'] ?? '' }}</h2>
+                    <p data-aos="fade-up">{{ $content['get_in_touch_description'] ?? '' }}</p>
                 </div>
 
                 <!-- Right Side Form -->
@@ -57,29 +57,29 @@
                     <form>
                         <div class="row mb-3">
                             <div class="col">
-                                <label for="firstName" class="form-label">First Name</label>
+                                <label data-aos="fade-up" for="firstName" class="form-label">First Name</label>
                                 <input type="text" id="firstName" class="form-control">
                             </div>
                             <div class="col">
-                                <label for="lastName" class="form-label">Last Name</label>
+                                <label data-aos="fade-up" for="lastName" class="form-label">Last Name</label>
                                 <input type="text" id="lastName" class="form-control">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <label for="email" class="form-label">Email</label>
+                                <label data-aos="fade-up" for="email" class="form-label">Email</label>
                                 <input type="email" id="email" class="form-control">
                             </div>
                             <div class="col">
-                                <label for="phone" class="form-label">Phone Number</label>
+                                <label data-aos="fade-up" for="phone" class="form-label">Phone Number</label>
                                 <input type="text" id="phone" class="form-control">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
+                            <label data-aos="fade-up" for="message" class="form-label">Message</label>
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
+                        <button data-aos="fade-up" type="submit" class="btn btn-primary px-4 py-2">{{ $content['get_in_touch_button_text'] ?? '' }}</button>
                     </form>
                 </div>
             </div>
@@ -88,7 +88,7 @@
 
     <style>
         .get-started-section {
-            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?? '' }}');
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/image (9).png') }}');
             /* replace with your image */
             background-size: cover;
             background-position: center;
