@@ -11,7 +11,7 @@
     <!-- Banner Section -->
     <div class="services-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white bold style="font-weight: 700 !important;"">Our Services</h1>
+            <h1 class="text-white bold" style="font-weight: 700 !important;">Our Services</h1>
         </div>
     </div>
 
@@ -45,7 +45,8 @@
                 @foreach($services as $service)
                     <div class="col-lg-4 mb-4 height-335">
                         <div class="position-relative">
-                            <img src="{{ asset('storage/' . $service->image) }}" class="img-fluid w-100" alt="{{ $service->title }}">
+                            <img src="{{ asset('storage/' . $service->image) }}" class="img-fluid w-100" style="height: 200px; background-position: center; background-size: cover;"
+                            alt="{{ $service->title }}">
                             <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
                                 <h5>{{ $service->title }}</h5>
                                 <p>{{ Str::limit(strip_tags($service->description), 40) ? : '' }}</p>

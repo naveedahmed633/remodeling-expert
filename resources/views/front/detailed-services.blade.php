@@ -1,9 +1,13 @@
 @extends('front.include.app')
 @section('title',  $service->title. ' | Remodeling Expert')
 @section('content')
-
+<style>
+    .banner {
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
+    }
+</style>
     <!-- Banner Section -->
-    <div class="interior-banner banner text-center">
+    <div class="banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
             <h1 data-aos="fade-up" class="text-white">{{ $service->title }}</h1>
         </div>
@@ -28,7 +32,7 @@
                         @foreach ($services as $service)
                             <div class="mb-4 height-335">
                                 <div class="position-relative">
-                                    <img data-aos="fade-up" src="{{ asset('storage/' .  $service->image) }}" class="img-fluid w-100"
+                                    <img data-aos="fade-up" src="{{ asset('storage/' .  $service->image) }}" class=""
                                         alt="{{ $service->title }}">
                                     <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
                                         <h5 data-aos="fade-up">{{ $service->title }}</h5>

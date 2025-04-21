@@ -3,10 +3,16 @@
 
 @section('content')
 
+<style>
+    .banner {
+        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
+    }
+</style>
+
     <!-- Banner Section -->
-    <div class="classic-banner banner text-center">
+    <div class="banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 data-aos="fade-up" class="text-white">{{ $project->title }}</h1>
+            <h1 data-aos="fade-up" class="text-white" style="font-weight: 700 !important;">{{ $project->title }}</h1>
         </div>
     </div>
 

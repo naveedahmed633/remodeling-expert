@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\CmsPage;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,10 @@ class ServiceController extends Controller
     {
         $service = Service::findOrFail($id);
         $services = Service::all();
-        return view('front.detailed-services', compact('service', 'services'));
+        
+        $data = CmsPage::where('name', 'Project')->first();
+        $content = $data ? json_decode($data->content, true) : [];
+        return view('front.detailed-services', compact('service', 'services', "data", "content"));
     }
 
     public function edit($id)
