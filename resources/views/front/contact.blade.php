@@ -1,15 +1,15 @@
 @extends('front.include.app')
 @section('title', 'Contact Us | Remodeling Expert')
 @section('content')
-<style>
-    .classic-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image (25).png') }}');
-    }
-</style>
+    <style>
+        .classic-banner {
+            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image (25).png') }}');
+        }
+    </style>
     <!-- Banner Section -->
     <div class="classic-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
-            <h1 data-aos="fade-up" class="text-white bold">{{ $content['banner_section_heading'] ?? '' }}</h1>
+            <h1 data-aos="fade-up" class="text-white bold" style="font-weight: 700 !important;">{{ $content['banner_section_heading'] ?? '' }}</h1>
         </div>
     </div>
 
@@ -19,23 +19,24 @@
 
                 <!-- Address -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold bold">{{ $content['address_heading'] ?? '' }}</h5>
+                    <h5 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{{ $content['address_heading'] ?? '' }}</h5>
                     <p data-aos="fade-up" class="mb-1">{{ $content['address_description_1'] ?? '' }}</p>
                     <p data-aos="fade-up" class="mb-1">{{ $content['address_description_2'] ?? '' }}</p>
                 </div>
 
                 <!-- Office Hours -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold bold">{{ $content['office_hours_heading'] ?? '' }}</h5>
+                    <h5 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{{ $content['office_hours_heading'] ?? '' }}</h5>
                     <p data-aos="fade-up" class="mb-1">{{ $content['office_hours_description_1'] ?? '' }}</p>
                     <p data-aos="fade-up" class="mb-0">{{ $content['office_hours_description_2'] ?? '' }}</p>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold bold">{{ $content['phone_number_heading'] ?? '' }}</h5>
+                    <h5 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{{ $content['phone_number_heading'] ?? '' }}</h5>
                     <p data-aos="fade-up" class="mb-1">{{ $content['phone_number_description_1'] ?? '' }}</p>
-                    <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">{{ $content['phone_number_description_2'] ?? '' }}</p>
+                    <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">
+                        {{ $content['phone_number_description_2'] ?? '' }}</p>
                 </div>
 
             </div>
@@ -48,7 +49,7 @@
 
                 <!-- Left Side Content -->
                 <div class="col-md-6 text-start mb-4 mb-md-0">
-                    <h2 data-aos="fade-up" class="fw-bold">{{ $content['get_in_touch_heading'] ?? '' }}</h2>
+                    <h2 data-aos="fade-up" class="fw-bold" style="font-weight: 700 !important;">{{ $content['get_in_touch_heading'] ?? '' }}</h2>
                     <p data-aos="fade-up">{{ $content['get_in_touch_description'] ?? '' }}</p>
                 </div>
 
@@ -79,7 +80,8 @@
                             <label data-aos="fade-up" for="message" class="form-label">Message</label>
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
-                        <button data-aos="fade-up" type="submit" class="btn btn-primary banner-btn">{{ $content['get_in_touch_button_text'] ?? '' }}</button>
+                        <button data-aos="fade-up" type="submit" class="btn btn-primary banner-btn"
+                            style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_in_touch_button_text'] ?? '' }}</button>
                     </form>
                 </div>
             </div>
@@ -109,10 +111,10 @@
     </style>
     <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
         <div class="content-box text-white text-center p-5">
-            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
+            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white" style="font-weight: 700 !important;">{{ $content['get_started_heading'] ?? '' }}</h2>
             <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
             <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
-                class="btn btn-primary banner-btn">{{ $content['get_started_button_text'] ?? '' }}</a>
+                class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
         </div>
     </section>
 @endsection

@@ -12,7 +12,7 @@
             <h1 class="text-white " data-aos="fade-up">{{ $content['banner_section_heading'] ?? '' }}</h1>
             <p class="text-white" data-aos="fade-up">{{ $content['banner_section_description'] ?? '' }}</p>
             <a href="{{ $content['banner_section_button_url'] ?? '' }}"
-                class="btn btn-primary banner-btn" data-aos="fade-up"><b>{{ $content['banner_section_button_text'] ?? '' }}</b></a>
+                class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;" data-aos="fade-up"><b>{{ $content['banner_section_button_text'] ?? '' }}</b></a>
         </div>
     </div>
 
@@ -28,13 +28,13 @@
                 <!-- Content Box Overlapping -->
                 <div class="col-md-7 position-absolute top-50 end-0 translate-middle-y bg-white p-5 shadow"
                     style="z-index: 10;">
-                    <h3 class="mb-3 text-start bold"  data-aos="fade-up">{{ $content['transforming_homes_heading'] ?? '' }}</h3>
+                    <h3 class="mb-3 text-start bold" style="font-weight: 700 !important;"  data-aos="fade-up">{{ $content['transforming_homes_heading'] ?? '' }}</h3>
                     <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_1'] ?? '' }}</p>
                     <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_2'] ?? '' }}</p>
                     <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_3'] ?? '' }}</p>
                     <div class="text-start mt-4">
                         <a href="{{ $content['transforming_homes_button_url'] ?? '' }}"
-                            class="btn btn-primary banner-btn"  data-aos="fade-up">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
+                            class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;"  data-aos="fade-up">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
         <div class="container text-center">
             <div class="row d-flex justify-content-center">
                 <div class="col-7">
-                    <h2 class="mb-5 bold" data-aos="fade-up">{{ $content['interior_solutions_heading'] ?? '' }}</h2>
+                    <h2 class="mb-5 bold" style="font-weight: 700 !important;" data-aos="fade-up">{{ $content['interior_solutions_heading'] ?? '' }}</h2>
                     <p data-aos="fade-up">{{ $content['interior_solutions_description'] ?? '' }}.</p>
                 </div>
             </div>
@@ -73,7 +73,7 @@
             </div>
 
             <a  data-aos="fade-up" href="{{ $content['interior_solution_button_url'] ?? '' }}"
-                class="btn btn-primary mt-4 banner-btn bold">{{ $content['interior_solution_button_text'] ?? '' }}</a>
+                class="btn btn-primary mt-4 banner-btn bold"  style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['interior_solution_button_text'] ?? '' }}</a>
         </div>
     </section>
 
@@ -81,7 +81,7 @@
         <div class="container">
             <!-- Main Heading -->
             <div class="text-center mb-4">
-                <h2 class="text-white bold"  data-aos="fade-up">{{ $content['estimate_section_heading'] ?? '' }}</h2>
+                <h2 class="text-white bold"  style="font-weight: 700 !important;"  data-aos="fade-up">{{ $content['estimate_section_heading'] ?? '' }}</h2>
                 <p class="text-white"  data-aos="fade-up">{{ $content['estimate_section_description'] ?? '' }}</p>
             </div>
 
@@ -131,14 +131,14 @@
             <!-- Button at the End -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{{ $content['estimate_button_url'] ?? '' }}"
-                    class="btn btn-primary banner-btn">{{ $content['estimate_button_text'] ?? '' }}</a>
+                    class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['estimate_button_text'] ?? '' }}</a>
             </div>
         </div>
     </section>
 
     <div class="container">
         <section class="before-after-section py-5 text-center">
-            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold">{{ $content['before_after_heading'] ?? '' }}</h2>
+            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold" style="font-weight: 700 !important;">{{ $content['before_after_heading'] ?? '' }}</h2>
 
             <div class="image-compare-wrapper" aria-label="Before and After Image Slider">
                 <div class="image-layer image-before">
@@ -168,14 +168,14 @@
                                 <div>
                                 <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}
                                 </h6>
-                                <h1 data-aos="fade-up" class="fw-bold my-3 bold">{{ $content['trusted_main_heading'] ?? '' }}</h1>
+                                <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{{ $content['trusted_main_heading'] ?? '' }}</h1>
                                 <p data-aos="fade-up">{{ $content['trusted_description'] ?? '' }}</p>
                             </div>
                             </div>
                         </div>
                         <div class="col-7 ms-auto">
                             <div class="p-4 py-5 text-white" style="background-color: #001626; width: 60%;">
-                                <h5 data-aos="fade-up" class="mb-2 text-white bold">{{ $content['dark_box_heading'] ?? '' }}</h5>
+                                <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{{ $content['dark_box_heading'] ?? '' }}</h5>
                                 <p data-aos="fade-up" class="mb-1 text-white">{{ $content['dark_box_description'] ?? '' }}</p>
                                 <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{{ $content['dark_box_number'] ?? '' }}</h4>
                             </div>
@@ -196,7 +196,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center  text-center">
                 <div class="col-7">
-                    <h2 data-aos="fade-up" class="mb-5 bold">{{ $content['recent_projects_heading'] ?? '' }}</h2>
+                    <h2 data-aos="fade-up" class="mb-5 bold" style="font-weight: 700 !important;">{{ $content['recent_projects_heading'] ?? '' }}</h2>
                     <p data-aos="fade-up">{{ $content['recent_projects_description'] ?? '' }}</p>
                 </div>
             </div>
@@ -223,7 +223,7 @@
             <!-- Bottom Centered Button -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{{ $content['recent_projects_button_url'] ?? '' }}"
-                    class="btn btn-primary banner-btn">{{ $content['recent_projects_button_text'] ?? '' }}</a>
+                    class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['recent_projects_button_text'] ?? '' }}</a>
             </div>
         </div>
     </section>
@@ -254,7 +254,7 @@
             <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
             <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
             <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
-                class="btn btn-primary banner-btn">{{ $content['get_started_button_text'] ?? '' }}</a>
+                class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
         </div>
     </section>
 @endsection
