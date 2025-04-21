@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Project;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -110,5 +111,17 @@ class ProjectController extends Controller
         $project->delete();
 
         return response()->json(['message' => 'Project deleted successfully.']);
+    }
+
+    public function orderIndex()
+    {
+        $orders = Order::get();
+        return view('admin.order.index', compact('orders'));
+    }
+
+    public function orderView($id)
+    {
+        $order = Order::find($id);
+        return view('admin.order.view', compact('order'));
     }
 }

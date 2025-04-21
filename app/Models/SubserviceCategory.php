@@ -17,9 +17,5 @@ class SubserviceCategory extends Model
         return $this->belongsTo(ServiceCategory::class, 'service_category_id');
     }
 
-    // Define a one-to-many relationship with RemodelType
-    public function remodelTypes()
-    {
-        return $this->hasMany(RemodelType::class, 'subservice_id');
-    }
+
 }
