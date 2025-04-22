@@ -3,9 +3,13 @@
 @section('content')
 
 <style>
-    .services-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/spacejoy-9M66C_w_ToM-unsplash.png') }}');
-    }
+       .services-banner {
+            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/spacejoy-9M66C_w_ToM-unsplash.png') }}');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            /* Set a fixed height to avoid stretching */
+        }
 </style>
 
     <!-- Banner Section -->

@@ -3,11 +3,15 @@
 
 @section('content')
 
-<style>
-    .banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
-    }
-</style>
+    <style>
+        .banner {
+            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            /* Set a fixed height to avoid stretching */
+        }
+    </style>
 
     <!-- Banner Section -->
     <div class="banner banner text-center">
@@ -22,7 +26,8 @@
 
                 <!-- Left Column -->
                 <div class="col-md-8 mb-4">
-                    <img data-aos="fade-up" src="{{ asset('front/images/image (18).png') }}" alt="Main Project Image" class="img-fluid mb-3">
+                    <img data-aos="fade-up" src="{{ asset('front/images/image (18).png') }}" alt="Main Project Image"
+                        class="img-fluid mb-3">
                     <p data-aos="fade-up">{!! $project->description1 ?? '' !!}</p>
                 </div>
 
@@ -52,19 +57,22 @@
                     <div class="row">
                         @if ($project->image1)
                             <div class="col-md-6">
-                                <img data-aos="fade-up" src="{{ asset('storage/' . $project->image1) }}" class="img-fluid mb-3" alt="Project View 1">
+                                <img data-aos="fade-up" src="{{ asset('storage/' . $project->image1) }}"
+                                    class="img-fluid mb-3" alt="Project View 1">
                             </div>
                         @endif
 
                         @if ($project->image2)
                             <div class="col-md-6">
-                                <img data-aos="fade-up" src="{{ asset('storage/' . $project->image2) }}" class="img-fluid mb-3" alt="Project View 2">
+                                <img data-aos="fade-up" src="{{ asset('storage/' . $project->image2) }}"
+                                    class="img-fluid mb-3" alt="Project View 2">
                             </div>
                         @endif
 
                         @if ($project->image3)
                             <div class="col-md-12">
-                                <img data-aos="fade-up" src="{{ asset('storage/' . $project->image3) }}" class="img-fluid mb-3" alt="Project View 3">
+                                <img data-aos="fade-up" src="{{ asset('storage/' . $project->image3) }}"
+                                    class="img-fluid mb-3" alt="Project View 3">
                             </div>
                         @endif
                     </div>
@@ -73,6 +81,6 @@
             </div>
         </div>
     </section>
-{{-- 
+    {{-- 
     <x-get-started :content="$content"/> --}}
 @endsection

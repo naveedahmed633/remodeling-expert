@@ -2,14 +2,18 @@
 @section('title', 'Services | Remodeling Expert')
 @section('content')
 
-<style>
-    .classic-banner {
-        background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image (25).png') }}');
-    }
-</style>
+    <style>
+        .blog-banner {
+            background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            /* Set a fixed height to avoid stretching */
+        }
+    </style>
 
     <!-- Banner Section -->
-    <div class="classic-banner banner text-center">
+    <div class="blog-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
             <h1 data-aos="fade-up" class="text-white bold" style="font-weight: 700 !important;">{!! $content['banner_section_heading'] ?? '' !!}</h1>
         </div>
@@ -22,13 +26,15 @@
                     <div class="col-12">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <img data-aos="fade-up" src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image" class="img-fluid w-100">
+                                <img data-aos="fade-up" src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image"
+                                    class="img-fluid w-100">
                             </div>
                             <div class="col-md-6">
                                 <p data-aos="fade-up" class="mb-1" style="color: #2980b9;">
                                     <strong>{{ strtoupper(\Carbon\Carbon::parse($blog->created_at)->format('d/F/Y')) }}</strong>
                                 </p>
-                                <h5 data-aos="fade-up" class="fw-bold" style="font-weight: 700 !important;">{{ $blog->title }}</h5>
+                                <h5 data-aos="fade-up" class="fw-bold" style="font-weight: 700 !important;">
+                                    {{ $blog->title }}</h5>
                                 <p data-aos="fade-up">{{ Str::limit(strip_tags($blog->description), 300) }}</p>
                                 <a data-aos="fade-up" href="{{ route('blog.detail', $blog->id) }}"
                                     style="text-decoration: underline; color: #2980b9;">Read More</a>
@@ -63,10 +69,11 @@
     </style>
     <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
         <div class="content-box text-white text-center p-5">
-            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white" style="font-weight: 700 !important;">{!! $content['get_started_heading'] ?? '' !!}</h2>
+            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white" style="font-weight: 700 !important;">
+                {!! $content['get_started_heading'] ?? '' !!}</h2>
             <p data-aos="fade-up" class="mb-4">{!! $content['get_started_description'] ?? '' !!}</p>
-            <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}"
-                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
+            <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}" class="btn btn-primary custom-btn btn-14 banner-btn"
+                style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
         </div>
     </section>
 @endsection

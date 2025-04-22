@@ -3,8 +3,12 @@
 @section('content')
 
     <style>
-        .about-banner {
+         .about-banner {
             background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/todd-kent-178j8tJrNlc-unsplash.png') }}');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            /* Set a fixed height to avoid stretching */
         }
     </style>
     <!-- Banner Section -->
