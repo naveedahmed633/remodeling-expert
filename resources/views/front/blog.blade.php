@@ -37,7 +37,7 @@
                                     {{ $blog->title }}</h5>
                                 <p data-aos="fade-up">{{ Str::limit(strip_tags($blog->description), 300) }}</p>
                                 <a data-aos="fade-up" href="{{ route('blog.detail', $blog->id) }}"
-                                    style="text-decoration: underline; color: #2980b9;">Read More</a>
+                                    style="text-decoration: underline; color: #2fa8fa;">Read More</a>
                             </div>
                         </div>
                     </div>

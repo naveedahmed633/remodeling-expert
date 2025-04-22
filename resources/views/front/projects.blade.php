@@ -30,7 +30,7 @@
                             <h5>{{ $project->title }}</h5>
                             <p>{{ Str::limit(strip_tags($project->description), 40) ?: '' }}</p>
                             <a href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
-                                style="color: #2980b9;">
+                                style="color: #2fa8fa;">
                                 <b><i>VIEW PROJECT</i></b>
                             </a>
                         </div>

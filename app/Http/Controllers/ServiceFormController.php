@@ -22,6 +22,27 @@ class ServiceFormController extends Controller
         return view('admin.form.add');
     }
 
+    // In ServiceFormController
+
+public function getSubservices($service_id)
+{
+    $subservices = SubserviceCategory::where('service_category_id', $service_id)->get();
+    return response()->json($subservices);
+}
+
+public function getRemodelTypes($subservice_id)
+{
+    $remodelTypes = RemodelType::where('subservice_id', $subservice_id)->get();
+    return response()->json($remodelTypes);
+}
+
+public function getRequirements($remodel_type_id)
+{
+    $requirements = Requirement::where('remodel_type_id', $remodel_type_id)->get();
+    return response()->json($requirements);
+}
+
+
     public function store(Request $request)
     {
         try {
