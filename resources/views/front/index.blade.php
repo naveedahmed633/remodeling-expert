@@ -8,8 +8,8 @@
     </style>
     <!-- Banner Section -->
     <div class="home-banner banner text-center">
-        <div class="mx-auto" style="max-width: 700px;">
-            <h1 class="text-white " data-aos="fade-up">{{ $content['banner_section_heading'] ?? '' }}</h1>
+        <div class="mx-auto" style="max-width: 700px; font-family: Open Sans;">
+            <h1 class="text-white" data-aos="fade-up">{!! $content['banner_section_heading'] ?? '' !!}</h1>
             <p class="text-white" data-aos="fade-up">{{ $content['banner_section_description'] ?? '' }}</p>
             <a href="{{ $content['banner_section_button_url'] ?? '' }}"
                 class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;" data-aos="fade-up"><b>{{ $content['banner_section_button_text'] ?? '' }}</b></a>
@@ -91,7 +91,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
                         <img  data-aos="fade-up" src="{{ asset('front/images/Screenshot 2025-04-21 060645.png') }}" alt="Icon 1" class="mb-3"
-                            style="width: 50px; height: 50px;">
+                            style="width: 50px; height: 100%;">
                         <h5  data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_1'] ?? '' }}</h5>
                         <p  data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_1'] ?? '' }}</p>
                     </div>
@@ -101,7 +101,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
                         <img  data-aos="fade-up" src="{{  asset('front/images/flooring.png') }}" alt="Icon 2" class="mb-3"
-                            style="width: 50px; height: 50px;">
+                            style="width: 50px; height: 100%;">
                         <h5  data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_2'] ?? '' }}</h5>
                         <p  data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_2'] ?? '' }}</p>
                     </div>
@@ -111,7 +111,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
                         <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}" alt="Icon 3" class="mb-3"
-                            style="width: 50px; height: 50px;">
+                            style="width: 50px; height: 100%;">
                         <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_3'] ?? '' }}</h5>
                         <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_3'] ?? '' }}</p>
                     </div>
@@ -121,7 +121,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
                         <img data-aos="fade-up" src="{{ asset('front/images/door.png') }}" alt="Icon 4" class="mb-3"
-                            style="width: 50px; height: 50px;">
+                            style="width: 50px; height: 100%;">
                         <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_4'] ?? '' }}</h5>
                         <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_4'] ?? '' }}</p>
                     </div>
@@ -162,8 +162,8 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="bg-white d-flex p-5 shadow mt-5 " style="width: 100%;">
-                                <div data-aos="fade-up" class="fs-1 text-primary mb-3 px-4"><i
-                                        class="fas fa-quote-left fa-3x text-theme-color mb-3"></i>
+                                <div data-aos="fade-up" class="fs-1 text-primary mb-3 px-4">
+                                    <img src="{{ asset('front/images/“.png') }}" alt="">
                                 </div>
                                 <div>
                                 <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}

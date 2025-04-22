@@ -80,7 +80,7 @@
                             <label data-aos="fade-up" for="message" class="form-label">Message</label>
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
-                        <button data-aos="fade-up" type="submit" class="btn btn-primary banner-btn"
+                        <button data-aos="fade-up" type="submit" class="btn btn-primary custom-btn btn-14 banner-btn"
                             style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_in_touch_button_text'] ?? '' }}</button>
                     </form>
                 </div>
@@ -114,7 +114,7 @@
             <h2 data-aos="fade-up" class="fw-bold mb-3 text-white" style="font-weight: 700 !important;">{{ $content['get_started_heading'] ?? '' }}</h2>
             <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
             <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
-                class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
+                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
         </div>
     </section>
 @endsection

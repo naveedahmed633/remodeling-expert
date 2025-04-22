@@ -44,13 +44,13 @@
             <!-- Center Logo on large screen | Right Logo on small -->
             <div class="position-absolute start-50 translate-middle-x text-center d-none d-lg-block">
                 <a class="navbar-brand d-block" href="/">
-                    <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" style="width: 40px; height: 40px;">
+                    <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo"  class="my-2" style="width: 40px; height: 40px;">
                     <div class="text-white small fw-bold">TOTAL UPGRADE</div>
                     <div class="text-white small fw-thin">REMODELING EXPERT</div>
                 </a>
             </div>
             <a class="navbar-brand ms-auto d-lg-none text-center" href="/">
-                <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" style="width: 30px; height: 30px;">
+                <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" class="my-2" style="width: 30px; height: 30px;">
                 <div class="text-white small fw-bold">TOTAL UPGRADE</div>
                 <div class="text-white small fw-thin">REMODELING EXPERT</div>
             </a>

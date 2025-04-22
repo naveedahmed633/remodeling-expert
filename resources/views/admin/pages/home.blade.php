@@ -54,7 +54,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="banner_section_heading">Banner Section Heading</label>
-                                                <input type="text" class="form-control form__field"
+                                                <input type="text"  class="form-control form__field"
                                                     name="banner_section_heading" placeholder="Enter Banner Section Heading"
                                                     value="{{ old('banner_section_heading', $content['banner_section_heading'] ?? '') }}">
                                                 <small class="text-danger">
@@ -136,7 +136,7 @@
                                             <div class="form-group">
                                                 <label for="transforming_homes_heading">Section Heading</label>
                                                 <input type="text" class="form-control form__field"
-                                                    name="transforming_homes_heading" placeholder="Enter Section Heading"
+                                                    name="transforming_homes_heading"placeholder="Enter Section Heading"
                                                     value="{{ old('transforming_homes_heading', $content['transforming_homes_heading'] ?? '') }}">
                                                 <small class="text-danger">
                                                     @error('transforming_homes_heading')
@@ -794,4 +794,19 @@
             </div>
         </form>
     </div>
+        <!-- include summernote css/js -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    
+        <script>
+            $(document).ready(function() {
+                $('#summernote').summernote({
+                    height: 200
+                });
+    
+                $('form').on('submit', function() {
+                    $('#summernote').val($('#summernote').summernote('code'));
+                });
+            });
+        </script>
 @endsection

@@ -66,8 +66,8 @@
                         <div class="row">
                             <div class="col-7">
                                 <div class="bg-white d-flex p-5 shadow mt-5 " style="width: 100%;">
-                                    <div data-aos="fade-up" class="fs-1 text-primary mb-3 px-4"><i
-                                            class="fas fa-quote-left fa-3x text-theme-color mb-3"></i>
+                                    <div data-aos="fade-up" class="fs-1 text-primary mb-3 px-4">
+                                        <img src="{{ asset('front/images/“.png') }}" alt="">
                                     </div>
                                     <div>
                                     <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}

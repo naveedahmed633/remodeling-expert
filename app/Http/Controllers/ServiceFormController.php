@@ -13,7 +13,7 @@ class ServiceFormController extends Controller
     public function index()
     {
         // Eager load the sub-services, remodel types, and their requirements
-        $services = ServiceCategory::with('subChildCategory.remodelTypes.requirements')->get();
+        $services = ServiceCategory::with('subServices.remodelTypes.requirements')->get();
         return view('admin.form.index', compact('services'));
     }
 
@@ -45,7 +45,7 @@ class ServiceFormController extends Controller
         if ($request->has('sub_services')) {
             foreach ($request->sub_services as $sub_service) {
                 // Create Subservice
-                $subService = $service->subChildCategory()->create([
+                $subService = $service->subServices()->create([
                     'name' => $sub_service['name'],
                     'service_category_id' => $service->id, // Ensure service_category_id is set
                 ]);
@@ -72,7 +72,7 @@ class ServiceFormController extends Controller
     public function edit($id)
     {
         // Load the service with sub-services, remodel types, and their requirements
-        $service = ServiceCategory::with('subChildCategory.remodelTypes.requirements')->findOrFail($id);
+        $service = ServiceCategory::with('subServices.remodelTypes.requirements')->findOrFail($id);
         return view('admin.form.add', compact('service'));
     }
 
@@ -98,7 +98,7 @@ class ServiceFormController extends Controller
         $service->update(['name' => $request->serviceName]);
 
         // Delete existing sub-services and remodel types
-        $service->subChildCategory->each(function ($subService) {
+        $service->subServices->each(function ($subService) {
             $subService->remodelTypes->each(function ($remodel) {
                 $remodel->requirements()->delete();  // Delete requirements related to remodel types
             });
@@ -108,7 +108,7 @@ class ServiceFormController extends Controller
         // Add new sub-services and remodel types
         if ($request->has('sub_services')) {
             foreach ($request->sub_services as $sub_service) {
-                $subService = $service->subChildCategory()->create([
+                $subService = $service->subServices()->create([
                     'name' => $sub_service['name'],
                     'service_category_id' => $service->id,  // Ensure service_category_id is set
                 ]);
@@ -136,7 +136,7 @@ class ServiceFormController extends Controller
         $service = ServiceCategory::findOrFail($id);
 
         // Delete related sub-services and remodel types
-        $service->subChildCategory->each(function ($subService) {
+        $service->subServices->each(function ($subService) {
             $subService->remodelTypes->each(function ($remodel) {
                 $remodel->requirements()->delete();  // Delete requirements related to remodel types
             });

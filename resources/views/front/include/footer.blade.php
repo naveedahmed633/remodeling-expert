@@ -60,7 +60,8 @@
                     <div class="col-12 col-lg-4 mb-4">
                         <h5 class="text-white" data-aos="zoom-out-up">Contact Us</h5>
                         <ul class="list-unstyled contact" data-aos="zoom-out-up" style="line-height: 35px;">
-                            <li><a class="text-white">📞 (123) 456-7890</a></li>
+                            <li><a class="text-white"><i class="fas fa-phone" style="color: gray;"></i>
+                                (123) 456-7890</a></li>
                             <li><a class="text-white">📧 info@remodelingexperts.com</a></li>
                             <li><a class="text-white">📍 1234 Remodeling Lane, New York, NY 10001</a></li>
                         </ul>
@@ -92,9 +93,13 @@
 <script src="{{ asset('front/js/aos.js') }}"></script>
 @stack('script')
 <script>
-    AOS.init({
-        easing: 'ease-in-out-sine'
-    });
+   AOS.init({
+  offset: 20, // Trigger animation 120px pehle
+  duration: 800,
+  easing: 'ease-in-out',
+  delay: 100,
+});
+
 </script>
 </body>
 </html>

@@ -57,7 +57,7 @@
                                 <p>Projects</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('admin.form.services.index') }}" class="nav-link {{ request()->is('admin/services*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Service Category</p>
@@ -87,7 +87,7 @@
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Order Listing</p>
                             </a>
-                        </li>
+                        </li> --}}
 
                         <!--  CMS-Section -->
                         <div style="border-top: 1px solid #ddd; padding-top: 10px; padding-bottom: 50px;">
@@ -143,13 +143,13 @@
                                             <p>Blog</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('admin.pages.edit', ['slug' => 'stepform']) }}"
                                             class="nav-link {{ request()->is('admin/cms/pages/step-form/edit') ? 'active' : '' }}">
                                             <i class="fas fa-eject nav-icon"></i>
                                             <p>Step Form</p>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     {{-- <li class="nav-item">
                                         <a href="{{ route('admin.pages.edit', ['slug' => 'privacy_policy']) }}"
                                             class="nav-link {{ request()->is('admin/cms/pages/privacy/edit') ? 'active' : '' }}">
