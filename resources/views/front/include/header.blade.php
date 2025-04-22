@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="{{ asset('front/images/logo_1.png') }}">
 
     <link href="{{ asset('front/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/css/style.css') }}?v={{ time() }}" rel="stylesheet">
     <link href="{{ asset('front/css/aos.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
