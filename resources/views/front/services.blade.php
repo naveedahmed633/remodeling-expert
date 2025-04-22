@@ -54,7 +54,7 @@
                             <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
                                 <h5>{{ $service->title }}</h5>
                                 <p>{{ Str::limit(strip_tags($service->description), 40) ? : '' }}</p>
-                                <a href="{{ route('service.detail', $service->id) }}" class="btn btn-sm" style="color: #2980b9;"><b><i>Read More</i></b></a>
+                                <a href="{{ route('service.detail', $service->id) }}" class="btn btn-sm" style="color: #2fa8fa;"><b><i>Read More</i></b></a>
                             </div>
                         </div>
                     </div>

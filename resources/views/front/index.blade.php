@@ -222,7 +222,7 @@
                                 <h5 data-aos="fade-up">{{ $project->title }}</h5>
                                 <p data-aos="fade-up">{{ Str::limit(strip_tags($project->description), 40) ?: '' }}</p>
                                 <a data-aos="fade-up" href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
-                                    style="color: #2fa8fc;">
+                                    style="color: #2fa8fa;">
                                     <b><i>VIEW PROJECT</i></b>
                                 </a>
                             </div>
