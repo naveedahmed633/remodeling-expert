@@ -128,15 +128,15 @@
                                         @include('partials.logo-social')
                                         <h3 class="fw-bold">Step 5: Contact & Final Details</h3>
 
-                                        <input type="text" name="name" class="form-control border-0 border-bottom mb-3"
+                                        <input type="text" name="name" class="form-control border-0 border-bottom mb-3" required
                                                placeholder="Name*" style="background-color: transparent;">
                                         <input type="number" name="phone"
-                                               class="form-control border-0 border-bottom mb-3" placeholder="Phone*"
+                                               class="form-control border-0 border-bottom mb-3" placeholder="Phone*" required
                                                style="background-color: transparent;">
                                         <input type="email" name="email"
-                                               class="form-control border-0 border-bottom mb-3" placeholder="Email*"
+                                               class="form-control border-0 border-bottom mb-3" placeholder="Email*" required
                                                style="background-color: transparent;">
-                                        <textarea name="message" class="form-control border-0 border-bottom mb-3"
+                                        <textarea name="message" class="form-control border-0 border-bottom mb-3" required
                                                   placeholder="Message"
                                                   style="background-color: transparent;"></textarea>
                                     </div>
