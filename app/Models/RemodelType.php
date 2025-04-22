@@ -12,7 +12,7 @@ class RemodelType extends Model
     protected $fillable = ['subservice_id', 'name'];
 
     // Define the inverse relationship to SubserviceCategory
-    public function subservice()
+    public function subChildCategory()
     {
         return $this->belongsTo(SubserviceCategory::class, 'subservice_id');
     }

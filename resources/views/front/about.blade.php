@@ -32,7 +32,7 @@
                     <p data-aos="fade-up" class="text-start">{{ $content['transforming_homes_desc_3'] ?? '' }}</p>
                     <div class="text-start mt-4">
                         <a data-aos="fade-up" href="{{ $content['transforming_homes_button_url'] ?? '' }}"
-                            class="btn btn-primary  bold banner-btn" style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
+                            class="btn btn-primary custom-btn btn-14 bold banner-btn" style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
             <!-- Button at the End -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{{ $content['estimate_button_url'] ?? '' }}"
-                    class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['estimate_button_text'] ?? '' }}</a>
+                    class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['estimate_button_text'] ?? '' }}</a>
             </div>
         </div>
     </section>

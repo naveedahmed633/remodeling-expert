@@ -33,7 +33,7 @@
                     <p data-aos="fade-up" class="text-start">{{ $content['transforming_homes_desc_3'] ?? '' }}</p>
                     <div class="text-start mt-4">
                         <a data-aos="fade-up" href="{{ $content['transforming_homes_button_url'] ?? '' }}"
-                            class="btn btn-primary  bold banner-btn" style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
+                            class="btn custom-btn btn-14 btn-primary  bold banner-btn" style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 @foreach($services as $service)
                     <div class="col-lg-4 mb-4 height-335">
                         <div class="position-relative">
-                            <img src="{{ asset('storage/' . $service->image) }}" class="img-fluid w-100" style="height: 200px; background-position: center; background-size: cover;"
+                            <img src="{{ asset('storage/' . $service->image) }}" class="img-fluid w-100"
                             alt="{{ $service->title }}">
                             <div class="overlay-box bg-white p-3 position-absolute bottom-minus">
                                 <h5>{{ $service->title }}</h5>

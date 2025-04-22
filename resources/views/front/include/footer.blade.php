@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row">
             <!-- First Section: Logo and Description -->
-            <div class="col-md-3 mt-4">
+            <div class="col-lg-3 mt-4">
                 <div class="navbar-brand text-start" style="white-space: normal;">
                     <div class="d-flex justify-content-start align-items-center my-3">
-                        <img data-aos="zoom-out-up" src="{{ asset('front/images/logo_1.png') }}" alt="Logo"
+                        <img data-aos="zoom-out-up" src="{{ asset('front/images/Vector.png') }}" alt="Logo"
                              class="mb-2 mr-3">
                         <div data-aos="zoom-out-up">
                             <span class="font-weight-bold">TOTAL UPGRADE</span>
@@ -14,7 +14,7 @@
                         </div>
                     </div>
 
-                    <p data-aos="zoom-out-up" class="mb-3">At Remodelling Experts, we bring innovation, precision, and
+                    <p data-aos="zoom-out-up" class="mb-3 fw-light font-weight-light text-white">At Remodelling Experts, we bring innovation, precision, and
                         quality to every
                         remodeling project. With years of experience, our team specializes in creating stunning,
                         functional spaces that enhance your home’s beauty and value.</p>
@@ -28,22 +28,22 @@
             </div>
 
             <!-- Second Section: Quick Links, Our Services, and Contact Us in One Line -->
-            <div class="col-12 col-md-9 mt-4">
+            <div class="col-12 col-lg-9 mt-4">
                 <div class="d-flex flex-wrap justify-content-between">
                     <!-- Quick Links -->
-                    <div class="col-12 col-md-3 mb-4">
-                        <h5 class="text-white" data-aos="zoom-out-up">Quick Links</h5>
+                    <div class="col-12 col-lg-2 mb-4">
+                        <h5 class="text-white fw-light" data-aos="zoom-out-up">Quick Links</h5>
                         <ul class="list-unstyled" data-aos="zoom-out-up" style="line-height: 35px;">
-                            <li><a href="{{ route('index') }}" class="text-white">Home</a></li>
-                            <li><a href="{{ route('about') }}" class="text-white">About Us</a></li>
-                            <li><a href="{{ route('services') }}" class="text-white">Services</a></li>
-                            <li><a href="{{ route('contact') }}" class="text-white">Contact</a></li>
-                            <li><a href="{{ route('blog') }}" class="text-white">Blog</a></li>
+                            <li><a href="{{ route('index') }}" class="text-white font-weight-light">Home</a></li>
+                            <li><a href="{{ route('about') }}" class="text-white font-weight-light">About Us</a></li>
+                            <li><a href="{{ route('services') }}" class="text-white font-weight-light">Services</a></li>
+                            <li><a href="{{ route('contact') }}" class="text-white font-weight-light">Contact</a></li>
+                            <li><a href="{{ route('blog') }}" class="text-white font-weight-light">Blog</a></li>
                         </ul>
                     </div>
 
                     <!-- Our Services -->
-                    <div class="col-12 col-md-3 mb-4">
+                    <div class="col-12 col-lg-2 mb-4">
                         <h5 class="text-white" data-aos="zoom-out-up">Our Services</h5>
                         <ul class="list-unstyled" data-aos="zoom-out-up" style="line-height: 35px;">
                             @foreach ($services->take(5) as $service)
@@ -57,9 +57,9 @@
                     </div>
 
                     <!-- Contact Us -->
-                    <div class="col-12 col-md-3 mb-4">
+                    <div class="col-12 col-lg-4 mb-4">
                         <h5 class="text-white" data-aos="zoom-out-up">Contact Us</h5>
-                        <ul class="list-unstyled" data-aos="zoom-out-up" style="line-height: 35px;">
+                        <ul class="list-unstyled contact" data-aos="zoom-out-up" style="line-height: 35px;">
                             <li><a class="text-white">📞 (123) 456-7890</a></li>
                             <li><a class="text-white">📧 info@remodelingexperts.com</a></li>
                             <li><a class="text-white">📍 1234 Remodeling Lane, New York, NY 10001</a></li>

@@ -12,7 +12,7 @@
             <h1 class="text-white " data-aos="fade-up">{{ $content['banner_section_heading'] ?? '' }}</h1>
             <p class="text-white" data-aos="fade-up">{{ $content['banner_section_description'] ?? '' }}</p>
             <a href="{{ $content['banner_section_button_url'] ?? '' }}"
-                class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;" data-aos="fade-up"><b>{{ $content['banner_section_button_text'] ?? '' }}</b></a>
+                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;" data-aos="fade-up"><b>{{ $content['banner_section_button_text'] ?? '' }}</b></a>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
                     <p class="text-start" data-aos="fade-up">{{ $content['transforming_homes_desc_3'] ?? '' }}</p>
                     <div class="text-start mt-4">
                         <a href="{{ $content['transforming_homes_button_url'] ?? '' }}"
-                            class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;"  data-aos="fade-up">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
+                            class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;"  data-aos="fade-up">{{ $content['transforming_homes_button_text'] ?? '' }}</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
             </div>
 
             <a  data-aos="fade-up" href="{{ $content['interior_solution_button_url'] ?? '' }}"
-                class="btn btn-primary mt-4 banner-btn bold"  style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['interior_solution_button_text'] ?? '' }}</a>
+                class="btn btn-primary custom-btn btn-14 mt-4 banner-btn bold"  style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['interior_solution_button_text'] ?? '' }}</a>
         </div>
     </section>
 
@@ -131,7 +131,7 @@
             <!-- Button at the End -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{{ $content['estimate_button_url'] ?? '' }}"
-                    class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['estimate_button_text'] ?? '' }}</a>
+                    class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['estimate_button_text'] ?? '' }}</a>
             </div>
         </div>
     </section>
@@ -223,7 +223,7 @@
             <!-- Bottom Centered Button -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{{ $content['recent_projects_button_url'] ?? '' }}"
-                    class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['recent_projects_button_text'] ?? '' }}</a>
+                    class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['recent_projects_button_text'] ?? '' }}</a>
             </div>
         </div>
     </section>
@@ -254,7 +254,7 @@
             <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
             <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
             <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
-                class="btn btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
+                class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
         </div>
     </section>
 @endsection

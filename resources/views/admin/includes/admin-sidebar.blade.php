@@ -58,9 +58,27 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.form.index') }}" class="nav-link {{ request()->is('admin/stepform*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.form.services.index') }}" class="nav-link {{ request()->is('admin/services*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-users"></i>
-                                <p>Step Form</p>
+                                <p>Service Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.subservice.category.index') }}" class="nav-link {{ request()->is('admin/subservice-category*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Subservice Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.remodel.type.index') }}" class="nav-link {{ request()->is('admin/remodel-type*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Remodel Type</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.requirement.index') }}" class="nav-link {{ request()->is('admin/requirement*') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>Requirement</p>
                             </a>
                         </li>
                         <li class="nav-item">

@@ -12,7 +12,7 @@ class Service extends Model
 
     protected $fillable = ['title', 'description', 'image'];
 
-    public function subCategory()
+    public function serviceCategory()
     {
         return $this->hasMany(ServiceCategory::class, 'services_id', 'id');
     }

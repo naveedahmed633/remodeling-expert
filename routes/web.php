@@ -8,8 +8,12 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CmsPagesController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RemodelTypeController;
+use App\Http\Controllers\RequirementController;
+use App\Http\Controllers\ServiceCategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceFormController;
+use App\Http\Controllers\SubserviceCategoryController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\TrainerController;
 use App\Models\Service;
@@ -88,13 +92,39 @@ Route::middleware('CheckAdmin')->prefix('admin/')->name('admin.')->group(functio
     Route::put('/project/{id}', [ProjectController::class, 'update'])->name('project.update');
     Route::delete('/project/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
 
-    // Project Crud Routes
-    Route::get('/form', [ServiceFormController::class, 'index'])->name('form.index');
-    Route::get('/form/create', [ServiceFormController::class, 'create'])->name('form.create');
-    Route::post('/form', [ServiceFormController::class, 'store'])->name('form.store');
-    Route::get('/form/{id}/edit', [ServiceFormController::class, 'edit'])->name('form.edit');
-    Route::put('/form/{id}', [ServiceFormController::class, 'update'])->name('form.update');
-    Route::delete('/form/{id}', [ServiceFormController::class, 'destroy'])->name('form.destroy');
+    // ServiceCategory Crud Routes
+    Route::get('/form-services', [ServiceCategoryController::class, 'index'])->name('form.services.index');
+    Route::get('/form-services/create', [ServiceCategoryController::class, 'create'])->name('form.services.create');
+    Route::post('/form-services', [ServiceCategoryController::class, 'store'])->name('form.services.store');
+    Route::get('/form-services/{id}/edit', [ServiceCategoryController::class, 'edit'])->name('form.services.edit');
+    Route::put('/form-services/{id}', [ServiceCategoryController::class, 'update'])->name('form.services.update');
+    Route::delete('/form-services/{id}', [ServiceCategoryController::class, 'destroy'])->name('form.services.destroy');
+
+    // SubserviceCategoryC Crud Routes
+    Route::get('/subservice-category', [SubserviceCategoryController::class, 'index'])->name('subservice.category.index');
+    Route::get('/subservice-category/create', [SubserviceCategoryController::class, 'create'])->name('subservice.category.create');
+    Route::post('/subservice-category', [SubserviceCategoryController::class, 'store'])->name('subservice.category.store');
+    Route::get('/subservice-category/{id}/edit', [SubserviceCategoryController::class, 'edit'])->name('subservice.category.edit');
+    Route::put('/subservice-category/{id}', [SubserviceCategoryController::class, 'update'])->name('subservice.category.update');
+    Route::delete('/subservice-category/{id}', [SubserviceCategoryController::class, 'destroy'])->name('subservice.category.destroy');
+
+    Route::get('/service/{id}/subservices', [SubserviceCategoryController::class, 'getSubServices']);
+
+    // RemodelType Crud Routes
+    Route::get('/remodel-type', [RemodelTypeController::class, 'index'])->name('remodel.type.index');
+    Route::get('/remodel-type/create', [RemodelTypeController::class, 'create'])->name('remodel.type.create');
+    Route::post('/remodel-type', [RemodelTypeController::class, 'store'])->name('remodel.type.store');
+    Route::get('/remodel-type/{id}/edit', [RemodelTypeController::class, 'edit'])->name('remodel.type.edit');
+    Route::put('/remodel-type/{id}', [RemodelTypeController::class, 'update'])->name('remodel.type.update');
+    Route::delete('/remodel-type/{id}', [RemodelTypeController::class, 'destroy'])->name('remodel.type.destroy');
+
+    // RequirementController Crud Routes
+    Route::get('/requirement', [RequirementController::class, 'index'])->name('requirement.index');
+    Route::get('/requirement/create', [RequirementController::class, 'create'])->name('requirement.create');
+    Route::post('/requirement', [RequirementController::class, 'store'])->name('requirement.store');
+    Route::get('/requirement/{id}/edit', [RequirementController::class, 'edit'])->name('requirement.edit');
+    Route::put('/requirement/{id}', [RequirementController::class, 'update'])->name('requirement.update');
+    Route::delete('/requirement/{id}', [RequirementController::class, 'destroy'])->name('requirement.destroy');
 
     // BLOG Crud Routes
     Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
