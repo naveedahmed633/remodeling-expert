@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\CmsPage;
 use App\Models\Project;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -52,7 +53,10 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $projects = Project::all();
         $services = Service::all();
-        return view('front.detailed-project', compact('project', 'projects', 'services'));
+        
+        $data = CmsPage::where('name', 'Project')->first();
+        $content = $data ? json_decode($data->content, true) : [];
+        return view('front.detailed-project', compact('project', 'projects', 'services',"data","content"));
     }
 
     public function edit($id)

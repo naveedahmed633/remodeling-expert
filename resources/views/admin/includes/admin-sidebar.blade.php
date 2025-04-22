@@ -58,13 +58,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.form.index') }}" class="nav-link {{ request()->is('admin/project*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.form.index') }}" class="nav-link {{ request()->is('admin/stepform*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Step Form</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.order.index') }}" class="nav-link {{ request()->is('admin/project*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.project.index') }}" class="nav-link {{ request()->is('admin/order*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Order Listing</p>
                             </a>
