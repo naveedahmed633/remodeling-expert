@@ -6,14 +6,16 @@
             <div class="col-md-3 mt-4">
                 <div class="navbar-brand text-start" style="white-space: normal;">
                     <div class="d-flex justify-content-start align-items-center my-3">
-                        <img data-aos="zoom-out-up" src="{{ asset('front/images/logo_1.png') }}" alt="Logo" class="mb-2 mr-3">
+                        <img data-aos="zoom-out-up" src="{{ asset('front/images/logo_1.png') }}" alt="Logo"
+                             class="mb-2 mr-3">
                         <div data-aos="zoom-out-up">
                             <span class="font-weight-bold">TOTAL UPGRADE</span>
                             <span class="font-weight-light">REMODELING EXPERT</span>
                         </div>
                     </div>
 
-                    <p data-aos="zoom-out-up" class="mb-3">At Remodelling Experts, we bring innovation, precision, and quality to every
+                    <p data-aos="zoom-out-up" class="mb-3">At Remodelling Experts, we bring innovation, precision, and
+                        quality to every
                         remodeling project. With years of experience, our team specializes in creating stunning,
                         functional spaces that enhance your home’s beauty and value.</p>
                     <!-- Social Media Icons -->
@@ -88,6 +90,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('front/js/script.js') }}"></script>
 <script src="{{ asset('front/js/aos.js') }}"></script>
+@stack('script')
 <script>
     AOS.init({
         easing: 'ease-in-out-sine'
