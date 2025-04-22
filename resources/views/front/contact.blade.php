@@ -109,12 +109,12 @@
             /* border-radius: 10px; */
         }
     </style>
-    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
-        <div class="content-box text-white text-center p-5">
-            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white" style="font-weight: 700 !important;">{{ $content['get_started_heading'] ?? '' }}</h2>
-            <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
-            <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
-                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
-        </div>
-    </section>
+   <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
+    <div class="content-box text-white text-center p-5">
+        <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
+        <p data-aos="fade-up" class="mb-4 text-white">{{ $content['get_started_description'] ?? '' }}</p>
+        <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
+            class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
+    </div>
+</section>
 @endsection

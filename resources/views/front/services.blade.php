@@ -72,13 +72,13 @@
                                     <div>
                                     <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}
                                     </h6>
-                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold"  style="font-weight: 700 !important;">{{ $content['trusted_main_heading'] ?? '' }}</h1>
+                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{{ $content['trusted_main_heading'] ?? '' }}</h1>
                                     <p data-aos="fade-up">{{ $content['trusted_description'] ?? '' }}</p>
                                 </div>
                                 </div>
                             </div>
                             <div class="col-7 ms-auto">
-                                <div class="p-4 py-5 text-white" style="background-color: #001626; width: 60%;">
+                                <div class="p-4 py-5 text-white" style="background-color: #001626; width: 50%; ">
                                     <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{{ $content['dark_box_heading'] ?? '' }}</h5>
                                     <p data-aos="fade-up" class="mb-1 text-white">{{ $content['dark_box_description'] ?? '' }}</p>
                                     <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{{ $content['dark_box_number'] ?? '' }}</h4>
@@ -90,7 +90,7 @@
             </div>
     
             <!-- Image outside container and full height -->
-            <div class="position-absolute top-0 end-0 h-100" style="width: 50%; z-index: 0;">
+            <div class="position-absolute top-0 end-0 h-100" style="width: 65%; z-index: 0;">
                 <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}" alt="Image"
                     class="w-100 h-100 object-fit-cover">
             </div>

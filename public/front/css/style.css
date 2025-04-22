@@ -11,6 +11,11 @@ body p{
   color: #000000;
 }
 
+.text-small{
+  font-size: 14px;
+  color: #d3d3d3 !important;
+}
+
 .banner{
     background-size: cover;
     background-position: center;
@@ -234,9 +239,9 @@ footer ul.contact .text-white:hover{
   transition: all 0.3s ease !important;
   position: relative !important;
   display: inline-block !important;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   /* box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
    7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1) !important;
+   4px 4px 5px 0px rgba(0,0,0,.1) !important; */
   outline: none !important;
 }
 .btn-14:hover {

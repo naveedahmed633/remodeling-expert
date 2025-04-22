@@ -128,19 +128,14 @@
 
     <div class="container">
         <section class="before-after-section py-5 text-center">
-            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold" style="font-weight: 700 !important;">
-                {{ $content['before_after_heading'] ?? '' }}</h2>
+            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold" style="font-weight: 700 !important;">{{ $content['before_after_heading'] ?? '' }}</h2>
 
             <div class="image-compare-wrapper" aria-label="Before and After Image Slider">
                 <div class="image-layer image-before">
-                    <img data-aos="fade-up"
-                        src="{{ $data?->getFirstMediaUrl('before_image') ?: asset('front/images/spacious-reconfigured-kitchen-remodel-naples-fl-before-2-1.jpg') }}"
-                        alt="Before Image">
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('before_image') ?: asset('front/images/spacious-reconfigured-kitchen-remodel-naples-fl-before-2-1.jpg') }}" alt="Before Image">
                 </div>
                 <div class="image-layer image-after">
-                    <img data-aos="fade-up"
-                        src="{{ $data?->getFirstMediaUrl('after_image') ?: asset('front/images/after.jpg') }}"
-                        alt="After Image">
+                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('after_image') ?: asset('front/images/after.jpg') }}" alt="After Image">
                 </div>
                 <div class="divider-line" id="dividerLine"></div>
                 <input type="range" min="0" max="100" value="50" id="imageSlider"
@@ -149,6 +144,7 @@
         </section>
     </div>
 
+    
     <section class="position-relative py-5 mb-5">
         <div class="container position-relative z-2">
             <div class="row  position-relative">
@@ -161,24 +157,18 @@
                                     <img src="{{ asset('front/images/“.png') }}" alt="">
                                 </div>
                                 <div>
-                                    <h6 data-aos="fade-up" class="text-uppercase text-theme-color">
-                                        {{ $content['trusted_small_heading'] ?? '' }}
-                                    </h6>
-                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold"
-                                        style="font-weight: 700 !important;">{{ $content['trusted_main_heading'] ?? '' }}
-                                    </h1>
-                                    <p data-aos="fade-up">{{ $content['trusted_description'] ?? '' }}</p>
-                                </div>
+                                <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}
+                                </h6>
+                                <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{{ $content['trusted_main_heading'] ?? '' }}</h1>
+                                <p data-aos="fade-up">{{ $content['trusted_description'] ?? '' }}</p>
+                            </div>
                             </div>
                         </div>
                         <div class="col-7 ms-auto">
-                            <div class="p-4 py-5 text-white" style="background-color: #001626; width: 60%;">
-                                <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">
-                                    {{ $content['dark_box_heading'] ?? '' }}</h5>
-                                <p data-aos="fade-up" class="mb-1 text-white">
-                                    {{ $content['dark_box_description'] ?? '' }}</p>
-                                <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">
-                                    {{ $content['dark_box_number'] ?? '' }}</h4>
+                            <div class="p-4 py-5 text-white" style="background-color: #001626; width: 50%; ">
+                                <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{{ $content['dark_box_heading'] ?? '' }}</h5>
+                                <p data-aos="fade-up" class="mb-1 text-white">{{ $content['dark_box_description'] ?? '' }}</p>
+                                <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{{ $content['dark_box_number'] ?? '' }}</h4>
                             </div>
                         </div>
                     </div>
@@ -187,10 +177,9 @@
         </div>
 
         <!-- Image outside container and full height -->
-        <div class="position-absolute top-0 end-0 h-100" style="width: 50%; z-index: 0;">
-            <img data-aos="fade-up"
-                src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}"
-                alt="Image" class="w-100 h-100 object-fit-cover">
+        <div class="position-absolute top-0 end-0 h-100" style="width: 65%; z-index: 0;">
+            <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}" alt="Image"
+                class="w-100 h-100 object-fit-cover">
         </div>
     </section>
 @endsection

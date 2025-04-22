@@ -44,9 +44,9 @@
     <section class="py-5">
         <div class="container text-center">
             <div class="row d-flex justify-content-center">
-                <div class="col-7">
-                    <h2 class="mb-5 bold" style="font-weight: 700 !important;" data-aos="fade-up">{{ $content['interior_solutions_heading'] ?? '' }}</h2>
-                    <p data-aos="fade-up">{{ $content['interior_solutions_description'] ?? '' }}.</p>
+                <div class="col-9">
+                    <h2 class="bold" style="font-weight: 700 !important;" data-aos="fade-up">{!! $content['interior_solutions_heading'] ?? '' !!}</h2>
+                    <p data-aos="fade-up">{!! $content['interior_solutions_description'] ?? '' !!}.</p>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -82,13 +82,13 @@
             <!-- Main Heading -->
             <div class="text-center mb-4">
                 <h2 class="text-white bold" style="font-weight: 700 !important;" data-aos="fade-up">{{ $content['estimate_section_heading'] ?? '' }}</h2>
-                <p class="text-white" data-aos="fade-up">{{ $content['estimate_section_description'] ?? '' }}</p>
+                <p class="text-white text-small" data-aos="fade-up">{{ $content['estimate_section_description'] ?? '' }}</p>
             </div>
     
             <!-- Sub-sections -->
-            <div class="row text-center p-5">
+            <div class="row text-center">
                 <!-- Sub-section 1 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/Screenshot 2025-04-21 060645.png') }}" alt="Icon 1"
@@ -100,7 +100,7 @@
                 </div>
     
                 <!-- Sub-section 2 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/flooring.png') }}" alt="Icon 2"
@@ -112,7 +112,7 @@
                 </div>
     
                 <!-- Sub-section 3 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}" alt="Icon 3"
@@ -124,7 +124,7 @@
                 </div>
     
                 <!-- Sub-section 4 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/door.png') }}" alt="Icon 4"
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                         <div class="col-7 ms-auto">
-                            <div class="p-4 py-5 text-white" style="background-color: #001626; width: 60%;">
+                            <div class="p-4 py-5 text-white" style="background-color: #001626; width: 50%; ">
                                 <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{{ $content['dark_box_heading'] ?? '' }}</h5>
                                 <p data-aos="fade-up" class="mb-1 text-white">{{ $content['dark_box_description'] ?? '' }}</p>
                                 <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{{ $content['dark_box_number'] ?? '' }}</h4>
@@ -198,7 +198,7 @@
         </div>
 
         <!-- Image outside container and full height -->
-        <div class="position-absolute top-0 end-0 h-100" style="width: 50%; z-index: 0;">
+        <div class="position-absolute top-0 end-0 h-100" style="width: 65%; z-index: 0;">
             <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}" alt="Image"
                 class="w-100 h-100 object-fit-cover">
         </div>
@@ -208,7 +208,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center  text-center">
                 <div class="col-7">
-                    <h2 data-aos="fade-up" class="mb-5 bold" style="font-weight: 700 !important;">{{ $content['recent_projects_heading'] ?? '' }}</h2>
+                    <h2 data-aos="fade-up" class=" bold" style="font-weight: 700 !important;">{{ $content['recent_projects_heading'] ?? '' }}</h2>
                     <p data-aos="fade-up">{{ $content['recent_projects_description'] ?? '' }}</p>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                                 <h5 data-aos="fade-up">{{ $project->title }}</h5>
                                 <p data-aos="fade-up">{{ Str::limit(strip_tags($project->description), 40) ?: '' }}</p>
                                 <a data-aos="fade-up" href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
-                                    style="color: #2980b9;">
+                                    style="color: #2fa8fc;">
                                     <b><i>VIEW PROJECT</i></b>
                                 </a>
                             </div>
@@ -264,7 +264,7 @@
     <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
         <div class="content-box text-white text-center p-5">
             <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{{ $content['get_started_heading'] ?? '' }}</h2>
-            <p data-aos="fade-up" class="mb-4">{{ $content['get_started_description'] ?? '' }}</p>
+            <p data-aos="fade-up" class="mb-4 text-white">{{ $content['get_started_description'] ?? '' }}</p>
             <a data-aos="fade-up" href="{{ $content['get_started_button_url'] ?? '' }}"
                 class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['get_started_button_text'] ?? '' }}</a>
         </div>
