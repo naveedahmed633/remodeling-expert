@@ -2,7 +2,7 @@
 @section('title', $service->title . ' | Remodeling Expert')
 @section('content')
     
-        <st>
+        <style>
             .banner {
             background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
             background-size: cover;
@@ -46,7 +46,6 @@
             padding-top: 20px;
         }
     </style>
-
     <!-- Banner Section -->
     <div class="banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
