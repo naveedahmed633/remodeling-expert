@@ -81,60 +81,72 @@
         <div class="container">
             <!-- Main Heading -->
             <div class="text-center mb-4">
-                <h2 class="text-white bold"  style="font-weight: 700 !important;"  data-aos="fade-up">{{ $content['estimate_section_heading'] ?? '' }}</h2>
-                <p class="text-white"  data-aos="fade-up">{{ $content['estimate_section_description'] ?? '' }}</p>
+                <h2 class="text-white bold" style="font-weight: 700 !important;" data-aos="fade-up">{{ $content['estimate_section_heading'] ?? '' }}</h2>
+                <p class="text-white" data-aos="fade-up">{{ $content['estimate_section_description'] ?? '' }}</p>
             </div>
-
+    
             <!-- Sub-sections -->
             <div class="row text-center p-5">
                 <!-- Sub-section 1 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img  data-aos="fade-up" src="{{ asset('front/images/Screenshot 2025-04-21 060645.png') }}" alt="Icon 1" class="mb-3"
-                            style="width: 50px; height: 100%;">
-                        <h5  data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_1'] ?? '' }}</h5>
-                        <p  data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_1'] ?? '' }}</p>
+                        <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
+                            <img data-aos="fade-up" src="{{ asset('front/images/Screenshot 2025-04-21 060645.png') }}" alt="Icon 1"
+                                 style="max-height: 100%; width: auto;">
+                        </div>
+                        <h5 data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_heading_1'] ?? '' }}</h5>
+                        <p data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_desc_1'] ?? '' }}</p>
                     </div>
                 </div>
-
+    
                 <!-- Sub-section 2 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img  data-aos="fade-up" src="{{  asset('front/images/flooring.png') }}" alt="Icon 2" class="mb-3"
-                            style="width: 50px; height: 100%;">
-                        <h5  data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_2'] ?? '' }}</h5>
-                        <p  data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_2'] ?? '' }}</p>
+                        <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
+                            <img data-aos="fade-up" src="{{ asset('front/images/flooring.png') }}" alt="Icon 2"
+                                 style="max-height: 100%; width: auto;">
+                        </div>
+                        <h5 data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_heading_2'] ?? '' }}</h5>
+                        <p data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_desc_2'] ?? '' }}</p>
                     </div>
                 </div>
-
+    
                 <!-- Sub-section 3 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}" alt="Icon 3" class="mb-3"
-                            style="width: 50px; height: 100%;">
-                        <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_3'] ?? '' }}</h5>
-                        <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_3'] ?? '' }}</p>
+                        <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
+                            <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}" alt="Icon 3"
+                                 style="max-height: 100%; width: auto;">
+                        </div>
+                        <h5 data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_heading_3'] ?? '' }}</h5>
+                        <p data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_desc_3'] ?? '' }}</p>
                     </div>
                 </div>
-
+    
                 <!-- Sub-section 4 -->
                 <div class="col-md-3 mb-4">
                     <div class="d-flex flex-column align-items-center">
-                        <img data-aos="fade-up" src="{{ asset('front/images/door.png') }}" alt="Icon 4" class="mb-3"
-                            style="width: 50px; height: 100%;">
-                        <h5 data-aos="fade-up" class="text-white">{{ $content['estimate_image_heading_4'] ?? '' }}</h5>
-                        <p data-aos="fade-up" class="text-white">{{ $content['estimate_image_desc_4'] ?? '' }}</p>
+                        <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
+                            <img data-aos="fade-up" src="{{ asset('front/images/door.png') }}" alt="Icon 4"
+                                 style="max-height: 100%; width: auto;">
+                        </div>
+                        <h5 data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_heading_4'] ?? '' }}</h5>
+                        <p data-aos="fade-up" class="text-white text-center">{{ $content['estimate_image_desc_4'] ?? '' }}</p>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Button at the End -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{{ $content['estimate_button_url'] ?? '' }}"
-                    class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{{ $content['estimate_button_text'] ?? '' }}</a>
+                   class="btn btn-primary custom-btn btn-14 banner-btn"
+                   style="padding: 10px 40px !important; font-weight: 800 !important;">
+                    {{ $content['estimate_button_text'] ?? '' }}
+                </a>
             </div>
         </div>
     </section>
+    
 
     <div class="container">
         <section class="before-after-section py-5 text-center">
