@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\CmsPage;
 use App\Models\Service;
+use App\Models\ServiceCategory;
+use App\Models\SubserviceCategory;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -42,7 +45,7 @@ class ServiceController extends Controller
     {
         $service = Service::findOrFail($id);
         $services = Service::all();
-        
+
         $data = CmsPage::where('name', 'Project')->first();
         $content = $data ? json_decode($data->content, true) : [];
         return view('front.detailed-services', compact('service', 'services', "data", "content"));
@@ -87,4 +90,63 @@ class ServiceController extends Controller
 
         return response()->json(['message' => 'Service deleted successfully.']);
     }
+
+    public function serviceCategories($id)
+    {
+        $categoryService = ServiceCategory::where('services_id', $id)->get();
+        return view('admin.services.service-category', compact('categoryService', 'id'));
+    }
+
+    public function serviceSubCategories($id)
+    {
+        $subCategory = SubserviceCategory::where('service_category_id', $id)->get();
+        return view('admin.services.sub-service-category', compact('subCategory', 'id'));
+    }
+
+    public function addServiceType(Request $request, $type, $id)
+    {
+        if ($type === 'category') {
+            ServiceCategory::create([
+                'services_id' => $id,
+                'name' => $request->name,
+            ]);
+        } elseif ($type === 'subcategory') {
+            SubserviceCategory::create([
+                'service_category_id' => $id,
+                'name' => $request->name,
+            ]);
+        }
+        return redirect()->back()->with('success', 'Listed Successfully');
+    }
+
+
+    public function updateServiceType(Request $request, $type, $id)
+    {
+
+        if ($type === 'category') {
+            ServiceCategory::find($id)->update([
+                'name' => $request->name,
+            ]);
+        } elseif ($type === 'subcategory') {
+            SubserviceCategory::find($id)->update([
+                'name' => $request->name,
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Updated Successfully');
+    }
+
+    public function deleteServiceType($type, $id)
+    {
+        if ($type === 'category') {
+            $category = ServiceCategory::find($id);
+            $category->delete();
+        } elseif ($type === 'subcategory') {
+            $subcategory = SubserviceCategory::find($id);
+            $subcategory->delete();
+        }
+        return redirect()->back()->with('success', 'Deleted Successfully');
+
+    }
+
 }

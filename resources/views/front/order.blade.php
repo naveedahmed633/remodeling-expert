@@ -32,19 +32,19 @@
                                                readonly>
 
                                         <div class="row stepOne service-section">
-                                            {{-- @foreach($serviceCategories as $category) --}}
+                                            @foreach($serviceCategories as $category)
                                                 <div class="col-md-6 col-sm-6">
                                                     <div class="form-check d-flex align-items-center mb-2">
                                                         <input class="form-check-input me-2 service-checkbox"
                                                                name="services[]"
                                                                type="checkbox"
-                                                               value=""
+                                                               value="{{ $category->id }}"
                                                                data-label="{{ $category->title }}">
                                                         <label
                                                             class="form-check-label mb-0">{{ $category->title }}</label>
                                                     </div>
                                                 </div>
-                                            {{-- @endforeach --}}
+                                            @endforeach
                                         </div>
                                     </div>
 
@@ -358,7 +358,7 @@
                         "X-CSRF-TOKEN": "{{ csrf_token() }}",
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({subchildservices: ids,subChildTiles: labels})
+                    body: JSON.stringify({subchildservices: ids, subChildTiles: labels})
                 });
             });
 

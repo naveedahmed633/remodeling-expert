@@ -143,6 +143,13 @@ Route::middleware('CheckAdmin')->prefix('admin/')->name('admin.')->group(functio
     Route::delete('service/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
 
 
+    Route::get('service/categories/{id}', [ServiceController::class, 'serviceCategories'])->name('service.category.index');
+    Route::get('service/sub/categories/{id}', [ServiceController::class, 'serviceSubCategories'])->name('service.sub.category.index');
+
+
+    Route::post('add/service/{type}/{id}', [ServiceController::class, 'addServiceType'])->name('add.service.type');
+    Route::post('update/service/{type}/{id}', [ServiceController::class, 'updateServiceType'])->name('update.service.type');
+    Route::get('delete/service/{type}/{id}', [ServiceController::class, 'deleteServiceType'])->name('delete.service.type');
 
 
     Route::get('orders', [ProjectController::class, 'orderIndex'])->name('order.index');
