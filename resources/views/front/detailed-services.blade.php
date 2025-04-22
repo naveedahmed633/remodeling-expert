@@ -1,8 +1,9 @@
 @extends('front.include.app')
 @section('title', $service->title . ' | Remodeling Expert')
 @section('content')
-    <style>
-        <style>.banner {
+    
+        <st>
+            .banner {
             background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
             background-size: cover;
             background-position: center;
@@ -46,7 +47,6 @@
         }
     </style>
 
-    </style>
     <!-- Banner Section -->
     <div class="banner banner text-center">
         <div class="mx-auto" style="max-width: 700px;">
