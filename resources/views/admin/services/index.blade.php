@@ -51,6 +51,8 @@
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item"
                                                                 href="{{ route('admin.service.edit', $service->id) }}">Edit</a>
+                                                            <a class="dropdown-item"
+                                                               href="{{ route('admin.service.category.index', $service->id) }}">Categories</a>
                                                             <a class="dropdown-item delete-btn"
                                                                 data-id="{{ $service->id }}">Delete</a>
                                                         </div>
