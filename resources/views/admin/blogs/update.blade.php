@@ -3,6 +3,9 @@
     Edit Blog
 @endsection
 @section('content')
+    <!-- In head section -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+
     <style>
         .active {
             background-color: #007BFF !important;
@@ -70,7 +73,8 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="row">
@@ -83,7 +87,9 @@
                                                 <input type="text" class="form-control form__field" name="title"
                                                     placeholder="Blog Title" value="{{ old('title', $blog->title ?? '') }}">
                                                 <small class="text-danger">
-                                                    @error('title') {{ $message }} @enderror
+                                                    @error('title')
+                                                        {{ $message }}
+                                                    @enderror
                                                 </small>
                                             </div>
                                         </div>
@@ -94,11 +100,14 @@
                                                 <label for="testimonialImageInput">Blog Image</label>
                                                 <input type="file" class="form-control form__field visually-hidden"
                                                     name="image" id="testimonialImageInput" accept="image/*">
-                                                <label for="testimonialImageInput" class="file-input-label form__field form-control">
+                                                <label for="testimonialImageInput"
+                                                    class="file-input-label form__field form-control">
                                                     <i class="fas fa-camera"></i> Choose file
                                                 </label>
                                                 <small class="text-danger">
-                                                    @error('image') {{ $message }} @enderror
+                                                    @error('image')
+                                                        {{ $message }}
+                                                    @enderror
                                                 </small>
                                             </div>
                                         </div>
@@ -108,14 +117,17 @@
                                             <label for="">Blog Description *</label>
                                             <textarea name="description" id="summernote" class="form-control form__field">{!! old('description', $blog->description ?? '') !!}</textarea>
                                             <small class="text-danger">
-                                                @error('description') {{ $message }} @enderror
+                                                @error('description')
+                                                    {{ $message }}
+                                                @enderror
                                             </small>
                                         </div>
 
                                         <!-- Submit -->
                                         <div class="mx-auto mt-5">
                                             <div class="form-group">
-                                                <input type="submit" class="form-control btn btn-primary btn-sm" value="Update">
+                                                <input type="submit" class="form-control btn btn-primary btn-sm"
+                                                    value="Update">
                                             </div>
                                         </div>
                                     </div>
@@ -131,17 +143,19 @@
 @endsection
 
 @section('script')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- At the end of body section -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#summernote').summernote({
                 height: 200
             });
 
             // Ensure description HTML gets submitted
-            $('form').on('submit', function () {
-                $('#summernote').val($('#summernote').summernote('code'));
+            $('form').on('submit', function() {
+                var htmlContent = $('#summernote').summernote('code');
+                $('#summernote').val(htmlContent); // Manually set value before submitting form
             });
         });
     </script>

@@ -49,7 +49,7 @@
                                 </p>
                                 <h5 data-aos="fade-up" class="fw-bold" style="font-weight: 700 !important;">
                                     {{ $blog->title }}</h5>
-                                <p data-aos="fade-up">{{ Str::limit(strip_tags($blog->description), 300) }}</p>
+                                <p data-aos="fade-up">{{ Str::limit(strip_tags($blog->description), 400) }}</p>
                                 <a data-aos="fade-up" href="{{ route('blog.detail', $blog->id) }}"
                                     style="text-decoration: underline; color: #2fa8fa;">Read More</a>
                             </div>

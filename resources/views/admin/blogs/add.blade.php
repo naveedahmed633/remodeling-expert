@@ -68,6 +68,7 @@
                             <div class="card-body">
                                 <form action="{{ route('admin.blogs.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
+                                    
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
