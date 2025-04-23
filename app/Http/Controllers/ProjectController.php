@@ -56,7 +56,10 @@ class ProjectController extends Controller
         
         $data = CmsPage::where('name', 'Project')->first();
         $content = $data ? json_decode($data->content, true) : [];
-        return view('front.detailed-project', compact('project', 'projects', 'services',"data","content"));
+
+        $homeData = CmsPage::where('name', 'Home')->first();
+        $homeContent = $data ? json_decode($homeData->content, true) : [];
+        return view('front.detailed-project', compact('project', 'projects', 'services',"data","content", 'homeContent'));
     }
 
     public function edit($id)

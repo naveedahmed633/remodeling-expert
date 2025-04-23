@@ -51,9 +51,11 @@ class FrontController extends Controller
     {
         $data = CmsPage::where('name', 'Project')->first();
         $content = $data ? json_decode($data->content, true) : [];
+        $homeData = CmsPage::where('name', 'Home')->first();
+        $homeContent = $data ? json_decode($homeData->content, true) : [];
         $projects = Project::all();
         $services = Service::all();
-        return view('front.projects', compact('services', 'projects', 'content', 'data'));
+        return view('front.projects', compact('services', 'projects', 'content', 'data', 'homeContent'));
     }
 
     public function services()
