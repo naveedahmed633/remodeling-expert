@@ -180,7 +180,7 @@
         </div>
     
         <!-- Background Image (Visible only on LG and above) -->
-        <div class="position-absolute top-0 end-0 trusted-bg-image" style="width: 65%; z-index: 0; height: 92% !important">
+        <div class="position-absolute top-0 end-0 trusted-bg-image" style="width: 65%; z-index: 0; height: 85% !important">
             <img data-aos="fade-up"
                 src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}"
                 alt="Image"
