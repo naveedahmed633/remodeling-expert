@@ -44,8 +44,8 @@
                         <ul class="list-unstyled" style="line-height: 35px;">
                             <li><a href="{{ route('index') }}" class="text-white font-weight-light">Home</a></li>
                             <li><a href="{{ route('about') }}" class="text-white font-weight-light">About Us</a></li>
-                            <li><a href="{{ route('blog') }}" class="text-white font-weight-light">Blog</a></li>
                             <li><a href="{{ route('services') }}" class="text-white font-weight-light">Our Services</a></li>
+                            <li><a href="{{ route('blog') }}" class="text-white font-weight-light">Blog</a></li>
                             <li><a href="{{ route('contact') }}" class="text-white font-weight-light">Contact us</a></li>
                         </ul>
                     </div>

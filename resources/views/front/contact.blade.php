@@ -23,24 +23,24 @@
 
                 <!-- Address -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h3 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['address_heading'] ?? '' !!}
-                    </h3>
+                    <h1 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['address_heading'] ?? '' !!}
+                    </h1>
                     <p data-aos="fade-up" class="mb-1">{!! $content['address_description_1'] ?? '' !!}</p>
                     <p data-aos="fade-up" class="mb-1">{!! $content['address_description_2'] ?? '' !!}</p>
                 </div>
 
                 <!-- Office Hours -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h3 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['office_hours_heading'] ?? '' !!}
-                    </h3>
+                    <h1 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['office_hours_heading'] ?? '' !!}
+                    </h1>
                     <p data-aos="fade-up" class="mb-1">{!! $content['office_hours_description_1'] ?? '' !!}</p>
                     <p data-aos="fade-up" class="mb-0">{!! $content['office_hours_description_2'] ?? '' !!}</p>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center p-5">
-                    <h3 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['phone_number_heading'] ?? '' !!}
-                    </h3>
+                    <h1 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['phone_number_heading'] ?? '' !!}
+                    </h1>
                     <p data-aos="fade-up" class="mb-1">{!! $content['phone_number_description_1'] ?? '' !!}</p>
                     <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">
                         {!! $content['phone_number_description_2'] ?? '' !!}</p>

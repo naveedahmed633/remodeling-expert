@@ -31,6 +31,10 @@
             color: white;
             /* Remove underline on hover */
         }
+
+        .blog-description * {
+            color: white !important;
+        }
     </style>
 
     <div class="bg-nav"></div>
@@ -71,7 +75,7 @@
                             class="img-fluid rounded mb-4">
                     </div>
                     <!-- Blog Description -->
-                    <div data-aos="fade-up" class="blog-description text-white">
+                    <div data-aos="fade-up" class="blog-description" style="color:white !important;">
                         {!! $blog->description !!}
                     </div>
 
