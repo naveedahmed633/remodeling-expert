@@ -107,7 +107,7 @@
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{!! $content['estimate_button_url'] ?? '' !!}"
                    class="btn btn-primary custom-btn btn-14 banner-btn"
-                   style="padding: 11px 40px !important; font-weight: 800 !important;">
+                   style="padding: 13px 25px !important; font-weight: 800 !important;">
                     {!! $content['estimate_button_text'] ?? '' !!}
                 </a>
             </div>
