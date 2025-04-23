@@ -88,7 +88,7 @@
                 </div>
 
                 <!-- Additional Images Section -->
-                <div class="col-md-8">
+                <div class="col-md-7">
                     {{-- <h4 data-aos="fade-up" class="mb-4">More About This Project</h4> --}}
                     <div class="row">
                         @if ($project->image1)
