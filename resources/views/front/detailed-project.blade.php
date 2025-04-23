@@ -61,14 +61,14 @@
             <div class="row align-items-start">
 
                 <!-- Left Column -->
-                <div class="col-md-8 ">
+                <div class="col-md-7">
                     <img data-aos="fade-up" src="{{ asset('front/images/image (18).png') }}" alt="Main Project Image"
                         class="img-fluid mb-3">
                     <p data-aos="fade-up" class="project-description">{!! $project->description1 ?? '' !!}</p>
                 </div>
 
                 <!-- Right Column -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-5 mb-4">
                     <div class="project-details">
                         <h5 data-aos="fade-up" class="fw-bold mb-3">{{ $project->title }}</h5>
                         <p data-aos="fade-up" class="project-description">{!! $project->description ?? '' !!}</p><br>
