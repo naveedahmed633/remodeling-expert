@@ -47,7 +47,7 @@
             background-position: center;
             height: 100vh;
         }
-    
+
         .content-box {
             background-color: #0016269e;
             /* black with opacity */
@@ -56,21 +56,23 @@
             padding: 5rem !important;
             padding-left: 6rem !important;
             padding-right: 6rem !important;
-            height: auto; /* Adjust height as needed */
-            min-height: 400px; /* Set minimum height for the content box */
+            height: auto;
+            /* Adjust height as needed */
+            min-height: 400px;
+            /* Set minimum height for the content box */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
     </style>
-    
+
     <section class="position-relative get-started-section d-flex justify-content-center align-items-center mt-5">
         <div class="content-box text-white text-center p-5">
             <h3 data-aos="fade-up" class="fw-bold text-white">{!! $homeContent['get_started_heading'] ?? '' !!}</h3>
             <p data-aos="fade-up" class="text-white">{!! $homeContent['get_started_description'] ?? '' !!}</p>
-            <a data-aos="fade-up" href="{!! $homeContent['get_started_button_url'] ?? '' !!}"
-                class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 13px 30px !important; font-weight: 800 !important;">{!! $homeContent['get_started_button_text'] ?? '' !!}</a>
+            <a data-aos="fade-up" href="{!! $homeContent['get_started_button_url'] ?? '' !!}" class="btn btn-primary banner-btn custom-btn btn-14"
+                style="padding: 13px 30px !important; font-weight: 800 !important;">{!! $homeContent['get_started_button_text'] ?? '' !!}</a>
         </div>
     </section>
 @endsection
