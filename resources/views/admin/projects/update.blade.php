@@ -174,7 +174,7 @@
                                         <!-- More About This Project -->
                                         <div class="col-md-12">
                                             <label for="">More About This Project</label>
-                                            <textarea name="description1" id="summernote2" placeholder="More About This Project" class="form-control form__field">
+                                            <textarea name="description1" placeholder="More About This Project" class="form-control form__field">
                                                 {{ old('description1', $project->description1 ?? '') }}
                                             </textarea>
                                             <small class="text-danger">
