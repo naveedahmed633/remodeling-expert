@@ -74,18 +74,18 @@
                                         <img src="{{ asset('front/images/“.png') }}" alt="">
                                     </div>
                                     <div>
-                                    <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{{ $content['trusted_small_heading'] ?? '' }}
+                                    <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{!! $content['trusted_small_heading'] ?? '' !!}
                                     </h6>
-                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{{ $content['trusted_main_heading'] ?? '' }}</h1>
-                                    <p data-aos="fade-up">{{ $content['trusted_description'] ?? '' }}</p>
+                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{!! $content['trusted_main_heading'] ?? '' !!}</h1>
+                                    <p data-aos="fade-up" style="font-style: italic">{!! $content['trusted_description'] ?? '' !!}</p>
                                 </div>
                                 </div>
                             </div>
                             <div class="col-7 ms-auto">
                                 <div class="p-4 py-5 text-white" style="background-color: #001626; width: 50%; ">
-                                    <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{{ $content['dark_box_heading'] ?? '' }}</h5>
-                                    <p data-aos="fade-up" class="mb-1 text-white">{{ $content['dark_box_description'] ?? '' }}</p>
-                                    <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{{ $content['dark_box_number'] ?? '' }}</h4>
+                                    <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{!! $content['dark_box_heading'] ?? '' !!}</h5>
+                                    <p data-aos="fade-up" class="mb-1 text-white">{!! $content['dark_box_description'] ?? '' !!}</p>
+                                    <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{!! $content['dark_box_number'] ?? '' !!}</h4>
                                 </div>
                             </div>
                         </div>

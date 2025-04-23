@@ -23,24 +23,24 @@
 
                 <!-- Address -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['address_heading'] ?? '' !!}
-                    </h5>
+                    <h3 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['address_heading'] ?? '' !!}
+                    </h3>
                     <p data-aos="fade-up" class="mb-1">{!! $content['address_description_1'] ?? '' !!}</p>
                     <p data-aos="fade-up" class="mb-1">{!! $content['address_description_2'] ?? '' !!}</p>
                 </div>
 
                 <!-- Office Hours -->
                 <div class="col-md-4 mb-4 mb-md-0 text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['office_hours_heading'] ?? '' !!}
-                    </h5>
+                    <h3 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['office_hours_heading'] ?? '' !!}
+                    </h3>
                     <p data-aos="fade-up" class="mb-1">{!! $content['office_hours_description_1'] ?? '' !!}</p>
                     <p data-aos="fade-up" class="mb-0">{!! $content['office_hours_description_2'] ?? '' !!}</p>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="col-md-4 d-flex flex-column align-items-center justify-content-center text-center p-5">
-                    <h5 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['phone_number_heading'] ?? '' !!}
-                    </h5>
+                    <h3 data-aos="fade-up" class="fw-bold bold" style="font-weight: 700 !important;">{!! $content['phone_number_heading'] ?? '' !!}
+                    </h3>
                     <p data-aos="fade-up" class="mb-1">{!! $content['phone_number_description_1'] ?? '' !!}</p>
                     <p data-aos="fade-up" class="mb-0" style="color: #1abc9c;">
                         {!! $content['phone_number_description_2'] ?? '' !!}</p>
@@ -93,36 +93,6 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <style>
-        .get-started-section {
-            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/frames-for-your-heart-2d4lAQAlbDA-unsplash.png') }}');
-            /* replace with your image */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-        }
-
-        .content-box {
-            background-color: #0016269e;
-            /* black with opacity */
-            max-width: 700px;
-            /* col-5 jaisa */
-            width: 100%;
-            padding: 5rem !important;
-            padding-left: 6rem !important;
-            padding-right: 6rem !important;
-            /* border-radius: 10px; */
-        }
-    </style>
-    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
-        <div class="content-box text-white text-center p-5">
-            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{!! $content['get_started_heading'] ?? '' !!}</h2>
-            <p data-aos="fade-up" class="mb-4 text-white">{!! $content['get_started_description'] ?? '' !!}</p>
-            <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}" class="btn btn-primary banner-btn custom-btn btn-14"
-                style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
         </div>
     </section>
 @endsection

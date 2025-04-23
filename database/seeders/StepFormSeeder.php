@@ -24,7 +24,7 @@ class StepFormSeeder extends Seeder
                 'banner_section_heading' => 'Welcome to',
                 'banner_section_description' => 'Our Website',
                 'banner_section_button_text' => 'Strength in Body',
-                'banner_section_button_url' => 'and Spirit',
+                'banner_section_button_url' => 'https://remodeling-expert.kaamupdates.net/',
             ];
     
             // Create Home page record

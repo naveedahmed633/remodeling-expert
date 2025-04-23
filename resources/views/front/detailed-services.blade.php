@@ -1,9 +1,9 @@
 @extends('front.include.app')
 @section('title', $service->title . ' | Remodeling Expert')
 @section('content')
-    
-        <style>
-            .banner {
+
+    <style>
+        .banner {
             background-image: url('{{ $data?->getFirstMediaUrl('banner_image') ?: asset('front/images/image.png') }}');
             background-size: cover;
             background-position: center;
@@ -12,7 +12,7 @@
         }
 
         .overlay-box {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: white;
             bottom: 0;
             left: 0;
             right: 0;
@@ -95,6 +95,57 @@
         </div>
     </section>
 
-    {{-- <x-before-after :content="$content"/>
-    <x-get-started :content="$content"/> --}}
+    <div class="container">
+        <section class="before-after-section py-5 text-center">
+            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold" style="font-weight: 700 !important;">
+                {!! $content['before_after_heading'] ?? '' !!}</h2>
+
+            <div class="image-compare-wrapper" aria-label="Before and After Image Slider">
+                <div class="image-layer image-before">
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('before_image') ?: asset('front/images/spacious-reconfigured-kitchen-remodel-naples-fl-before-2-1.jpg') }}"
+                        alt="Before Image">
+                </div>
+                <div class="image-layer image-after">
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('after_image') ?: asset('front/images/after.jpg') }}"
+                        alt="After Image">
+                </div>
+                <div class="divider-line" id="dividerLine"></div>
+                <input type="range" min="0" max="100" value="50" id="imageSlider" class="slider-range" />
+            </div>
+        </section>
+    </div>
+
+    
+
+    <style>
+        .get-started-section {
+            background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/frames-for-your-heart-2d4lAQAlbDA-unsplash.png') }}');
+            /* replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .content-box {
+            background-color: #0016269e;
+            /* black with opacity */
+            max-width: 700px;
+            /* col-5 jaisa */
+            width: 100%;
+            padding: 5rem !important;
+            padding-left: 6rem !important;
+            padding-right: 6rem !important;
+            /* border-radius: 10px; */
+        }
+    </style>
+    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
+        <div class="content-box text-white text-center p-5">
+            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{!! $content['get_started_heading'] ?? '' !!}</h2>
+            <p data-aos="fade-up" class="mb-4 text-white">{!! $content['get_started_description'] ?? '' !!}</p>
+            <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}" class="btn btn-primary banner-btn custom-btn btn-14"
+                style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
+        </div>
+    </section>
 @endsection

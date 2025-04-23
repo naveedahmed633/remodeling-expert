@@ -25,7 +25,7 @@ class AboutSeeder extends Seeder
             'transforming_homes_desc_2' => "We take pride in our attention to detail, seamless project management, and commitment to customer satisfaction. Whether it's a kitchen, bathroom, or whole-home renovation, we ensure a stress-free experience and exceptional results.",
             'transforming_homes_desc_3' => "Let’s build something amazing together!",
             'transforming_homes_button_text' => 'Learn More',
-            'transforming_homes_button_url' => 'project',
+            'transforming_homes_button_url' => 'https://remodeling-expert.kaamupdates.net/',
 
             'estimate_section_heading' => 'Get the Estimate for Your Full Home',
             'estimate_section_description' => 'Estimate the approximate cost of doing up your home interiors',
@@ -38,7 +38,7 @@ class AboutSeeder extends Seeder
             'estimate_image_desc_3' => 'Estimate the approximate cost of your lighting.',
             'estimate_image_desc_4' => 'Estimate the approximate cost of your doors.',
             'estimate_button_text' => 'Get a Free Quote',
-            'estimate_button_url' => 'order',
+            'estimate_button_url' => 'https://remodeling-expert.kaamupdates.net/',
 
             'before_after_heading' => 'Before and After',
             'trusted_small_heading' => 'Trusted Experts',

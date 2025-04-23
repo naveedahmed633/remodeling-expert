@@ -26,13 +26,18 @@ class ServiceSeeder extends Seeder
             'transforming_homes_desc_2' => "We take pride in our attention to detail, seamless project management, and commitment to customer satisfaction. Whether it's a kitchen, bathroom, or whole-home renovation, we ensure a stress-free experience and exceptional results.",
             'transforming_homes_desc_3' => 'Let’s build something amazing together!',
             'transforming_homes_button_text' => 'Learn More',
-            'transforming_homes_button_url' => 'project',
+            'transforming_homes_button_url' => 'https://remodeling-expert.kaamupdates.net/',
             'trusted_small_heading' => 'Trusted Experts',
             'trusted_main_heading' => 'Building Your Vision into Reality',
             'trusted_description' => 'Our dedicated team ensures excellence in every step of your construction journey, delivering unmatched results on time and on budget.',
             'dark_box_heading' => 'Need Consultation?',
             'dark_box_description' => 'We’re here to help 24/7.',
             'dark_box_number' => '+92 300 1234567',
+            
+            'get_started_heading' => 'Get Started Today',
+            'get_started_description' => 'You dream It, we design It.',
+            'get_started_button_text' => 'CONTACT US',
+            'get_started_button_url' => 'remodeling-expert.kaamupdates.net',
         ];
     
         // 👇 Only insert if services table is empty

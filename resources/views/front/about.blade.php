@@ -164,7 +164,7 @@
                                 <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{!! $content['trusted_small_heading'] ?? '' !!}
                                 </h6>
                                 <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{!! $content['trusted_main_heading'] ?? '' !!}</h1>
-                                <p data-aos="fade-up">{!! $content['trusted_description'] ?? '' !!}</p>
+                                <p data-aos="fade-up" style="font-style: italic">{!! $content['trusted_description'] ?? '' !!}</p>
                             </div>
                             </div>
                         </div>

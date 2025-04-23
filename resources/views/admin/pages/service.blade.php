@@ -13,7 +13,7 @@
     <div class="content-wrapper">
         <form action="{{ route('admin.pages.update', $slug) }}" method="POST" enctype="multipart/form-data">
             <!-- Hidden media collection inputs -->
-            @foreach(['banner_image', 'transforming_homes_image'] as $media)
+            @foreach (['banner_image', 'transforming_homes_image', 'get_started_today_image', 'before', 'after'] as $media)
                 <input type="hidden" name="media_collections[]" value="{{ $media }}">
             @endforeach
             @csrf
@@ -33,12 +33,13 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <input type="hidden" name="admin_id">
-            
+
                                         <!-- Banner Image Input -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="banner_image">Banner Image</label>
-                                                <input type="file" class="form-control form__field" name="banner_image" id="banner_image">
+                                                <input type="file" class="form-control form__field" name="banner_image"
+                                                    id="banner_image">
                                                 @if ($page->hasMedia('banner_image'))
                                                     <label for="existing_banner_image"></label>
                                                     @foreach ($page->getMedia('banner_image') as $media)
@@ -48,14 +49,14 @@
                                                 @endif
                                             </div>
                                         </div>
-            
+
                                         <!-- Banner Section Heading -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="banner_section_heading">Banner Section Heading</label>
-                                                <input type="text" class="form-control form__field" name="banner_section_heading"
-                                                       placeholder="Enter Banner Section Heading"
-                                                       value="{{ old('banner_section_heading', $content['banner_section_heading'] ?? '') }}">
+                                                <input type="text" class="form-control form__field"
+                                                    name="banner_section_heading" placeholder="Enter Banner Section Heading"
+                                                    value="{{ old('banner_section_heading', $content['banner_section_heading'] ?? '') }}">
                                                 <small class="text-danger">
                                                     @error('banner_section_heading')
                                                         {{ $message }}
@@ -63,7 +64,7 @@
                                                 </small>
                                             </div>
                                         </div>
-            
+
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -86,14 +87,14 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <input type="hidden" name="admin_id">
-            
+
                                         <!-- Heading Field -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_heading">Section Heading</label>
-                                                <input type="text" class="form-control form__field" name="transforming_homes_heading"
-                                                       placeholder="Enter Section Heading"
-                                                       value="{{ old('transforming_homes_heading', $content['transforming_homes_heading'] ?? '') }}">
+                                                <input type="text" class="form-control form__field"
+                                                    name="transforming_homes_heading" placeholder="Enter Section Heading"
+                                                    value="{{ old('transforming_homes_heading', $content['transforming_homes_heading'] ?? '') }}">
                                                 <small class="text-danger">
                                                     @error('transforming_homes_heading')
                                                         {{ $message }}
@@ -101,28 +102,28 @@
                                                 </small>
                                             </div>
                                         </div>
-            
+
                                         <!-- Image Field -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_image">Section Image</label>
-                                                <input type="file" class="form-control form__field" name="transforming_homes_image" id="transforming_homes_image">
+                                                <input type="file" class="form-control form__field"
+                                                    name="transforming_homes_image" id="transforming_homes_image">
                                                 @if ($page->hasMedia('transforming_homes_image'))
                                                     <label for="existing_transforming_homes_image"></label>
                                                     @foreach ($page->getMedia('transforming_homes_image') as $media)
                                                         <img src="{{ $media->getUrl() ?? '' }}" alt="Existing Image"
-                                                             style="max-width: 200px; max-height: 200px; margin-top: 10px;">
+                                                            style="max-width: 200px; max-height: 200px; margin-top: 10px;">
                                                     @endforeach
                                                 @endif
                                             </div>
                                         </div>
-            
+
                                         <!-- Description Fields -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_desc_1">Description 1</label>
-                                                <textarea name="transforming_homes_desc_1" class="form-control form__field"
-                                                          placeholder="Enter Description 1">{{ old('transforming_homes_desc_1', $content['transforming_homes_desc_1'] ?? '') }}</textarea>
+                                                <textarea name="transforming_homes_desc_1" class="form-control form__field" placeholder="Enter Description 1">{{ old('transforming_homes_desc_1', $content['transforming_homes_desc_1'] ?? '') }}</textarea>
                                                 <small class="text-danger">
                                                     @error('transforming_homes_desc_1')
                                                         {{ $message }}
@@ -130,12 +131,11 @@
                                                 </small>
                                             </div>
                                         </div>
-            
+
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_desc_2">Description 2</label>
-                                                <textarea name="transforming_homes_desc_2" class="form-control form__field"
-                                                          placeholder="Enter Description 2">{{ old('transforming_homes_desc_2', $content['transforming_homes_desc_2'] ?? '') }}</textarea>
+                                                <textarea name="transforming_homes_desc_2" class="form-control form__field" placeholder="Enter Description 2">{{ old('transforming_homes_desc_2', $content['transforming_homes_desc_2'] ?? '') }}</textarea>
                                                 <small class="text-danger">
                                                     @error('transforming_homes_desc_2')
                                                         {{ $message }}
@@ -147,8 +147,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_desc_3">Description 2</label>
-                                                <textarea name="transforming_homes_desc_3" class="form-control form__field"
-                                                          placeholder="Enter Description 2">{{ old('transforming_homes_desc_3', $content['transforming_homes_desc_3'] ?? '') }}</textarea>
+                                                <textarea name="transforming_homes_desc_3" class="form-control form__field" placeholder="Enter Description 2">{{ old('transforming_homes_desc_3', $content['transforming_homes_desc_3'] ?? '') }}</textarea>
                                                 <small class="text-danger">
                                                     @error('transforming_homes_desc_3')
                                                         {{ $message }}
@@ -156,14 +155,14 @@
                                                 </small>
                                             </div>
                                         </div>
-            
+
                                         <!-- Button Text and URL -->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_button_text">Button Text</label>
-                                                <input type="text" class="form-control form__field" name="transforming_homes_button_text"
-                                                       placeholder="Enter Button Text"
-                                                       value="{{ old('transforming_homes_button_text', $content['transforming_homes_button_text'] ?? '') }}">
+                                                <input type="text" class="form-control form__field"
+                                                    name="transforming_homes_button_text" placeholder="Enter Button Text"
+                                                    value="{{ old('transforming_homes_button_text', $content['transforming_homes_button_text'] ?? '') }}">
                                                 <small class="text-danger">
                                                     @error('transforming_homes_button_text')
                                                         {{ $message }}
@@ -171,13 +170,13 @@
                                                 </small>
                                             </div>
                                         </div>
-            
+
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="transforming_homes_button_url">Button URL</label>
-                                                <input type="url" class="form-control form__field" name="transforming_homes_button_url"
-                                                       placeholder="Enter Button URL"
-                                                       value="{{ old('transforming_homes_button_url', $content['transforming_homes_button_url'] ?? '') }}">
+                                                <input type="url" class="form-control form__field"
+                                                    name="transforming_homes_button_url" placeholder="Enter Button URL"
+                                                    value="{{ old('transforming_homes_button_url', $content['transforming_homes_button_url'] ?? '') }}">
                                                 <small class="text-danger">
                                                     @error('transforming_homes_button_url')
                                                         {{ $message }}
@@ -185,7 +184,7 @@
                                                 </small>
                                             </div>
                                         </div>
-            
+
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -204,7 +203,7 @@
                                 <div class="card-header">
                                     <h3 class="card-title">Trusted Experts Section</h3>
                                 </div>
-            
+
                                 <div class="card-body">
                                     <div class="row">
                                         <!-- White Box Section -->
@@ -212,61 +211,195 @@
                                             <div class="form-group">
                                                 <label for="trusted_small_heading">Small Heading (White Box)</label>
                                                 <input type="text" class="form-control" name="trusted_small_heading"
-                                                       placeholder="Enter Small Heading"
-                                                       value="{{ old('trusted_small_heading', $content['trusted_small_heading'] ?? '') }}">
+                                                    placeholder="Enter Small Heading"
+                                                    value="{{ old('trusted_small_heading', $content['trusted_small_heading'] ?? '') }}">
                                             </div>
-            
+
                                             <div class="form-group">
                                                 <label for="trusted_main_heading">Main Heading (White Box)</label>
                                                 <input type="text" class="form-control" name="trusted_main_heading"
-                                                       placeholder="Enter Main Heading"
-                                                       value="{{ old('trusted_main_heading', $content['trusted_main_heading'] ?? '') }}">
+                                                    placeholder="Enter Main Heading"
+                                                    value="{{ old('trusted_main_heading', $content['trusted_main_heading'] ?? '') }}">
                                             </div>
-            
+
                                             <div class="form-group">
                                                 <label for="trusted_description">Description (White Box)</label>
-                                                <textarea name="trusted_description" class="form-control" rows="3"
-                                                          placeholder="Enter Description">{{ old('trusted_description', $content['trusted_description'] ?? '') }}</textarea>
+                                                <textarea name="trusted_description" class="form-control" rows="3" placeholder="Enter Description">{{ old('trusted_description', $content['trusted_description'] ?? '') }}</textarea>
                                             </div>
                                         </div>
-            
+
                                         <!-- Dark Box Section -->
                                         <div class="col-md-12 bg-dark text-white p-3 rounded">
                                             <div class="form-group">
                                                 <label for="dark_box_heading">Heading (Dark Box)</label>
                                                 <input type="text" class="form-control" name="dark_box_heading"
-                                                       placeholder="Enter Dark Box Heading"
-                                                       value="{{ old('dark_box_heading', $content['dark_box_heading'] ?? '') }}">
+                                                    placeholder="Enter Dark Box Heading"
+                                                    value="{{ old('dark_box_heading', $content['dark_box_heading'] ?? '') }}">
                                             </div>
-            
+
                                             <div class="form-group">
                                                 <label for="dark_box_description">Description (Dark Box)</label>
-                                                <textarea name="dark_box_description" class="form-control" rows="2"
-                                                          placeholder="Enter Dark Box Description">{{ old('dark_box_description', $content['dark_box_description'] ?? '') }}</textarea>
+                                                <textarea name="dark_box_description" class="form-control" rows="2" placeholder="Enter Dark Box Description">{{ old('dark_box_description', $content['dark_box_description'] ?? '') }}</textarea>
                                             </div>
-            
+
                                             <div class="form-group">
                                                 <label for="dark_box_number">Number (e.g. Experience, Projects)</label>
                                                 <input type="type" class="form-control" name="dark_box_number"
-                                                       placeholder="Enter Number"
-                                                       value="{{ old('dark_box_number', $content['dark_box_number'] ?? '') }}">
+                                                    placeholder="Enter Number"
+                                                    value="{{ old('dark_box_number', $content['dark_box_number'] ?? '') }}">
                                             </div>
                                         </div>
-            
+
                                         <!-- Section Image -->
                                         <div class="col-md-12 mt-4">
                                             <div class="form-group">
                                                 <label for="trusted_section_image">Section Image</label>
-                                                <input type="file" class="form-control" name="trusted_section_image" id="trusted_section_image">
+                                                <input type="file" class="form-control" name="trusted_section_image"
+                                                    id="trusted_section_image">
                                                 @if ($page->hasMedia('trusted_section_image'))
                                                     @foreach ($page->getMedia('trusted_section_image') as $media)
                                                         <img src="{{ $media->getUrl() }}" alt="Section Image"
-                                                             style="max-width: 200px; margin-top: 10px;">
+                                                            style="max-width: 200px; margin-top: 10px;">
                                                     @endforeach
                                                 @endif
                                             </div>
                                         </div>
-            
+
+                                    </div>
+                                </div> <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Before & After -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-box-shadow mt-5">
+                                <div class="card-header">
+                                    <h3 class="card-title">Detail Page Before and After</h3>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Section Heading -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="before_after_heading">Section Heading</label>
+                                                <input type="text" class="form-control" name="before_after_heading"
+                                                    placeholder="Enter Section Heading"
+                                                    value="{{ old('before_after_heading', $content['before_after_heading'] ?? '') }}">
+                                            </div>
+                                        </div>
+
+                                        <!-- Before Image -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="before_image">Before Image</label>
+                                                <input type="file" class="form-control" name="before_image"
+                                                    id="before_image">
+                                                @if ($page->hasMedia('before_image'))
+                                                    @foreach ($page->getMedia('before_image') as $media)
+                                                        <img src="{{ $media->getUrl() }}" alt="Before Image"
+                                                            style="max-width: 200px; margin-top: 10px;">
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <!-- After Image -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="after_image">After Image</label>
+                                                <input type="file" class="form-control" name="after_image"
+                                                    id="after_image">
+                                                @if ($page->hasMedia('after_image'))
+                                                    @foreach ($page->getMedia('after_image') as $media)
+                                                        <img src="{{ $media->getUrl() }}" alt="After Image"
+                                                            style="max-width: 200px; margin-top: 10px;">
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Get Started Today -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-box-shadow mt-5">
+                                <div class="card-header">
+                                    <h3 class="card-title">Get Started Today Section</h3>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <!-- Heading -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="get_started_heading">Heading</label>
+                                                <input type="text" class="form-control" name="get_started_heading"
+                                                    placeholder="Enter Heading"
+                                                    value="{{ old('get_started_heading', $content['get_started_heading'] ?? '') }}">
+                                            </div>
+                                        </div>
+
+                                        <!-- Image Upload Field -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="get_started_today_image">Image</label>
+                                                <input type="file" class="form-control" name="get_started_today_image"
+                                                    id="get_started_today_image">
+
+                                                @if ($page->hasMedia('get_started_today_image'))
+                                                    @foreach ($page->getMedia('get_started_today_image') as $media)
+                                                        <img src="{{ $media->getUrl() ?? '' }}"
+                                                            alt="Get Started Today Image"
+                                                            style="max-width: 200px; max-height: 200px; margin-top: 10px;">
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="get_started_description">Description</label>
+                                                <textarea name="get_started_description" class="form-control" rows="3" placeholder="Enter Description">{{ old('get_started_description', $content['get_started_description'] ?? '') }}</textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- Button Text -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_started_button_text">Button Text</label>
+                                                <input type="text" class="form-control" name="get_started_button_text"
+                                                    placeholder="Enter Button Text"
+                                                    value="{{ old('get_started_button_text', $content['get_started_button_text'] ?? '') }}">
+                                            </div>
+                                        </div>
+
+                                        <!-- Button URL -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="get_started_button_url">Button URL</label>
+                                                <input type="url" class="form-control" name="get_started_button_url"
+                                                    placeholder="Enter Button URL"
+                                                    value="{{ old('get_started_button_url', $content['get_started_button_url'] ?? '') }}">
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div> <!-- /.card-body -->
                             </div>

@@ -80,14 +80,13 @@
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Requirement</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
-                            <a href="{{ route('admin.order.index') }}" class="nav-link {{ request()->is('admin/project*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.project.index') }}" class="nav-link {{ request()->is('admin/order*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.order.index') }}" class="nav-link {{ request()->is('admin/order*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>Order Listing</p>
                             </a>
-                        </li> --}}
+                        </li>
 
                         <!--  CMS-Section -->
                         <div style="border-top: 1px solid #ddd; padding-top: 10px; padding-bottom: 50px;">

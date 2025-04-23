@@ -1,4 +1,14 @@
- /* Define colors in root */
+/* @font-face {
+  font-family: 'MyCustomFont';
+  src: url('../fonts/inter_5.1.1_cyrillic-100-italic.woff2') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* Define colors in root */
  :root {
     --primary-color: #2FA8FC; /* Blue */
     --secondary-color: #2ecc71; /* Green */
@@ -7,6 +17,11 @@
     --text-color: #333333; /* Dark Gray */
     --link-color: #2980b9; /* Link color */
 }
+
+body h1,h2,h3,h4,h5,h6,p{
+  font-family: 'Inter', sans-serif !important;
+}
+
 body p{
   color: #000000;
 }

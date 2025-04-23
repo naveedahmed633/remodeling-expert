@@ -7,7 +7,7 @@
             <div class="col-lg-4">
                 <div class="navbar-brand text-start" style="white-space: normal;">
                     <!-- Logo and Title -->
-                    <div class="d-flex align-items-center gap-2 my-3" data-aos="zoom-out-up">
+                    <div class="d-flex align-items-center gap-2 my-3">
                         <img src="{{ asset('front/images/Vector.png') }}" alt="Logo" class="mb-0"
                             style="width: 40px;">
                         <div>
@@ -17,14 +17,14 @@
                     </div>
 
                     <!-- Description -->
-                    <p data-aos="zoom-out-up" class="mb-3 fw-light text-white small">
+                    <p class="mb-3 fw-light text-white small">
                         At Remodelling Experts, we bring innovation, precision, and <br>quality to every remodeling
                         project. With years of experience,<br> our team specializes in creating stunning, functional
                         spaces <br>that enhance your home’s beauty and value.
                     </p>
 
                     <!-- Social Media Icons -->
-                    <div data-aos="zoom-out-up" class="d-flex gap-3">
+                    <div class="d-flex gap-3">
                         <a href="#" class="social-icon text-white" target="_blank" rel="noopener"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon text-white" target="_blank" rel="noopener"><i
@@ -40,20 +40,20 @@
                 <div class="d-flex flex-wrap justify-content-between">
                     <!-- Quick Links -->
                     <div class="col-12 col-lg-2 mb-4">
-                        <h5 class="text-white fw-light" data-aos="zoom-out-up">Quick Links</h5>
-                        <ul class="list-unstyled" data-aos="zoom-out-up" style="line-height: 35px;">
+                        <h5 class="text-white fw-light">Quick Links</h5>
+                        <ul class="list-unstyled" style="line-height: 35px;">
                             <li><a href="{{ route('index') }}" class="text-white font-weight-light">Home</a></li>
                             <li><a href="{{ route('about') }}" class="text-white font-weight-light">About Us</a></li>
-                            <li><a href="{{ route('services') }}" class="text-white font-weight-light">Services</a></li>
-                            <li><a href="{{ route('contact') }}" class="text-white font-weight-light">Contact</a></li>
                             <li><a href="{{ route('blog') }}" class="text-white font-weight-light">Blog</a></li>
+                            <li><a href="{{ route('services') }}" class="text-white font-weight-light">Our Services</a></li>
+                            <li><a href="{{ route('contact') }}" class="text-white font-weight-light">Contact us</a></li>
                         </ul>
                     </div>
 
                     <!-- Our Services -->
                     <div class="col-12 col-lg-2 mb-4">
-                        <h5 class="text-white" data-aos="zoom-out-up">Our Services</h5>
-                        <ul class="list-unstyled" data-aos="zoom-out-up" style="line-height: 35px;">
+                        <h5 class="text-white">Our Services</h5>
+                        <ul class="list-unstyled" style="line-height: 35px;">
                             @foreach ($services->take(5) as $service)
                                 <li>
                                     <a href="{{ route('service.detail', $service->id) }}" class="text-white">
@@ -66,8 +66,8 @@
 
                     <!-- Contact Us -->
                     <div class="col-12 col-lg-4 mb-4">
-                        <h5 class="text-white" data-aos="zoom-out-up">Contact Us</h5>
-                        <ul class="list-unstyled contact" data-aos="zoom-out-up" style="line-height: 35px;">
+                        <h5 class="text-white">Contact Us</h5>
+                        <ul class="list-unstyled contact" style="line-height: 35px;">
                             <li><a class="text-white"><i class="fas fa-phone" style="color: gray;"></i>
                                     (123) 456-7890</a></li>
                             <li><a class="text-white">📧 info@remodelingexperts.com</a></li>
@@ -83,7 +83,7 @@
             <div class="col-12 text-center mt-4 pb-4">
                 <hr class="border-white w-100 mb-4">
                 <div class="d-flex justify-content-between flex-column flex-md-row text-start">
-                    <p class="mb-0 text-white">Copyright © 2025 Total Upgrade Remodeling Expert. All rights reserved.
+                    <p class="mb-0 text-white">Copyright © 2025Total Upgrade Remodeling Expert. All rights reserved.
                     </p>
                     <div class="d-flex">
                         <a href="#" class="text-white">Privacy Policy</a>

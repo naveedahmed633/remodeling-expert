@@ -22,7 +22,7 @@ class SettingSeeder extends Seeder
             'banner_section_heading' => 'Welcome to Our Website',
             'banner_section_description' => 'Experience strength in both body and spirit with our expert remodeling solutions.',
             'banner_section_button_text' => 'Explore More',
-            'banner_section_button_url' => 'about-us',
+            'banner_section_button_url' => 'https://remodeling-expert.kaamupdates.net/',
         ];
 
         // Create Setting page record

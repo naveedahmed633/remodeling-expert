@@ -9,7 +9,7 @@
     <!-- Banner Section -->
     <div class="home-banner banner text-center">
         <div class="mx-auto" style="max-width: 700px; ">
-            <h1 class="text-white" data-aos="fade-up" style="font-family: Open Sans;">{!! $content['banner_section_heading'] ?? '' !!}</h1>
+            <h1 class="text-white" data-aos="fade-up">{!! $content['banner_section_heading'] ?? '' !!}</h1>
             <p class="text-white" data-aos="fade-up">{!! $content['banner_section_description'] ?? ''!!}</p>
             <a href="{!! $content['banner_section_button_url'] ?? ''!!}"
                 class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;" data-aos="fade-up"><b>{!! $content['banner_section_button_text'] ?? '' !!}</b></a>
@@ -181,7 +181,7 @@
                                 <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{!! $content['trusted_small_heading'] ?? '' !!}
                                 </h6>
                                 <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{!! $content['trusted_main_heading'] ?? '' !!}</h1>
-                                <p data-aos="fade-up" style="font-family: Open Sans"><i>{!! $content['trusted_description'] ?? '' !!}</i></p>
+                                <p data-aos="fade-up" style="font-style: italic">{!! $content['trusted_description'] ?? '' !!}</p>
                             </div>
                             </div>
                         </div>

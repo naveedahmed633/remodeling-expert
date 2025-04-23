@@ -45,7 +45,7 @@ class ContactSeeder extends Seeder
             'get_started_heading' => 'Get Started Today',
             'get_started_description' => 'Start your journey with us and unlock endless possibilities.',
             'get_started_button_text' => 'Join Now',
-            'get_started_button_url' => 'order', // updated for consistency
+            'get_started_button_url' => 'https://remodeling-expert.kaamupdates.net/', // updated for consistency
         ];
 
         // Create Contact page record
