@@ -72,16 +72,16 @@
                     <div class="project-details">
                         <h5 data-aos="fade-up" class="fw-bold mb-3">{{ $project->title }}</h5>
                         <p data-aos="fade-up" class="project-description">{!! $project->description ?? '' !!}</p><br>
-                        <div class="mb-2 d-flex">
-                            <strong data-aos="fade-up" style="min-width: 100px;">Client</strong>
+                        <div class="mb-4 d-flex">
+                            <strong data-aos="fade-up" style="min-width: 100px; font-weight: 700; color: black;">Client</strong>
                             <span data-aos="fade-up">{{ $project->client }}</span>
                         </div>
-                        <div class="mb-2 d-flex">
-                            <strong data-aos="fade-up" style="min-width: 100px;">Year</strong>
+                        <div class="mb-4 d-flex">
+                            <strong data-aos="fade-up" style="min-width: 100px; font-weight: 700; color: black;">Year</strong>
                             <span data-aos="fade-up">{{ $project->year }}</span>
                         </div>
-                        <div class="mb-2 d-flex">
-                            <strong data-aos="fade-up" style="min-width: 100px;">Author</strong>
+                        <div class="mb-4 d-flex">
+                            <strong data-aos="fade-up" style="min-width: 100px; font-weight: 700; color: black;">Author</strong>
                             <span data-aos="fade-up">{{ $project->author }}</span>
                         </div>
                     </div>
