@@ -8,7 +8,7 @@
     </style>
     <!-- Banner Section -->
     <div class="home-banner banner text-center">
-        <div class="mx-auto" style="max-width: 80px; ">
+        <div class="mx-auto" style="max-width: 800px; ">
             <h1 class="text-white" data-aos="fade-up">{!! $content['banner_section_heading'] ?? '' !!}</h1>
             <p class="text-white" data-aos="fade-up">{!! $content['banner_section_description'] ?? ''!!}</p>
             <a href="{!! $content['banner_section_button_url'] ?? ''!!}"
