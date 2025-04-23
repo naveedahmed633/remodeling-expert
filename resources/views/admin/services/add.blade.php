@@ -106,7 +106,7 @@
                                         <!-- Service Description -->
                                         <div class="col-md-12">
                                             <label for="">Service Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="Description"
+                                            <textarea name="description" placeholder="Description"
                                                 class="form-control form__field">{{ old('description') }}</textarea>
                                             <small class="text-danger">
                                                 @error('description')

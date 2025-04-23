@@ -109,7 +109,7 @@
                                         <!-- Blog Description -->
                                         <div class="col-md-12">
                                             <label for="">Blog Description *</label>
-                                            <textarea name="description" id="summernote" class="form-control form__field">{!! old('description', $blog->description ?? '') !!}</textarea>
+                                            <textarea name="description"  class="form-control form__field">{!! old('description', $blog->description ?? '') !!}</textarea>
                                             <small class="text-danger">
                                                 @error('description') {{ $message }} @enderror
                                             </small>
