@@ -3,6 +3,8 @@
     Edit Project
 @endsection
 @section('content')
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <style>
         .active {
             background-color: #007BFF !important;
@@ -277,7 +279,6 @@
 @endsection
 
 @section('script')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <script>
         $(document).ready(function() {
