@@ -120,7 +120,7 @@
                                         <!-- Short Description -->
                                         <div class="col-md-12">
                                             <label for="">Project Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="description" class="form-control form__field" required>
+                                            <textarea name="description" placeholder="description" class="form-control form__field" required>
                                                 {{ old('description', $project->description ?? '') }}
                                             </textarea>
                                             <small class="text-danger">

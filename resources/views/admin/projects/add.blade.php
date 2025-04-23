@@ -106,7 +106,7 @@
                                         <!-- Short Description -->
                                         <div class="col-md-12">
                                             <label for="">Project Description *</label>
-                                            <textarea name="description" id="summernote" placeholder="Description" class="form-control form__field">{{ old('description') }}</textarea>
+                                            <textarea name="description" placeholder="Description" class="form-control form__field">{{ old('description') }}</textarea>
                                             <small class="text-danger">
                                                 @error('description')
                                                     {{ $message }}
