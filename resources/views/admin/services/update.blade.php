@@ -3,6 +3,7 @@
     Edit Blog
 @endsection
 @section('content')
+
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <style>
         .active {
@@ -152,24 +153,15 @@
 @section('script')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-            height: 200
-        });
+    $(document).ready(function () {
+            $('#summernote').summernote({
+                height: 200
+            });
 
-        // Ensure summernote content is saved before form submit
-        $('form').on('submit', function() {
-            $('#summernote').val($('#summernote').summernote('code'));
-        });
-
-        // Image preview before upload
-        $('#testimonialImageInput').on('change', function() {
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                $('#imagePreview').attr('src', e.target.result).show();
-            };
-            reader.readAsDataURL(this.files[0]);
-        });
+            // Ensure description HTML gets submitted
+            $('form').on('submit', function () {
+                $('#summernote').val($('#summernote').summernote('code'));
+            });
     });
 </script>
 @endsection

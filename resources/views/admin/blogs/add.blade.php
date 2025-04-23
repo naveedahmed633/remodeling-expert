@@ -3,7 +3,8 @@
     Add Blog
 @endsection
 @section('content')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <style>
         .active {
             background-color: #007BFF !important;
@@ -43,9 +44,9 @@
             display: none;
         }
 
-        .rating input:checked~label:before,
-        .rating:not(:checked)>label:hover:before,
-        .rating:not(:checked)>label:hover~label:before {
+        .rating input:checked ~ label:before,
+        .rating:not(:checked) > label:hover:before,
+        .rating:not(:checked) > label:hover ~ label:before {
             color: #f9df4a;
         }
     </style>
@@ -67,10 +68,9 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('admin.blogs.store') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form action="{{ route('admin.blogs.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-
+                                    
                                     <div class="row">
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
@@ -143,21 +143,18 @@
 
     <script>
         $(document).ready(function() {
-            $('#summernote').summernote({
-                height: 200, // Set the height of the editor
-                allowedTags: ['p', 'a', 'b', 'i', 'strong', 'em', 'ul', 'ol', 'li', 'br', 'img', 'h1', 'h2',
-                    'h3', 'h4', 'h5', 'h6'
-                ], // Specify allowed tags
-                callbacks: {
-                    onPaste: function(e) {
-                        let bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData)
-                            .getData('text/html');
-                        e.preventDefault();
-                        let cleaned = $('<div>').append(bufferText).text(); // removes all tags
-                        document.execCommand('insertText', false, cleaned);
-                    }
-                }
-            });
+             $('#summernote').summernote({
+        height: 200,  // Set the height of the editor
+        allowedTags: ['p', 'a', 'b', 'i', 'strong', 'em', 'ul', 'ol', 'li', 'br', 'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],  // Specify allowed tags
+        callbacks: {
+            onPaste: function (e) {
+                let bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('text/html');
+                e.preventDefault();
+                let cleaned = $('<div>').append(bufferText).text(); // removes all tags
+                document.execCommand('insertText', false, cleaned);
+            }
+        }
+    });
 
             $('form').on('submit', function() {
                 $('#summernote').val($('#summernote').summernote('code'));

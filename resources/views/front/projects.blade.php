@@ -27,7 +27,7 @@
                         <img src="{{ asset('storage/' . $project->image) }}" class="img-fluid w-100 project-image"
                             alt="{{ $project->title }}">
                         <div class="overlay-box bg-white p-3 position-absolute">
-                            <h5>{{ $project->title }}</h5>
+                            <h5>{{ Str::limit($project->title, 20) ?: '' }}</h5>
                             <p>{{ Str::limit(strip_tags($project->description), 40) ?: '' }}</p>
                             <a href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
                                 style="color: #2fa8fa;">
