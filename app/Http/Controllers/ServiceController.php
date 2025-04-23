@@ -47,8 +47,10 @@ class ServiceController extends Controller
         $services = Service::all();
 
         $data = CmsPage::where('name', 'Project')->first();
+        $homeData = CmsPage::where('name', 'Home')->first();
         $content = $data ? json_decode($data->content, true) : [];
-        return view('front.detailed-services', compact('service', 'services', "data", "content"));
+        $homeContent = $data ? json_decode($homeData->content, true) : [];
+        return view('front.detailed-services', compact('service', 'services', "data", "content", 'homeContent'));
     }
 
     public function edit($id)
