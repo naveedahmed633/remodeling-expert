@@ -1,5 +1,5 @@
 @extends('front.include.app')
-@section('title', 'Services | Remodeling Expert')
+@section('title', 'Blogs | Remodeling Expert')
 @section('content')
 
     <style>
