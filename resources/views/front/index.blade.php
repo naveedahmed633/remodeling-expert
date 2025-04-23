@@ -12,13 +12,13 @@
             <h1 class="text-white" data-aos="fade-up">{!! $content['banner_section_heading'] ?? '' !!}</h1>
             <p class="text-white" data-aos="fade-up">{!! $content['banner_section_description'] ?? ''!!}</p>
             <a href="{!! $content['banner_section_button_url'] ?? ''!!}"
-                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;" data-aos="fade-up"><b>{!! $content['banner_section_button_text'] ?? '' !!}</b></a>
+                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 12px 50px !important; font-weight: 600 !important; font-size: larger !important;" data-aos="fade-up"><b>{!! $content['banner_section_button_text'] ?? '' !!}</b></a>
         </div>
     </div>
 
     <section class="py-5" style="">
         <div class="container position-relative">
-            <div class="row mb-5">
+            <div class="row">
                 <!-- Image Column -->
                 <div class="col-md-6">
                     <img  data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?: asset('front/images/3d-rendering-loft-luxury-living-room-with-bookshelf (1).png') }}" alt="Sample"
@@ -34,7 +34,7 @@
                     <p class="text-start" data-aos="fade-up">{!! $content['transforming_homes_desc_3'] ?? '' !!}</p>
                     <div class="text-start mt-4">
                         <a href="{!! $content['transforming_homes_button_url'] ?? '' !!}"
-                            class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;"  data-aos="fade-up">{!! $content['transforming_homes_button_text'] ?? '' !!}</a>
+                            class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 12px 40px !important; font-weight: 800 !important;"  data-aos="fade-up">{!! $content['transforming_homes_button_text'] ?? '' !!}</a>
                     </div>
                 </div>
             </div>
@@ -73,12 +73,12 @@
             </div>
 
             <a  data-aos="fade-up" href="{!! $content['interior_solution_button_url'] ?? '' !!}"
-                class="btn btn-primary custom-btn btn-14 mt-4 banner-btn bold"  style="font-weight: 700 !important; padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['interior_solution_button_text'] ?? '' !!}</a>
+                class="btn btn-primary custom-btn btn-14 mt-4 banner-btn bold"  style="font-weight: 700 !important; padding: 12px 30px !important; font-weight: 800 !important;">{!! $content['interior_solution_button_text'] ?? '' !!}</a>
         </div>
     </section>
 
     <section class="py-5" style="background-color: #001626;">
-        <div class="container">
+        <div class="container py-4">
             <!-- Main Heading -->
             <div class="text-center mb-4">
                 <h2 class="text-white bold" style="font-weight: 700 !important;" data-aos="fade-up">{!! $content['estimate_section_heading'] ?? '' !!}</h2>
@@ -86,7 +86,7 @@
             </div>
     
             <!-- Sub-sections -->
-            <div class="row text-center">
+            <div class="row text-center py-3">
                 <!-- Sub-section 1 -->
                 <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
@@ -140,7 +140,7 @@
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{!! $content['estimate_button_url'] ?? '' !!}"
                    class="btn btn-primary custom-btn btn-14 banner-btn"
-                   style="padding: 10px 40px !important; font-weight: 800 !important;">
+                   style="padding: 11px 40px !important; font-weight: 800 !important;">
                     {!! $content['estimate_button_text'] ?? '' !!}
                 </a>
             </div>
@@ -165,48 +165,65 @@
             </div>
         </section>
     </div>
-
+    
     <section class="position-relative py-5 mb-5">
         <div class="container position-relative z-2">
-            <div class="row  position-relative">
+            <div class="row position-relative">
                 <div class="col-md-12 position-relative" style="z-index: 2;">
-                    <!-- White Box with width 100% -->
                     <div class="row">
-                        <div class="col-7">
-                            <div class="bg-white d-flex p-5 shadow mt-5 " style="width: 100%;">
-                                <div data-aos="fade-up" class="fs-1 text-primary mb-3 px-4">
+                        <!-- White Box -->
+                        <div class="col-lg-7 col-md-12">
+                            <div class="bg-white d-flex p-5 shadow mt-5 trusted-white-box flex-column flex-lg-row align-items-start"
+                                style="width: 100%;">
+                                <div data-aos="fade-up" class="fs-1 text-primary mb-3 px-lg-4 px-0 trusted-quote-img">
                                     <img src="{{ asset('front/images/“.png') }}" alt="">
                                 </div>
                                 <div>
-                                <h6 data-aos="fade-up" class="text-uppercase text-theme-color">{!! $content['trusted_small_heading'] ?? '' !!}
-                                </h6>
-                                <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">{!! $content['trusted_main_heading'] ?? '' !!}</h1>
-                                <p data-aos="fade-up" style="font-style: italic">{!! $content['trusted_description'] ?? '' !!}</p>
-                            </div>
+                                    <h6 data-aos="fade-up" class="text-uppercase text-theme-color">
+                                        {!! $content['trusted_small_heading'] ?? '' !!}
+                                    </h6>
+                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">
+                                        {!! $content['trusted_main_heading'] ?? '' !!}
+                                    </h1>
+                                    <p data-aos="fade-up" style="font-style: italic">
+                                        {!! $content['trusted_description'] ?? '' !!}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-7 ms-auto">
-                            <div class="p-4 py-5 text-white" style="background-color: #001626; width: 50%; ">
-                                <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">{!! $content['dark_box_heading'] ?? '' !!}</h5>
-                                <p data-aos="fade-up" class="mb-1 text-white">{!! $content['dark_box_description'] ?? '' !!}</p>
-                                <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">{!! $content['dark_box_number'] ?? '' !!}</h4>
+    
+                        <!-- Black Box -->
+                        <div class="col-lg-7 col-md-12 ms-lg-auto">
+                            <div class="p-4 py-5 text-white trusted-dark-box"
+                                style="background-color: #001626; width: 50%;">
+                                <h5 data-aos="fade-up" class="mb-2 text-white bold" style="font-weight: 700 !important;">
+                                    {!! $content['dark_box_heading'] ?? '' !!}
+                                </h5>
+                                <p data-aos="fade-up" class="mb-1 text-white">
+                                    {!! $content['dark_box_description'] ?? '' !!}
+                                </p>
+                                <h4 data-aos="fade-up" class="fw-bold mb-0 text-theme-color">
+                                    {!! $content['dark_box_number'] ?? '' !!}
+                                </h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Image outside container and full height -->
-        <div class="position-absolute top-0 end-0 h-100" style="width: 65%; z-index: 0;">
-            <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}" alt="Image"
+    
+        <!-- Background Image (Visible only on LG and above) -->
+        <div class="position-absolute top-0 end-0 h-100 trusted-bg-image" style="width: 65%; z-index: 0;">
+            <img data-aos="fade-up"
+                src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}"
+                alt="Image"
                 class="w-100 h-100 object-fit-cover">
         </div>
     </section>
-
+    
     <section class="py-5">
         <div class="container">
-            <div class="row d-flex justify-content-center  text-center">
+            <div class="row d-flex justify-content-center text-center">
                 <div class="col-8">
                     <h2 data-aos="fade-up" class=" bold" style="font-weight: 700 !important;">{!! $content['recent_projects_heading'] ?? '' !!}</h2>
                     <p data-aos="fade-up">{!! $content['recent_projects_description'] ?? '' !!}</p>
@@ -235,7 +252,7 @@
             <!-- Bottom Centered Button -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{!! $content['recent_projects_button_url'] ?? '' !!}"
-                    class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['recent_projects_button_text'] ?? '' !!}</a>
+                    class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 12px 30px !important; font-weight: 800 !important;">{!! $content['recent_projects_button_text'] ?? '' !!}</a>
             </div>
         </div>
     </section>
@@ -243,30 +260,35 @@
     <style>
         .get-started-section {
             background-image: url('{{ $data?->getFirstMediaUrl('get_started_today_image') ?: asset('front/images/frames-for-your-heart-2d4lAQAlbDA-unsplash.png') }}');
-            /* replace with your image */
             background-size: cover;
             background-position: center;
             height: 100vh;
         }
-
+    
         .content-box {
             background-color: #0016269e;
             /* black with opacity */
-            max-width: 700px;
-            /* col-5 jaisa */
+            max-width: 790px;
             width: 100%;
             padding: 5rem !important;
             padding-left: 6rem !important;
             padding-right: 6rem !important;
-            /* border-radius: 10px; */
+            height: auto; /* Adjust height as needed */
+            min-height: 400px; /* Set minimum height for the content box */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
-    <section class="position-relative get-started-section d-flex justify-content-center align-items-center">
+    
+    <section class="position-relative get-started-section d-flex justify-content-center align-items-center mt-5">
         <div class="content-box text-white text-center p-5">
-            <h2 data-aos="fade-up" class="fw-bold mb-3 text-white">{!! $content['get_started_heading'] ?? '' !!}</h2>
-            <p data-aos="fade-up" class="mb-4 text-white">{!! $content['get_started_description'] ?? '' !!}</p>
+            <h3 data-aos="fade-up" class="fw-bold text-white">{!! $content['get_started_heading'] ?? '' !!}</h3>
+            <p data-aos="fade-up" class="text-white">{!! $content['get_started_description'] ?? '' !!}</p>
             <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}"
-                class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
+                class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 13px 30px !important; font-weight: 800 !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
         </div>
     </section>
+    
 @endsection

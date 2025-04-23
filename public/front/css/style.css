@@ -26,6 +26,12 @@ body p{
   color: #000000;
 }
 
+p {
+  margin-bottom: 1rem; /* ya jitni aapko chahiye */
+  margin-top: 0;       /* optionally top margin remove karne ke liye */
+  line-height: 1.6;    /* readability ke liye line spacing */
+}
+
 .text-small{
   font-size: 14px;
   color: #d3d3d3 !important;
@@ -34,7 +40,7 @@ body p{
 .banner{
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 720px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -413,4 +419,51 @@ footer ul.contact .text-white:hover{
     object-fit: cover !important;
     height: 400px !important;  
     width: 100% !important;
+}
+
+@media (max-width: 991.98px) {
+  .trusted-white-box,
+  .trusted-dark-box {
+      width: 100% !important;
+  }
+
+  .trusted-white-box {
+      margin-bottom: 2rem;
+  }
+
+  .trusted-bg-image {
+      display: none !important;
+  }
+
+  .trusted-quote-img {
+      margin-right: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .trusted-white-box,
+  .trusted-dark-box {
+      width: 100%;
+  }
+}
+
+.project-img-fixed {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  /* border-radius: 6px; */
+}
+
+.project-img-auto {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* border-radius: 6px; */
+}
+
+@media (max-width: 768px) {
+  .project-img-fixed {
+      height: 220px;
+  }
 }

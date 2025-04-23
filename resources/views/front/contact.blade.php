@@ -9,6 +9,15 @@
             height: 400px;
             /* Set a fixed height to avoid stretching */
         }
+
+        .form-control{
+            border: 1px solid #000000 !important;
+            border-radius: 0px !important;
+        }
+
+        .form-label{
+            color: black !important;
+        }
     </style>
     <!-- Banner Section -->
     <div class="classic-banner banner text-center">
@@ -85,11 +94,11 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label data-aos="fade-up" for="message" class="form-label">Message</label>
+                            <label data-aos="fade-up" for="message" class="form-label">Message!</label>
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
                         <button data-aos="fade-up" type="submit" class="btn btn-primary custom-btn btn-14 banner-btn"
-                            style="padding: 10px 40px !important; font-weight: 800 !important;">{!! $content['get_in_touch_button_text'] ?? '' !!}</button>
+                            style="padding: 11px 50px !important; font-weight: 800 !important;">{!! $content['get_in_touch_button_text'] ?? '' !!}</button>
                     </form>
                 </div>
             </div>

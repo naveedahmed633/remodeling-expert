@@ -57,7 +57,7 @@
 
             <!-- Search Form: Visible on lg+, hidden on small -->
             <form class="d-none d-lg-flex" role="search">
-                <a href="#" class="btn btn-primary banner-btn bold custom-btn btn-14" style="padding: 10px 40px !important; font-weight: 800 !important; font-weight: 700 !important;">(123) 456-7890</a>
+                <a href="#" class="btn btn-primary banner-btn bold custom-btn btn-14" style="padding: 12px 35px !important; font-weight: 600 !important; font-size: larger !important;">(123) 456-7890</a>
             </form>            
 
         </div>

@@ -190,7 +190,7 @@ class FrontController extends Controller
         ];
 
         // Send email using Mailable class
-        // Mail::to($request->email)->send(new \App\Mail\OrderSummaryMail($emailData));
+        Mail::to($request->email)->send(new \App\Mail\OrderSummaryMail($emailData));
 
         // Clear session after submission (optional)
         session()->forget([
