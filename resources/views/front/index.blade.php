@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <section class="py-5" style="">
+    <section class="py-5 transforming-md-screen" style="">
         <div class="container position-relative">
             <div class="row">
                 <!-- Image Column -->
@@ -146,7 +146,6 @@
             </div>
         </div>
     </section>
-    
 
     <div class="container">
         <section class="before-after-section py-5 text-center">

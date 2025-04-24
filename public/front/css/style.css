@@ -132,7 +132,7 @@ nav .nav-link{
 
     /* Jab navbar collapse ho to logo ke size ko thora chhota karen */
     .navbar-brand img {
-        width: 30px;
+        /* width: 30px; */
         height: 30px;
     }
 
@@ -465,5 +465,11 @@ footer ul.contact .text-white:hover{
 @media (max-width: 768px) {
   .project-img-fixed {
       height: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .transforming-md-screen  {
+    margin-bottom: 150px; /* jitni chahen */
   }
 }

@@ -23,11 +23,16 @@
 
             <!-- Left Nav Links + Toggle Button -->
             <div class="d-flex align-items-center">
-                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
+                {{-- <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarLeft" aria-controls="navbarLeft" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <i class="fas fa-bars text-white fs-4"></i>
-                </button>
+                </button> --}}
+                <a class="navbar-brand ms-auto d-lg-none text-center" href="/">
+                    <img src="{{ asset('front/images/Group 135.png') }}" alt="Logo" class="my-2" style="">
+                    {{-- <div class="text-white small fw-bold">TOTAL UPGRADE</div>
+                    <div class="text-white small fw-thin">REMODELING EXPERT</div> --}}
+                </a>
                 <div class="collapse navbar-collapse" id="navbarLeft">
                     <ul class="navbar-nav me-3 mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link text-white active" href="/"><b>Home</b></a></li>
@@ -49,11 +54,16 @@
                     <div class="text-white small fw-thin">REMODELING EXPERT</div>
                 </a>
             </div>
-            <a class="navbar-brand ms-auto d-lg-none text-center" href="/">
+            {{-- <a class="navbar-brand ms-auto d-lg-none text-center" href="/">
                 <img src="{{ asset('front/images/logo_1.png') }}" alt="Logo" class="my-2" style="width: 30px; height: 30px;">
                 <div class="text-white small fw-bold">TOTAL UPGRADE</div>
                 <div class="text-white small fw-thin">REMODELING EXPERT</div>
-            </a>
+            </a> --}}
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarLeft" aria-controls="navbarLeft" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white fs-4"></i>
+                </button>
 
             <!-- Search Form: Visible on lg+, hidden on small -->
             <form class="d-none d-lg-flex" role="search">
