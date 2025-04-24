@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row align-items-start d-flex flex-wrap">
             <!-- First Section: Logo and Description -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-5">
                 <div class="navbar-brand text-start" style="white-space: normal;">
                     <!-- Logo and Title -->
                     <div class="d-flex align-items-center gap-2 my-3">

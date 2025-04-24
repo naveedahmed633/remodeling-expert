@@ -150,7 +150,7 @@
             <h3 data-aos="fade-up" class="fw-bold text-white">{!! $homeContent['get_started_heading'] ?? '' !!}</h3>
             <p data-aos="fade-up" class="text-white">{!! $homeContent['get_started_description'] ?? '' !!}</p>
             <a data-aos="fade-up" href="{!! $homeContent['get_started_button_url'] ?? '' !!}" class="btn btn-primary banner-btn custom-btn btn-14"
-                style="padding: 13px 30px !important; font-weight: 800 !important;">{!! $homeContent['get_started_button_text'] ?? '' !!}</a>
+                style="padding: 13px 30px !important;">{!! $homeContent['get_started_button_text'] ?? '' !!}</a>
         </div>
     </section>
 @endsection

@@ -37,7 +37,7 @@
                     <p class="text-start" data-aos="fade-up">{!! $content['transforming_homes_desc_3'] ?? '' !!}</p>
                     <div class="text-start mt-4">
                         <a href="{!! $content['transforming_homes_button_url'] ?? '' !!}"
-                            class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 12px 40px !important; font-weight: 800 !important;"  data-aos="fade-up">{!! $content['transforming_homes_button_text'] ?? '' !!}</a>
+                            class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 12px 40px !important;"  data-aos="fade-up">{!! $content['transforming_homes_button_text'] ?? '' !!}</a>
                     </div>
                 </div>
             </div>

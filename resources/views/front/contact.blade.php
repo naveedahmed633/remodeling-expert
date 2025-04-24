@@ -98,7 +98,7 @@
                             <textarea id="message" rows="4" class="form-control"></textarea>
                         </div>
                         <button data-aos="fade-up" type="submit" class="btn btn-primary custom-btn btn-14 banner-btn"
-                            style="padding: 11px 50px !important; font-weight: 800 !important;">{!! $content['get_in_touch_button_text'] ?? '' !!}</button>
+                            style="padding: 11px 50px !important;">{!! $content['get_in_touch_button_text'] ?? '' !!}</button>
                     </form>
                 </div>
             </div>

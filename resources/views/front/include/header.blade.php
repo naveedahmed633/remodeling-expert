@@ -35,12 +35,12 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarLeft">
                     <ul class="navbar-nav me-3 mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link text-white active" href="/"><b>Home</b></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('about') }}"><b>About Us</b></a>
+                        <li class="nav-item"><a class="nav-link text-white active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('about') }}">About Us</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('services') }}"><b>Our
-                            Services</b></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('project') }}"><b>Projects</b></a>
+                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('services') }}">Our
+                            Services</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{{ route('project') }}">Projects</a>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
 
             <!-- Search Form: Visible on lg+, hidden on small -->
             <form class="d-none d-lg-flex" role="search">
-                <a href="#" class="btn btn-primary banner-btn bold custom-btn btn-14" style="padding: 12px 35px !important; font-weight: 600 !important; font-size: larger !important;">(123) 456-7890</a>
+                <a href="#" class="btn btn-primary banner-btn bold custom-btn btn-14" style="padding: 12px 35px !important; font-size: larger !important;">(123) 456-7890</a>
             </form>            
 
         </div>
