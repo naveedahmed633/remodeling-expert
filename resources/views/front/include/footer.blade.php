@@ -51,7 +51,7 @@
                     </div>
 
                     <!-- Our Services -->
-                    <div class="col-12 col-lg-2 mb-4">
+                    <div class="col-12 col-lg-3 mb-4">
                         <h5 class="text-white">Our Services</h5>
                         <ul class="list-unstyled" style="line-height: 35px;">
                             @foreach ($services->take(5) as $service)
