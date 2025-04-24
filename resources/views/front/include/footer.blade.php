@@ -18,9 +18,9 @@
 
                     <!-- Description -->
                     <p class="mb-3 fw-light text-white small">
-                        At Remodelling Experts, we bring innovation, precision, and <br>quality to every remodeling
-                        project. With years of experience,<br> our team specializes in creating stunning, functional
-                        spaces <br>that enhance your home’s beauty and value.
+                        At Remodelling Experts, we bring innovation, precision, and quality to every remodeling
+                        project. With years of experience, our team specializes in creating stunning, functional
+                        spaces that enhance your home’s beauty and value.
                     </p>
 
                     <!-- Social Media Icons -->

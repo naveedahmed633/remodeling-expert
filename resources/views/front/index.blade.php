@@ -20,13 +20,13 @@
         <div class="container position-relative">
             <div class="row">
                 <!-- Image Column -->
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <img  data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?: asset('front/images/3d-rendering-loft-luxury-living-room-with-bookshelf (1).png') }}" alt="Sample"
                         class="img-fluid w-100">
                 </div>
 
                 <!-- Content Box Overlapping -->
-                <div class="col-md-7 position-absolute top-50 end-0 translate-middle-y bg-white p-5 shadow"
+                <div class="col-lg-7 position-absolute top-50 end-0 translate-middle-y bg-white p-5 shadow"
                     style="z-index: 10;">
                     <h3 class="mb-3 text-start bold" style="font-weight: 700 !important;"  data-aos="fade-up">{!! $content['transforming_homes_heading'] ?? '' !!}</h3>
                     <p class="text-start" data-aos="fade-up">{!! $content['transforming_homes_desc_1'] ?? '' !!}</p>
@@ -235,7 +235,7 @@
                             <img data-aos="fade-up" src="{{ asset('storage/' . $project->image) }}" class="img-fluid w-100 project-image"
                                 alt="{{ $project->title }}">
                             <div class="overlay-box bg-white p-3 position-absolute">
-                                <h5 data-aos="fade-up">{{ Str::limit($project->title, 20, '') ?: '' }}</h5>
+                                <h5 data-aos="fade-up">{{ Str::limit($project->title, 15, '') ?: '' }}</h5>
                                 <p data-aos="fade-up">{{ Str::limit(strip_tags($project->description), 40, '') ?: '' }}</p>
                                 <a data-aos="fade-up" href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
                                     style="color: #2fa8fa;">
