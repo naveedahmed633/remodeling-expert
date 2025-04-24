@@ -10,9 +10,10 @@
     <div class="home-banner banner text-center">
         <div class="mx-auto" style="max-width: 800px; ">
             <h1 class="text-white" data-aos="fade-up">{!! $content['banner_section_heading'] ?? '' !!}</h1>
-            <p class="text-white" data-aos="fade-up">{!! $content['banner_section_description'] ?? ''!!}</p>
-            <a href="{!! $content['banner_section_button_url'] ?? ''!!}"
-                class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 12px 50px !important; font-size: larger !important;" data-aos="fade-up"><b>{!! $content['banner_section_button_text'] ?? '' !!}</b></a>
+            <p class="text-white" data-aos="fade-up">{!! $content['banner_section_description'] ?? '' !!}</p>
+            <a href="{!! $content['banner_section_button_url'] ?? '' !!}" class="btn btn-primary custom-btn btn-14 banner-btn"
+                style="padding: 12px 50px !important; font-size: larger !important;"
+                data-aos="fade-up"><b>{!! $content['banner_section_button_text'] ?? '' !!}</b></a>
         </div>
     </div>
 
@@ -21,20 +22,22 @@
             <div class="row">
                 <!-- Image Column -->
                 <div class="col-lg-6">
-                    <img  data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?: asset('front/images/3d-rendering-loft-luxury-living-room-with-bookshelf (1).png') }}" alt="Sample"
-                        class="img-fluid w-100">
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('transforming_homes_image') ?: asset('front/images/3d-rendering-loft-luxury-living-room-with-bookshelf (1).png') }}"
+                        alt="Sample" class="img-fluid w-100">
                 </div>
 
                 <!-- Content Box Overlapping -->
                 <div class="col-lg-7 position-absolute top-50 end-0 translate-middle-y bg-white p-5 shadow"
                     style="z-index: 10;">
-                    <h3 class="mb-3 text-start bold" style="font-weight: 700 !important;"  data-aos="fade-up">{!! $content['transforming_homes_heading'] ?? '' !!}</h3>
+                    <h3 class="mb-3 text-start bold" style="font-weight: 700 !important;" data-aos="fade-up">
+                        {!! $content['transforming_homes_heading'] ?? '' !!}</h3>
                     <p class="text-start" data-aos="fade-up">{!! $content['transforming_homes_desc_1'] ?? '' !!}</p>
                     <p class="text-start" data-aos="fade-up">{!! $content['transforming_homes_desc_2'] ?? '' !!}</p>
                     <p class="text-start" data-aos="fade-up">{!! $content['transforming_homes_desc_3'] ?? '' !!}</p>
                     <div class="text-start mt-4">
-                        <a href="{!! $content['transforming_homes_button_url'] ?? '' !!}"
-                            class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 12px 40px !important;"  data-aos="fade-up">{!! $content['transforming_homes_button_text'] ?? '' !!}</a>
+                        <a href="{!! $content['transforming_homes_button_url'] ?? '' !!}" class="btn custom-btn btn-14 btn-primary banner-btn"
+                            style="padding: 12px 40px !important;" data-aos="fade-up">{!! $content['transforming_homes_button_text'] ?? '' !!}</a>
                     </div>
                 </div>
             </div>
@@ -51,29 +54,34 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-3 mb-4">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('interior_solution_image_1') ?: asset('front/images/image (33).png') }}"
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('interior_solution_image_1') ?: asset('front/images/image (33).png') }}"
                         class="img-fluid equal-height" alt="Image 1">
                     <h5 data-aos="fade-up" class="mt-3">{!! $content['interior_solution_desc_1'] ?? '' !!}</h5>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('interior_solution_image_2') ?: asset('front/images/image (31).png') }}"
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('interior_solution_image_2') ?: asset('front/images/image (31).png') }}"
                         class="img-fluid equal-height" alt="Image 2">
                     <h5 data-aos="fade-up" class="mt-3">{!! $content['interior_solution_desc_2'] ?? '' !!}</h5>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('interior_solution_image_3') ?: asset('front/images/image (33).png') }}"
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('interior_solution_image_3') ?: asset('front/images/image (33).png') }}"
                         class="img-fluid equal-height" alt="Image 3">
                     <h5 data-aos="fade-up" class="mt-3">{!! $content['interior_solution_desc_3'] ?? '' !!}</h5>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('interior_solution_image_4') ?: asset('front/images/image (32).png') }}"
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('interior_solution_image_4') ?: asset('front/images/image (32).png') }}"
                         class="img-fluid equal-height" alt="Image 4">
                     <h5 data-aos="fade-up" class="mt-3">{!! $content['interior_solution_desc_4'] ?? '' !!}</h5>
                 </div>
             </div>
 
-            <a  data-aos="fade-up" href="{!! $content['interior_solution_button_url'] ?? '' !!}"
-                class="btn btn-primary custom-btn btn-14 mt-4 banner-btn bold"  style="padding: 12px 30px !important;">{!! $content['interior_solution_button_text'] ?? '' !!}</a>
+            <a data-aos="fade-up" href="{!! $content['interior_solution_button_url'] ?? '' !!}"
+                class="btn btn-primary custom-btn btn-14 mt-4 banner-btn bold"
+                style="padding: 12px 30px !important;">{!! $content['interior_solution_button_text'] ?? '' !!}</a>
         </div>
     </section>
 
@@ -81,66 +89,66 @@
         <div class="container py-4">
             <!-- Main Heading -->
             <div class="text-center mb-4">
-                <h2 class="text-white bold" style="font-weight: 700 !important;" data-aos="fade-up">{!! $content['estimate_section_heading'] ?? '' !!}</h2>
+                <h2 class="text-white bold" style="font-weight: 700 !important;" data-aos="fade-up">{!! $content['estimate_section_heading'] ?? '' !!}
+                </h2>
                 <p class="text-white text-small" data-aos="fade-up">{!! $content['estimate_section_description'] ?? '' !!}</p>
             </div>
-    
+
             <!-- Sub-sections -->
             <div class="row text-center py-3">
                 <!-- Sub-section 1 -->
                 <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
-                            <img data-aos="fade-up" src="{{ asset('front/images/Screenshot 2025-04-21 060645.png') }}" alt="Icon 1"
-                                 style="max-height: 100%; width: auto;">
+                            <img data-aos="fade-up" src="{{ asset('front/images/Screenshot 2025-04-21 060645.png') }}"
+                                alt="Icon 1" style="max-height: 100%; width: auto;">
                         </div>
                         <h5 data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_heading_1'] ?? '' !!}</h5>
                         <p data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_desc_1'] ?? '' !!}</p>
                     </div>
                 </div>
-    
+
                 <!-- Sub-section 2 -->
                 <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/flooring.png') }}" alt="Icon 2"
-                                 style="max-height: 100%; width: auto;">
+                                style="max-height: 100%; width: auto;">
                         </div>
                         <h5 data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_heading_2'] ?? '' !!}</h5>
                         <p data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_desc_2'] ?? '' !!}</p>
                     </div>
                 </div>
-    
+
                 <!-- Sub-section 3 -->
                 <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/lightning.png') }}" alt="Icon 3"
-                                 style="max-height: 100%; width: auto;">
+                                style="max-height: 100%; width: auto;">
                         </div>
                         <h5 data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_heading_3'] ?? '' !!}</h5>
                         <p data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_desc_3'] ?? '' !!}</p>
                     </div>
                 </div>
-    
+
                 <!-- Sub-section 4 -->
                 <div class="col-md-3">
                     <div class="d-flex flex-column align-items-center">
                         <div style="height: 60px;" class="mb-3 d-flex align-items-start justify-content-center">
                             <img data-aos="fade-up" src="{{ asset('front/images/door.png') }}" alt="Icon 4"
-                                 style="max-height: 100%; width: auto;">
+                                style="max-height: 100%; width: auto;">
                         </div>
                         <h5 data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_heading_4'] ?? '' !!}</h5>
                         <p data-aos="fade-up" class="text-white text-center">{!! $content['estimate_image_desc_4'] ?? '' !!}</p>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Button at the End -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{!! $content['estimate_button_url'] ?? '' !!}"
-                   class="btn btn-primary custom-btn btn-14 banner-btn"
-                   style="padding: 13px 25px !important;">
+                    class="btn btn-primary custom-btn btn-14 banner-btn" style="padding: 13px 25px !important;">
                     {!! $content['estimate_button_text'] ?? '' !!}
                 </a>
             </div>
@@ -149,14 +157,19 @@
 
     <div class="container">
         <section class="before-after-section py-5 text-center">
-            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold" style="font-weight: 700 !important;">{!! $content['before_after_heading'] ?? '' !!}</h2>
+            <h2 data-aos="fade-up" class="section-title mb-4 fw-bold bold" style="font-weight: 700 !important;">
+                {!! $content['before_after_heading'] ?? '' !!}</h2>
 
             <div class="image-compare-wrapper" aria-label="Before and After Image Slider">
                 <div class="image-layer image-before">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('before_image') ?: asset('front/images/spacious-reconfigured-kitchen-remodel-naples-fl-before-2-1.jpg') }}" alt="Before Image">
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('before_image') ?: asset('front/images/spacious-reconfigured-kitchen-remodel-naples-fl-before-2-1.jpg') }}"
+                        alt="Before Image">
                 </div>
                 <div class="image-layer image-after">
-                    <img data-aos="fade-up" src="{{ $data?->getFirstMediaUrl('after_image') ?: asset('front/images/after.jpg') }}" alt="After Image">
+                    <img data-aos="fade-up"
+                        src="{{ $data?->getFirstMediaUrl('after_image') ?: asset('front/images/after.jpg') }}"
+                        alt="After Image">
                 </div>
                 <div class="divider-line" id="dividerLine"></div>
                 <input type="range" min="0" max="100" value="50" id="imageSlider"
@@ -164,7 +177,7 @@
             </div>
         </section>
     </div>
-    
+
     <section class="position-relative py-5 mb-5">
         <div class="container position-relative z-2">
             <div class="row position-relative">
@@ -181,7 +194,8 @@
                                     <h6 data-aos="fade-up" class="text-uppercase text-theme-color">
                                         {!! $content['trusted_small_heading'] ?? '' !!}
                                     </h6>
-                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold" style="font-weight: 700 !important;">
+                                    <h1 data-aos="fade-up" class="fw-bold my-3 bold"
+                                        style="font-weight: 700 !important;">
                                         {!! $content['trusted_main_heading'] ?? '' !!}
                                     </h1>
                                     <p data-aos="fade-up" style="font-style: italic">
@@ -190,7 +204,7 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Black Box -->
                         <div class="col-lg-7 col-md-12 ms-lg-auto">
                             <div class="p-4 py-5 text-white trusted-dark-box"
@@ -210,48 +224,53 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- Background Image (Visible only on LG and above) -->
-        <div class="position-absolute top-0 end-0 trusted-bg-image" style="width: 65%; z-index: 0; height: 85% !important;">
+        <div class="position-absolute top-0 end-0 trusted-bg-image"
+            style="width: 65%; z-index: 0; height: 85% !important;">
             <img data-aos="fade-up"
                 src="{{ $data?->getFirstMediaUrl('trusted_section_image') ?: asset('front/images/image (30).png') }}"
-                alt="Image"
-                class="w-100 h-100 object-fit-cover">
+                alt="Image" class="w-100 h-100 object-fit-cover">
         </div>
     </section>
-    
+
     <section class="py-5">
         <div class="container">
             <div class="row d-flex justify-content-center text-center">
                 <div class="col-8">
-                    <h2 data-aos="fade-up" class=" bold" style="font-weight: 700 !important;">{!! $content['recent_projects_heading'] ?? '' !!}</h2>
+                    <h2 data-aos="fade-up" class=" bold" style="font-weight: 700 !important;">{!! $content['recent_projects_heading'] ?? '' !!}
+                    </h2>
                     <p data-aos="fade-up">{!! $content['recent_projects_description'] ?? '' !!}</p>
                 </div>
             </div>
             <div class="row">
                 @foreach ($projects->take(4) as $project)
-                    <div class="col-md-3 mb-4">
+                    <div class="col-lg-3 mb-4">
                         <div class="position-relative">
-                            <img data-aos="fade-up" src="{{ asset('storage/' . $project->image) }}" class="img-fluid w-100 project-image"
-                                alt="{{ $project->title }}">
+                            <img data-aos="fade-up" src="{{ asset('storage/' . $project->image) }}"
+                                class="img-fluid w-100 project-image" alt="{{ $project->title }}">
                             <div class="overlay-box bg-white p-3 position-absolute">
-                                <h5 data-aos="fade-up">{{ Str::limit($project->title, 11, '') ?: '' }}</h5>
-                                <p data-aos="fade-up">{{ Str::limit(strip_tags($project->description), 40, '') ?: '' }}</p>
-                                <a data-aos="fade-up" href="{{ route('project.detail', $project->id) }}" class="btn btn-sm"
-                                    style="color: #2fa8fa;">
-                                    <b><i>VIEW PROJECT</i></b>
+                                <div>
+                                    <h5 data-aos="fade-up" class="mb-2">{{ $project->title }}</h5>
+                                    <p data-aos="fade-up" class="mb-3">
+                                        {{ Str::limit(strip_tags($project->description), 40, '') ?: '' }}</p>
+                                </div>
+                                <a data-aos="fade-up" href="{{ route('project.detail', $project->id) }}"
+                                    class="btn btn-sm"
+                                    style="color: #2fa8fa; text-align: justify; text-decoration: underline;">
+                                    <i>VIEW PROJECT</i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
 
             <!-- Bottom Centered Button -->
             <div class="text-center mt-4">
                 <a data-aos="fade-up" href="{!! $content['recent_projects_button_url'] ?? '' !!}"
-                    class="btn custom-btn btn-14 btn-primary banner-btn" style="padding: 12px 30px !important;">{!! $content['recent_projects_button_text'] ?? '' !!}</a>
+                    class="btn custom-btn btn-14 btn-primary banner-btn"
+                    style="padding: 12px 30px !important;">{!! $content['recent_projects_button_text'] ?? '' !!}</a>
             </div>
         </div>
     </section>
@@ -263,7 +282,7 @@
             background-position: center;
             height: 100vh;
         }
-    
+
         .content-box {
             background-color: #0016269e;
             /* black with opacity */
@@ -272,22 +291,24 @@
             padding: 5rem !important;
             padding-left: 6rem !important;
             padding-right: 6rem !important;
-            height: auto; /* Adjust height as needed */
-            min-height: 400px; /* Set minimum height for the content box */
+            height: auto;
+            /* Adjust height as needed */
+            min-height: 400px;
+            /* Set minimum height for the content box */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
     </style>
-    
+
     <section class="position-relative get-started-section d-flex justify-content-center align-items-center mt-5">
         <div class="content-box text-white text-center p-5">
             <h3 data-aos="fade-up" class="fw-bold text-white">{!! $content['get_started_heading'] ?? '' !!}</h3>
             <p data-aos="fade-up" class="text-white">{!! $content['get_started_description'] ?? '' !!}</p>
-            <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}"
-                class="btn btn-primary banner-btn custom-btn btn-14" style="padding: 13px 30px !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
+            <a data-aos="fade-up" href="{!! $content['get_started_button_url'] ?? '' !!}" class="btn btn-primary banner-btn custom-btn btn-14"
+                style="padding: 13px 30px !important;">{!! $content['get_started_button_text'] ?? '' !!}</a>
         </div>
     </section>
-    
+
 @endsection

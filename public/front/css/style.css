@@ -69,13 +69,13 @@ nav .nav-link{
 .navbar-brand .fw-bold
 {
   font-weight: 200 !important;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .navbar-brand .fw-thin
 {
   font-weight: lighter !important;
-  font-size: 9px;
+  font-size: 11px;
 }
 
 
@@ -162,7 +162,8 @@ nav .nav-link{
 
 .footer h5.text-white {
   color: #fff !important;
-  font-weight: 100;
+  font-weight: lighter;
+  /* font-size: large; */
   /* font-family: Open Sans; */
 }
 
@@ -213,7 +214,7 @@ nav .nav-link{
 }
 
 .footer .text-white {
-    color: #cfcfcf !important;
+    color: #d9d9d9 !important;
     line-height: 20px;
 }
 
@@ -399,7 +400,17 @@ footer ul.contact .text-white:hover{
     bottom: 0;
     left: 0;
     width: 90%;
+    min-height: 180px; /* set a minimum height so all boxes match */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+
+  @media (max-width: 768px) {
+    .overlay-box {
+      min-height: 140px;
+    }
+  }  
 
   .blog-posts{
     color: #ffffff !important;
@@ -477,4 +488,9 @@ footer ul.contact .text-white:hover{
 
 footer .navbar-brand .brand-name div{
   color: #fff !important;
+}
+
+footer .navbar-brand .brand-name div.fw-thin{
+  color: #fff !important;
+  font-size: 10px;
 }
