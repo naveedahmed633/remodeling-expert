@@ -65,7 +65,7 @@
                     </div>
 
                     <!-- Contact Us -->
-                    <div class="col-12 col-lg-4 mb-4">
+                    <div class="col-12 col-lg-4">
                         <h5 class="text-white">Contact Us</h5>
                         <ul class="list-unstyled contact" style="line-height: 35px;">
                             <li><a class="text-white"><i class="fas fa-phone" style="color: gray;"></i>
