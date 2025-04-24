@@ -10,7 +10,7 @@
                     <div class="d-flex align-items-center gap-2 my-3">
                         <img src="{{ asset('front/images/Vector.png') }}" alt="Logo" class="mb-0"
                             style="width: 40px;">
-                        <div>
+                        <div class="brand-name">
                             <div class="fw-bold text-white fw-bold">TOTAL UPGRADE</div>
                             <div class="fw-light text-white small fw-thin">REMODELING EXPERT</div>
                         </div>

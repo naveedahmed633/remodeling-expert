@@ -474,3 +474,7 @@ footer ul.contact .text-white:hover{
     margin-bottom: 150px; /* jitni chahen */
   }
 }
+
+footer .navbar-brand .brand-name div{
+  color: #fff !important;
+}
